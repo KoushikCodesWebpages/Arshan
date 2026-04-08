@@ -11,6 +11,7 @@ koushik@koushik-ASUS-TUF-Gaming-A15-FA506QM-FA506QM:~/Projects/Internship/arshan
 ├── public
 │   ├── file.svg
 │   ├── globe.svg
+│   ├── images
 │   ├── next.svg
 │   ├── vercel.svg
 │   └── window.svg
@@ -24,13 +25,19 @@ koushik@koushik-ASUS-TUF-Gaming-A15-FA506QM-FA506QM:~/Projects/Internship/arshan
 │   │   └── page.tsx
 │   ├── components
 │   │   ├── forms
+│   │   ├── home
+│   │   │   └── Hero.tsx
 │   │   ├── layout
+│   │   │   ├── Footer.tsx
+│   │   │   └── Navbar.tsx
 │   │   └── ui
 │   ├── hooks
 │   ├── lib
+│   │   └── theme.ts
 │   ├── services
 │   └── types
 ├── structure.md
+├── tailwind.config.ts
 └── tsconfig.json
 
-13 directories, 20 files
+15 directories, 25 files

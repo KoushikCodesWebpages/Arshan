@@ -3,7 +3,7 @@
 /* 1. DEFINE YOUR ARSHAN PALETTE VARIABLES */
 :root {
   /* Page Level */
-  --background: #f0f0f0;    /* Tailwind Gray-100 (The Canvas) */
+  --background: #f6f6f6b0;    /* Tailwind Gray-100 (The Canvas) */
   --foreground: #1E293B;    /* Slate 800 (Text Main) */
   
   /* Brand Specifics */
@@ -49,3 +49,11 @@ body {
    to keep the design strictly "High-Contrast Light Mode" 
    as per the Arshan aesthetic.
 */
+/* Disable the Next.js development overlay/badge */
+#nextjs-portal, 
+[data-nextjs-toast-wrapper],
+.nextjs-static-indicator {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

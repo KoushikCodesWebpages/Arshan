@@ -33,7 +33,7 @@ export default function Footer() {
     /* We use bg-white here so the footer block is clearly 
        distinct from the bg-gray-100 body.
     */
-    <footer className="bg-white border-t border-gray-200 mt-auto font-sans">
+    <footer className="bg-slate-50 border-t border-gray-200 mt-auto font-sans">
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-12">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
