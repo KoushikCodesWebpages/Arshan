@@ -4,8 +4,8 @@ import { ArrowRight } from "lucide-react";
 
 export default function FinanceIntro() {
   return (
-    <section className="py-30 bg-white overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="py-30  overflow-hidden">
+      <div className="w-full mx-auto px-28">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
           {/* Text Content */}
