@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { theme } from "@/lib/theme";
 import { TrendingUp } from "lucide-react";
+import finance3 from '../../../public/finance3.svg'
+import finance4 from '../../../public/finance4.svg'
 
 export default function ProtocolStability() {
   return (
@@ -84,7 +86,7 @@ export default function ProtocolStability() {
             {/* Chart Laptop */}
             <div className="rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+                src={finance3}
                 alt="Analytics dashboard"
                 width={400}
                 height={400}
@@ -109,7 +111,7 @@ export default function ProtocolStability() {
             {/* Meeting Image */}
             <div className="rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1556761175-4b46a572b786"
+                src={finance4}
                 alt="Business meeting"
                 width={400}
                 height={400}

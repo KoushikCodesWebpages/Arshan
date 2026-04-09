@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { theme } from "@/lib/theme";
 import { ArrowRight } from "lucide-react";
-
+import finance1 from '../../../public/finance1.svg'
 export default function FinanceIntro() {
   return (
     <section className="py-30  overflow-hidden">
@@ -49,26 +49,29 @@ export default function FinanceIntro() {
                 {/* <div className="absolute inset-0 bg-slate-900 rounded-2xl -rotate-2 translate-x-1" /> */}
 
                 {/* Top Layer (The Graph Image) */}
-                <div className="absolute inset-0 -rotate-5 translate-x-4 translate-y-2 rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                    <Image
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" // Place your graph image in public/images/
-                    alt="Financial Growth Chart"
-                    fill
-                    className="object-cover"
-                    />
+                {/* <div className="absolute inset-0 -rotate-5 translate-x-4 translate-y-2 rounded-2xl overflow-hidden shadow-2xl border border-white/10 group"> */}
+                {/* // 1. Add "group" to the parent div */}
+                  <div className="group absolute inset-0 rounded-2xl overflow-hidden -rotate-5 translate-x-4 translate-y-2">
+                      <Image
+                          src={finance1}
+                          alt="Financial Growth Chart"
+                          fill
+                          className="object-cover scale-150 rotate-6 transition-transform duration-500 group-hover:rotate-6"
+                      />
+
 
                     {/* --- ADDED EFFECTS START --- */}
                     
-                    {/* 1. THE HOLE: Central clarity with deep black outer blur */}
+                    {/* 1. THE HOLE: Central clarity with deep black outer blur
                     <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,_transparent_10%,_rgba(0,0,0,0.5)_60%,_rgba(0,0,0,0.9)_100%)] mix-blend-multiply" />
 
                     {/* 2. VIGNETTE: Heavy blurred black edges */}
-                    <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_100px_rgba(0,0,0,0.9)]" />
+                    {/* <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_100px_rgba(0,0,0,0.9)]" /> */}
                     
                     {/* --- ADDED EFFECTS END --- */}
 
                     {/* Subtle dark gradient to match the design's mood */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 to-transparent" />
+                    {/* <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 to-transparent" /> */} 
                     </div>
 
                 </div>

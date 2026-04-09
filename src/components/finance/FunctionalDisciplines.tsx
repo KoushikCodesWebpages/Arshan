@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { theme } from "@/lib/theme";
 import { Wallet, FolderCog, FileText, CheckCircle } from "lucide-react";
+import finance2 from '../../../public/finance2.svg'
 
 export default function FunctionalDisciplines() {
   return (
@@ -127,7 +128,7 @@ export default function FunctionalDisciplines() {
             <div className="bg-white p-4 rounded-2xl shadow-2xl border border-border-light relative z-10">
               <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
                 <Image
-                  src="https://images.unsplash.com/photo-1642790106117-e829e14a795f"
+                  src={finance2}
                   alt="Financial analytics chart"
                   fill
                   className="object-cover"
