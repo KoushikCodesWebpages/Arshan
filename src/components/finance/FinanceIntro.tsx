@@ -40,7 +40,7 @@ export default function FinanceIntro() {
 
           {/* Stacked Image Effect */}
           <div className="flex-1 relative">
-            <div className="relative w-full max-w-[500px] aspect-square mx-auto">
+            <div className="relative w-full max-w-125 aspect-square mx-auto">
               
               {/* Back Layer (Navy Accent) */}
               <div className="absolute inset-0 bg-primary rounded-2xl rotate-3 translate-x-4 translate-y-2 opacity-90" />

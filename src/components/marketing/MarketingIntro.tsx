@@ -40,7 +40,7 @@ export default function MarketingIntro() {
 
           {/* Right Side: Cinematic Image Card */}
           <div className="flex-1 relative">
-            <div className="relative w-full max-w-[550px] aspect-square mx-auto">
+            <div className="relative w-full max-w-137.5 aspect-square mx-auto">
               
               {/* Outer Glow / Shadow */}
               <div className="absolute -inset-4 bg-primary/5 blur-3xl rounded-full" />
@@ -55,13 +55,13 @@ export default function MarketingIntro() {
                 />
 
                 {/* 1. THE "HOLE": Central clarity and deep vignette */}
-                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,_transparent_15%,_rgba(0,0,0,0.4)_60%,_rgba(0,0,0,0.85)_100%)] mix-blend-multiply" />
+                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_15%,rgba(0,0,0,0.4)_60%,rgba(0,0,0,0.85)_100%)] mix-blend-multiply" />
 
                 {/* 2. CYAN LIGHT LEAK: Matching the image's palette */}
-                <div className="absolute inset-0 mix-blend-screen opacity-40 bg-[radial-gradient(circle_at_70%_70%,_rgba(0,255,255,0.3)_0%,_transparent_50%)]" />
+                <div className="absolute inset-0 mix-blend-screen opacity-40 bg-[radial-gradient(circle_at_70%_70%,rgba(0,255,255,0.3)_0%,transparent_50%)]" />
 
                 {/* 3. CHROMATIC ABERRATION: Prismatic artifacts */}
-                <div className="absolute inset-0 mix-blend-screen opacity-20 bg-[linear-gradient(135deg,_transparent_20%,_rgba(0,255,255,0.2)_30%,_transparent_40%,_rgba(255,0,255,0.1)_60%,_transparent_70%)]" />
+                <div className="absolute inset-0 mix-blend-screen opacity-20 bg-[linear-gradient(135deg,transparent_20%,rgba(0,255,255,0.2)_30%,transparent_40%,rgba(255,0,255,0.1)_60%,transparent_70%)]" />
 
                 {/* 4. DUST & GRAIN */}
                 <div className="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />

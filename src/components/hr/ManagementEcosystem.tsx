@@ -47,7 +47,7 @@ export default function ManagementEcosystem() {
               {steps.map((step, index) => (
                 <FadeItem key={index} className="flex gap-8 lg:gap-12">
                   {/* Large Stylized Number */}
-                  <span className="text-slate-400 text-6xl lg:text-7xl font-bold text-primary/10 select-none leading-none mt-[-8px]">
+                  <span className="text-primary/10 text-6xl lg:text-7xl font-bold  select-none leading-none -mt-2">
                     {step.number}
                   </span>
 

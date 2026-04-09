@@ -126,7 +126,7 @@ export default function FunctionalDisciplines() {
           <div className="relative order-1 lg:order-2">
             {/* White outer frame shadow as seen in reference */}
             <div className="bg-white p-4 rounded-2xl shadow-2xl border border-border-light relative z-10">
-              <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
+              <div className="relative rounded-xl overflow-hidden aspect-4/3">
                 <Image
                   src={finance2}
                   alt="Financial analytics chart"
@@ -135,10 +135,10 @@ export default function FunctionalDisciplines() {
                 />
 
                 {/* Cinematic overlay for depth */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-tr from-slate-900/40 to-transparent" />
                 
                 {/* Subtle vignetting to keep consistent with FinanceIntro */}
-                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,_transparent_30%,_rgba(0,0,0,0.3)_100%)]" />
+                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.3)_100%)]" />
               </div>
             </div>
             

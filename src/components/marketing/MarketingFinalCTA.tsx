@@ -19,13 +19,13 @@ export default function MarketingFinalCTA() {
           {/* Dual Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
             <button 
-              className={`text-xs ${theme.buttons.primary} min-w-[240px] py-4 shadow-xl hover:shadow-primary/20 transition-all`}
+              className={`text-xs ${theme.buttons.primary} min-w-60 py-4 shadow-xl hover:shadow-primary/20 transition-all`}
             >
               REQUEST ACCOUNT AUDIT
             </button>
             
             <button 
-              className="min-w-[200px] py-4 border border-primary text-primary font-bold text-xs tracking-widest uppercase hover:bg-slate-50 transition-colors"
+              className="min-w-50 py-4 border border-primary text-primary font-bold text-xs tracking-widest uppercase hover:bg-slate-50 transition-colors"
             >
               OUR CASE STUDIES
             </button>

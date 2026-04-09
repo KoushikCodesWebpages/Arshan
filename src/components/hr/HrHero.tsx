@@ -46,9 +46,9 @@ export default function HRHero() {
 
         {/* Right Image Composition */}
         <FadeItem>
-          <div className="relative group max-w-[500px] ml-auto">
+          <div className="relative group max-w-125 ml-auto">
             {/* 1. The Blue Offset Background - Adjusted for better alignment */}
-            <div className="absolute top-12 -right-6 w-full h-full bg-primary/10 rounded-sm -z-10 transition-transform duration-700 group-hover:translate-x-2 group-hover:translate-y-[-8px]" />
+            <div className="absolute top-12 -right-6 w-full h-full bg-primary/10 rounded-sm -z-10 transition-transform duration-700 group-hover:translate-x-2 group-hover:-translate-y-2" />
             
             {/* 2. The Main Image Container */}
             <div className="relative overflow-hidden rounded-sm shadow-2xl border border-white/20 bg-muted">
@@ -64,7 +64,7 @@ export default function HRHero() {
               />
               
               {/* 3. Refined Overlay - Subtle glass effect + Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-40" />
+              <div className="absolute inset-0 bg-linear-to-tr from-primary/30 via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-40" />
               
               {/* 4. Interactive Border (Optional "Premium" touch) */}
               <div className="absolute inset-0 border-2 border-white/0 transition-colors duration-700 group-hover:border-white/10 pointer-events-none" />
