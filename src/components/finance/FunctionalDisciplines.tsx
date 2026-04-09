@@ -10,7 +10,7 @@ import finance2 from '../../../public/finance2.svg';
 export default function FunctionalDisciplines() {
   return (
     <section className="py-24 bg-neutral/50">
-      <div className="container mx-auto px-6 lg:px-28 space-y-16">
+      <div className="w-full mx-auto px-28 space-y-16">
 
         {/* HEADER */}
         <FadeInStagger>

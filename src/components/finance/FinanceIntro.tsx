@@ -9,8 +9,8 @@ import finance1 from '../../../public/finance1.svg';
 
 export default function FinanceIntro() {
   return (
-    <section className="py-24 lg:py-32 overflow-hidden bg-background">
-      <div className="container mx-auto px-6 lg:px-28">
+    <section className="py-24 overflow-hidden bg-background">
+      <div className="w-full mx-auto px-28">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
           {/* Text Content */}

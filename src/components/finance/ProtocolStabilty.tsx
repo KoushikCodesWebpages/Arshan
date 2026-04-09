@@ -6,7 +6,7 @@ import finance4 from '../../../public/finance4.svg'
 
 export default function ProtocolStability() {
   return (
-    <section className="py-28 bg-primary text-white">
+    <section className="py-12 bg-primary text-white">
       <div className="w-full mx-auto px-28">
 
         <div className="grid lg:grid-cols-2 gap-20 items-center">

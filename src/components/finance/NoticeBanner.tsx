@@ -7,7 +7,7 @@ import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 export default function NoticeBanner() {
   return (
     <section className="py-12 bg-white">
-      <div className="container mx-auto px-6 lg:px-28">
+      <div className="w-full mx-auto px-28">
         <FadeInStagger>
           <FadeItem>
             <div className={`relative ${theme.ui.card} bg-neutral/50 p-8 md:p-10 flex items-start gap-6 group transition-colors hover:bg-neutral`}>

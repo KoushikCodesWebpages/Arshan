@@ -7,7 +7,7 @@ import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 export default function FinalCTA() {
   return (
     <section className="py-24 bg-white overflow-hidden">
-      <div className="container w-full mx-auto px-6 lg:px-28 text-center ">
+      <div className=" w-full mx-auto px-6  text-center ">
         <FadeInStagger>
           <div className="space-y-8">
             

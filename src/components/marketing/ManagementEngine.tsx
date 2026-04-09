@@ -1,6 +1,10 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
 import { theme } from "@/lib/theme";
 import { ArrowRight } from "lucide-react";
+import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
 export default function ManagementEngine() {
   const stats = [
@@ -9,64 +13,71 @@ export default function ManagementEngine() {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="w-full mx-auto px-28">
-        <div className="flex flex-col lg:flex-row min-h-[500px] rounded-sm overflow-hidden shadow-2xl border border-slate-100">
-          
-          {/* Left: Text & Metrics */}
-          <div className="flex-1 bg-primary p-12 lg:p-16 flex flex-col justify-center space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                Data-Driven <br />
-                Management <br />
-                Engine.
-              </h2>
-              <p className="text-slate-300 text-lg leading-relaxed max-w-md">
-                Our management approach uses real-time platform data to ensure 
-                your content is always delivered at the optimal time for maximum engagement.
-              </p>
-            </div>
+    <section className="py-24 bg-white overflow-hidden">
+      <div className=" w-full mx-auto px-28 ">
+        <FadeInStagger>
+          <div className="flex flex-col lg:flex-row min-h-125 rounded-sm overflow-hidden shadow-2xl border border-border-light">
+            
+            {/* Left: Text & Metrics */}
+            <FadeItem className="flex-1 bg-primary p-12 lg:p-16 flex flex-col justify-center space-y-8 z-10">
+              <div className="space-y-4">
+                <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight">
+                  Data-Driven <br />
+                  Management <br />
+                  Engine.
+                </h2>
+                <p className="text-slate-300 text-lg leading-relaxed max-w-md opacity-90">
+                  Our management approach uses real-time platform data to ensure 
+                  your content is always delivered at the optimal time for maximum engagement.
+                </p>
+              </div>
 
-            {/* Metrics Grid */}
-            <div className="grid grid-cols-2 gap-8 py-4 border-y border-white/10">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="space-y-1">
-                  <div className="text-3xl font-bold text-white">{stat.value}</div>
-                  <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">
-                    {stat.label}
+              {/* Metrics Grid */}
+              <div className="grid grid-cols-2 gap-8 py-8 border-y border-white/10">
+                {stats.map((stat, idx) => (
+                  <div key={idx} className="space-y-1">
+                    <div className="text-3xl font-bold text-white">{stat.value}</div>
+                    <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase">
+                      {stat.label}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            <button className="flex items-center gap-3 text-white font-bold text-sm tracking-widest uppercase group transition-all hover:gap-5">
-              Explore Our Workflow 
-              <ArrowRight className="w-5 h-5 text-tertiary" />
-            </button>
+              <FadeItem>
+                <button className="flex items-center gap-3 text-white font-bold text-sm tracking-widest uppercase group transition-all hover:gap-5">
+                  Explore Our Workflow 
+                  <ArrowRight className={`w-5 h-5 ${theme.brand.accent}`} />
+                </button>
+              </FadeItem>
+            </FadeItem>
+
+            {/* Right: Cinematic Visualization */}
+            <FadeItem className="flex-[1.2] relative min-h-100 group overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" 
+                alt="Real-time analytics engine"
+                fill
+                className="object-cover transition-transform duration-[3s] ease-out group-hover:scale-110"
+                priority
+              />
+              
+              {/* Arshan Lens Overlays */}
+              {/* 1. Deep Shadow Vignette - Blending the image into the primary navy block */}
+              <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/20 to-transparent hidden lg:block" />
+              
+              {/* 2. The "Hole" and Black Blurs for the Premium UI feel */}
+              <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.4)_70%,rgba(0,0,0,0.9)_100%)] mix-blend-multiply" />
+              
+              {/* 3. Color Depth Layer */}
+              <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
+              
+              {/* 4. Subtle Glass Highlight */}
+              <div className="absolute inset-0 border-l border-white/10 pointer-events-none" />
+            </FadeItem>
+
           </div>
-
-          {/* Right: Cinematic Visualization */}
-          <div className="flex-[1.2] relative min-h-[400px]">
-            <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" // Representing a high-end data engine/dashboard
-              alt="Real-time analytics engine"
-              fill
-              className="object-cover"
-              priority
-            />
-            
-            {/* Arshan Lens Overlays */}
-            {/* 1. Deep Shadow Vignette */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-transparent to-transparent hidden lg:block" />
-            
-            {/* 2. The "Hole" and Black Blurs */}
-            <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,_transparent_20%,_rgba(0,0,0,0.4)_70%,_rgba(0,0,0,0.9)_100%)] mix-blend-multiply" />
-            
-            {/* 3. Cyan Depth Layer to match the visualization */}
-            <div className="absolute inset-0 bg-cyan-900/10 mix-blend-overlay" />
-          </div>
-
-        </div>
+        </FadeInStagger>
       </div>
     </section>
   );

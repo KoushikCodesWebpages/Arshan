@@ -1,37 +1,50 @@
+"use client";
+
+import React from "react";
 import { theme } from "@/lib/theme";
+import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
 export default function MarketingFinalCTA() {
   return (
-    <section className="py-24 bg-white border-t border-slate-100">
-      <div className="w-full mx-auto px-28 text-center">
-        <div className="space-y-8">
-          
-          {/* Headline matches Finance styling for brand unity */}
-          <h2 className={`text-5xl md:text-6xl font-bold tracking-tight ${theme.text.brand}`}>
-            Ready to scale?
-          </h2>
-
-          <p className={`text-lg md:text-xl leading-relaxed ${theme.text.muted} max-w-2xl mx-auto`}>
-            Partner with Arshan for professional social media management that 
-            transforms your digital presence into a consistent, high-authority brand asset.
-          </p>
-
-          {/* Dual Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-            <button 
-              className={`text-xs ${theme.buttons.primary} min-w-60 py-4 shadow-xl hover:shadow-primary/20 transition-all`}
-            >
-              REQUEST ACCOUNT AUDIT
-            </button>
+    <section className="py-24 bg-white border-t border-border-light overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-28 text-center">
+        <FadeInStagger>
+          <div className="space-y-8">
             
-            <button 
-              className="min-w-50 py-4 border border-primary text-primary font-bold text-xs tracking-widest uppercase hover:bg-slate-50 transition-colors"
-            >
-              OUR CASE STUDIES
-            </button>
+            {/* Headline */}
+            <FadeItem>
+              <h2 className={`text-5xl md:text-7xl font-bold tracking-tight ${theme.text.brand}`}>
+                Ready to scale?
+              </h2>
+            </FadeItem>
+
+            {/* Subtext */}
+            <FadeItem>
+              <p className={`text-lg md:text-xl leading-relaxed ${theme.text.muted} max-w-2xl mx-auto`}>
+                Partner with Arshan for professional social media management that 
+                transforms your digital presence into a consistent, high-authority brand asset.
+              </p>
+            </FadeItem>
+
+            {/* Dual Action Buttons */}
+            <FadeItem>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+                <button 
+                  className={`${theme.buttons.primary} min-w-65 py-4 shadow-xl hover:shadow-primary/20 transition-all rounded-sm font-bold text-xs tracking-widest uppercase active:scale-95`}
+                >
+                  Request Account Audit
+                </button>
+                
+                <button 
+                  className="min-w-55 py-4 border border-primary/20 text-primary font-bold text-xs tracking-widest uppercase hover:bg-neutral transition-all rounded-sm active:scale-95"
+                >
+                  Our Case Studies
+                </button>
+              </div>
+            </FadeItem>
+            
           </div>
-          
-        </div>
+        </FadeInStagger>
       </div>
     </section>
   );
