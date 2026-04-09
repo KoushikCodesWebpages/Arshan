@@ -27,7 +27,7 @@ export default function FinanceIntro() {
             </p>
 
             <div className="flex items-center gap-8 pt-4">
-              <button className={theme.buttons.primary}>
+              <button className={`text-xs ${theme.buttons.primary} w-50 py-4 shadow-xl hover:shadow-primary/20 rounded-sm transition-all`}>
                 View Solutions
               </button>
               

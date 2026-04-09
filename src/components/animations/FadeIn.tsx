@@ -3,8 +3,10 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 
+// Updated interface to include optional className
 interface FadeProps {
   children: React.ReactNode;
+  className?: string; // Added this
 }
 
 const containerVariants: Variants = {
@@ -22,7 +24,7 @@ const itemVariants: Variants = {
   hidden: { 
     opacity: 0, 
     y: 20,
-    filter: "blur(4px)" // Added a slight blur for a more premium "emergence" feel
+    filter: "blur(4px)" 
   },
   visible: {
     opacity: 1,
@@ -30,29 +32,33 @@ const itemVariants: Variants = {
     filter: "blur(0px)",
     transition: { 
       duration: 0.8, 
-      ease: [0.21, 0.47, 0.32, 0.98] // Custom cubic-bezier for a smooth deceleration
+      ease: [0.21, 0.47, 0.32, 0.98] 
     },
   },
 };
 
-export function FadeInStagger({ children }: FadeProps) {
+// Added className prop here
+export function FadeInStagger({ children, className }: FadeProps) {
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
-      // margin: "-10% 0px" triggers the animation when the element is 10% inside the viewport
-      // once: true ensures it stays visible after scrolling past
       viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
       variants={containerVariants}
+      className={className} // Pass it down
     >
       {children}
     </motion.div>
   );
 }
 
-export function FadeItem({ children }: FadeProps) {
+// Added className prop here
+export function FadeItem({ children, className }: FadeProps) {
   return (
-    <motion.div variants={itemVariants}>
+    <motion.div 
+      variants={itemVariants} 
+      className={className} // Pass it down
+    >
       {children}
     </motion.div>
   );
