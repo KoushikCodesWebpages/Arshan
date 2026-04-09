@@ -1,20 +1,19 @@
-//
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { theme } from "@/lib/theme"; 
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import ScrollReset from "@/components/utils/ScrollReset";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Koushik Babu | Solution Architect & Developer",
-  description: "Portfolio and insights on AI, Full-stack development, and System Optimization.",
-  metadataBase: new URL('https://yourportfolio.com'), 
+  title: "Arshan | Integrated Business Solutions",
+  description: "High-performance infrastructure for finance, marketing, and HR.",
+  metadataBase: new URL('https://arshan.services'), 
   openGraph: {
-    title: "Koushik Babu",
+    title: "Arshan",
     description: "Building data-driven tools and high-performance applications.",
     type: "website",
     images: ['/og-image.png'], 
@@ -31,10 +30,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined') {
+                window.history.scrollRestoration = 'manual';
+              }
+            `,
+          }}
+        />
+      </head>
       <body 
         className={`
           ${inter.className} 
-          bg-gray-100 
+          bg-white 
           ${theme.text.main}
           antialiased 
           min-h-screen 
@@ -42,13 +52,12 @@ export default function RootLayout({
           flex-col
         `}
       >
-        {/* Navigation Layer */}
+        {/* This component now handles global click listening and scroll logic */}
+        <ScrollReset />
+
         <Navbar />
 
-        {/* The 'flex-grow' on main ensures that if a page has little content, 
-          the Footer is still pushed to the very bottom of the screen.
-        */}
-        <main className="flex-grow">
+        <main className="grow">
           {children}
         </main>
 

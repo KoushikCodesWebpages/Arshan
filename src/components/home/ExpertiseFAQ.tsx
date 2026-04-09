@@ -1,4 +1,8 @@
+"use client";
+
+import React from "react";
 import { theme } from "@/lib/theme";
+import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
 const faqs = [
   {
@@ -25,39 +29,42 @@ const faqs = [
 
 export default function ExpertiseFAQ() {
   return (
-    <section className="py-20">
+    <section className="py-20 overflow-hidden">
       <div className="w-full mx-auto px-28">
 
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className={`text-4xl font-bold ${theme.text.brand}`}>
-            Expertise & Frequently Asked Questions
-          </h2>
+        <FadeInStagger className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <FadeItem>
+            <h2 className={`text-4xl font-bold ${theme.text.brand}`}>
+              Expertise & Frequently Asked Questions
+            </h2>
+          </FadeItem>
 
-          <p className={`mt-4 text-lg ${theme.text.muted}`}>
-            Providing clarity on how Arshan helps small businesses navigate the
-            complexities of global operations.
-          </p>
-        </div>
+          <FadeItem>
+            <p className={`text-lg ${theme.text.muted}`}>
+              Providing clarity on how Arshan helps small businesses navigate the
+              complexities of global operations.
+            </p>
+          </FadeItem>
+        </FadeInStagger>
 
         {/* FAQ GRID */}
-        <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
-
+        <FadeInStagger className="grid md:grid-cols-2 gap-x-16 gap-y-12">
           {faqs.map((faq, index) => (
-            <div key={index}>
+            <FadeItem key={index}>
+              <div className="group">
+                <h3 className={`text-lg font-semibold mb-3 ${theme.text.main} transition-colors group-hover:text-primary`}>
+                  {faq.question}
+                </h3>
 
-              <h3 className={`text-lg font-semibold mb-3 ${theme.text.main}`}>
-                {faq.question}
-              </h3>
-
-              <p className={`leading-relaxed text-sm ${theme.text.muted}`}>
-                {faq.answer}
-              </p>
-
-            </div>
+                <p className={`leading-relaxed text-sm ${theme.text.muted}`}>
+                  {faq.answer}
+                </p>
+              </div>
+            </FadeItem>
           ))}
-
-        </div>
+        </FadeInStagger>
+        
       </div>
     </section>
   );

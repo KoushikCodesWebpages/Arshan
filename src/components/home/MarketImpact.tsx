@@ -1,4 +1,8 @@
+"use client";
+
+import React from "react";
 import { theme } from "@/lib/theme";
+import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
 const stats = [
   {
@@ -17,13 +21,13 @@ const stats = [
 
 export default function MarketImpact() {
   return (
-    <section className="py-20 bg-white ">
+    <section className="py-20 bg-white overflow-hidden">
       <div className="w-full mx-auto px-28">
 
-        <div className="grid lg:grid-cols-4 gap-10 items-center">
+        <FadeInStagger className="grid lg:grid-cols-4 gap-10 items-center">
 
           {/* Left Text */}
-          <div className="space-y-3">
+          <FadeItem className="space-y-3">
             <p className="text-xs tracking-widest text-tertiary font-semibold uppercase">
               Market Impact
             </p>
@@ -31,11 +35,11 @@ export default function MarketImpact() {
             <h3 className={`text-2xl font-semibold ${theme.text.main}`}>
               Proven results across global industries.
             </h3>
-          </div>
+          </FadeItem>
 
           {/* Stats */}
           {stats.map((stat, index) => (
-            <div key={index} className="text-left lg:text-center">
+            <FadeItem key={index} className="text-left lg:text-center">
 
               <div className={`text-3xl font-bold ${theme.text.brand}`}>
                 {stat.value}
@@ -45,10 +49,10 @@ export default function MarketImpact() {
                 {stat.label}
               </p>
 
-            </div>
+            </FadeItem>
           ))}
 
-        </div>
+        </FadeInStagger>
 
       </div>
     </section>

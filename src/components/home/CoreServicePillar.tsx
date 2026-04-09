@@ -1,3 +1,6 @@
+"use client";
+
+import React from "react";
 import { theme } from "@/lib/theme";
 import { 
   Building2, 
@@ -6,6 +9,7 @@ import {
   CheckCircle2, 
   ArrowRight 
 } from "lucide-react";
+import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
 const services = [
   {
@@ -36,67 +40,72 @@ const services = [
 
 export default function ServicePillars() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-background overflow-hidden">
       <div className="w-full mx-auto px-28">
         {/* Header */}
-        <div className="mb-16 space-y-4">
-          <h2 className={`text-4xl font-bold ${theme.text.brand}`}>
-            Our Core Service Pillars
-          </h2>
-          <p className={`max-w-2xl text-lg ${theme.text.muted}`}>
-            Comprehensive business infrastructure designed for performance and search-engine-optimized visibility.
-          </p>
-        </div>
+        <FadeInStagger className="mb-16 space-y-4">
+          <FadeItem>
+            <h2 className={`text-4xl font-bold ${theme.text.brand}`}>
+              Our Core Service Pillars
+            </h2>
+          </FadeItem>
+          <FadeItem>
+            <p className={`max-w-2xl text-lg ${theme.text.muted}`}>
+              Comprehensive business infrastructure designed for performance and search-engine-optimized visibility.
+            </p>
+          </FadeItem>
+        </FadeInStagger>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {services.map((service, index) => (
-            <div 
-              key={index} 
-              className={`${theme.cards.base} p-8 hover:shadow-lg transition-all duration-300`}
-            >
-              {/* Icon Header */}
-              <div className="mb-8">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <service.icon className="w-6 h-6 text-primary" />
+            <FadeItem key={index} className="h-full">
+              <div 
+                className={`${theme.cards.base} p-8 hover:shadow-lg transition-all duration-300 flex flex-col h-full`}
+              >
+                {/* Icon Header */}
+                <div className="mb-8">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <service.icon className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="space-y-4 flex-1">
+                  <h3 className={`text-2xl font-bold leading-tight ${theme.text.main}`}>
+                    {service.title}
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${theme.text.muted}`}>
+                    {service.description}
+                  </p>
+
+                  {/* Highlights */}
+                  <ul className="space-y-3 pt-4">
+                    {service.highlights.map((item, i) => (
+                      <li key={i} className="flex items-center gap-3">
+                        <CheckCircle2 className="w-4 h-4 text-tertiary" />
+                        <span className={`text-sm font-medium ${theme.text.main}`}>
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Footer Link */}
+                <div className="mt-10 pt-6 border-t border-border-light">
+                  <a 
+                    href={service.href} 
+                    className={`flex items-center gap-2 text-sm font-bold ${theme.text.brand} hover:gap-3 transition-all`}
+                  >
+                    {service.linkText}
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
                 </div>
               </div>
-
-              {/* Content */}
-              <div className="space-y-4 flex-1">
-                <h3 className={`text-2xl font-bold leading-tight ${theme.text.main}`}>
-                  {service.title}
-                </h3>
-                <p className={`text-sm leading-relaxed ${theme.text.muted}`}>
-                  {service.description}
-                </p>
-
-                {/* Highlights */}
-                <ul className="space-y-3 pt-4">
-                  {service.highlights.map((item, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-tertiary" />
-                      <span className={`text-sm font-medium ${theme.text.main}`}>
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Footer Link */}
-              <div className="mt-10 pt-6 border-t border-border-light">
-                <a 
-                  href={service.href} 
-                  className={`flex items-center gap-2 text-sm font-bold ${theme.text.brand} hover:gap-3 transition-all`}
-                >
-                  {service.linkText}
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
+            </FadeItem>
           ))}
-        </div>
+        </FadeInStagger>
       </div>
     </section>
   );
