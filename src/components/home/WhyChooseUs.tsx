@@ -79,7 +79,7 @@ export default function WhyChooseUs() {
                     alt="Strategic planning"
                     width={800}
                     height={600}
-                    className="w-full h-[500px] object-cover"
+                    className="w-full h-125 object-cover"
                 />
                 </div>
             </div>

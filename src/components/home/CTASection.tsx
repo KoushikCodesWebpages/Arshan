@@ -35,7 +35,7 @@ export default function CTASection() {
           </div>
 
           {/* Right Image Side */}
-          <div className="flex-1 min-h-[400px] relative">
+          <div className="flex-1 min-h-100 relative">
             <Image
               src={home3} // Add your desk/office image here
               alt="Professional Office Setup"
@@ -44,7 +44,7 @@ export default function CTASection() {
               priority
             />
             {/* Gradient Overlay for mobile to ensure text readability if it stacks */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent md:hidden" />
+            <div className="absolute inset-0 bg-linear-to-t from-primary/80 to-transparent md:hidden" />
           </div>
 
         </div>

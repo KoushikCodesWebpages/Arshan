@@ -56,7 +56,7 @@ export default function Hero() {
           {/* Visual Column */}
           <div className="relative flex justify-center lg:justify-end animate-in fade-in zoom-in duration-1000 mt-16 lg:mt-0">
             {/* Main Image Container */}
-            <div className="relative w-full max-w-[520px] h-[450px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl group">
+            <div className="relative w-full max-w-130 h-112.5 md:h-150 rounded-2xl overflow-hidden shadow-2xl group">
             {/* BRAND OVERLAY: 
                 Using 'mix-blend-multiply' with your primary navy ensures the 
                 building reflections harmonize with your brand colors.
@@ -67,13 +67,13 @@ export default function Hero() {
               src={home1} 
               alt="Arshan Strategic Architecture"
               fill
-              className="object-cover grayscale-[10%] contrast-[1.05] brightness-[0.98] transition-transform duration-700 group-hover:scale-105"
+              className="object-cover grayscale-10 contrast-[1.05] brightness-[0.98] transition-transform duration-700 group-hover:scale-105"
               priority
               sizes="(max-width: 768px) 100vw, 520px"
             />
 
             {/* Subtle gradient at the bottom for text readability on the floating card */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent z-10" />
             </div>
 
             {/* The Floating Value Card: 
@@ -94,7 +94,7 @@ export default function Hero() {
       </div>
       
       {/* Background Accent: Subtle gradient on the right (faintly visible in design) */}
-      <div className="absolute top-0 right-0 w-1/4 h-full bg-gradient-to-l from-slate-50 to-transparent -z-10" />
+      <div className="absolute top-0 right-0 w-1/4 h-full bg-linear-to-l from-slate-50 to-transparent -z-10" />
     </section>
   );
 }
