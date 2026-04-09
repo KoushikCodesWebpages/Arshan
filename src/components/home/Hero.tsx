@@ -2,6 +2,9 @@
 import Image from "next/image";
 import { theme } from "@/lib/theme";
 
+import home1 from '../../../public/home1.svg'
+
+
 export default function Hero() {
   return (
     /* OUTER WRAPPER: Fixed background, sits directly on body. */
@@ -61,12 +64,12 @@ export default function Hero() {
             <div className="absolute inset-0 bg-primary/15 mix-blend-multiply z-10 pointer-events-none" />
             
             <Image
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
-                alt="Arshan Strategic Architecture"
-                fill
-                className="object-cover grayscale-[10%] contrast-[1.05] brightness-[0.98] transition-transform duration-700 group-hover:scale-105"
-                priority
-                sizes="(max-width: 768px) 100vw, 520px"
+              src={home1} 
+              alt="Arshan Strategic Architecture"
+              fill
+              className="object-cover grayscale-[10%] contrast-[1.05] brightness-[0.98] transition-transform duration-700 group-hover:scale-105"
+              priority
+              sizes="(max-width: 768px) 100vw, 520px"
             />
 
             {/* Subtle gradient at the bottom for text readability on the floating card */}

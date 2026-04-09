@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  devIndicators: {
-    appIsrStatus: false, // Disables the 'Static' / 'Dynamic' indicator
-    buildActivity: false, // Disables the build spinner
-  },
+  output: 'export', // Required for SSG/Static Export
+  distDir: 'public_html',
   images: {
+    unoptimized: true, // Required for static export unless using a third-party loader
     remotePatterns: [
       {
         protocol: 'https',
@@ -13,6 +12,10 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+  },
+  devIndicators: {
+    appIsrStatus: false, 
+    buildActivity: false, 
   },
 };
 

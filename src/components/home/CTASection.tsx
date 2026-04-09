@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { theme } from "@/lib/theme";
 import { BarChartHorizontal } from "lucide-react";
-
+import home3 from '../../../public/home3.svg'
 export default function CTASection() {
   return (
     <section className="py-20 bg-white">
@@ -37,7 +37,7 @@ export default function CTASection() {
           {/* Right Image Side */}
           <div className="flex-1 min-h-[400px] relative">
             <Image
-              src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" // Add your desk/office image here
+              src={home3} // Add your desk/office image here
               alt="Professional Office Setup"
               fill
               className="object-cover"
