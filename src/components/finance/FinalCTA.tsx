@@ -1,32 +1,45 @@
+"use client";
+
+import React from "react";
 import { theme } from "@/lib/theme";
+import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
 export default function FinalCTA() {
   return (
-    <section className="py-24 bg-white">
-      <div className="container w-full mx-auto px-28 text-center ">
-        <div className="space-y-8">
-          
-          {/* Main Heading */}
-          <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight ${theme.text.brand}`}>
-            Ready to secure your fiscal foundation?
-          </h2>
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="container w-full mx-auto px-6 lg:px-28 text-center ">
+        <FadeInStagger>
+          <div className="space-y-8">
+            
+            {/* Main Heading */}
+            <FadeItem>
+              <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight ${theme.text.brand}`}>
+                Ready to secure your <br className="hidden md:block" /> 
+                fiscal foundation?
+              </h2>
+            </FadeItem>
 
-          {/* Supporting Subtext */}
-          <p className={`text-lg md:text-xl leading-relaxed ${theme.text.muted} max-w-2xl mx-auto`}>
-            Join the organizations that trust Arshan for architectural-grade 
-            financial record management.
-          </p>
+            {/* Supporting Subtext */}
+            <FadeItem>
+              <p className={`text-lg md:text-xl leading-relaxed ${theme.text.muted} max-w-2xl mx-auto`}>
+                Join the organizations that trust Arshan for architectural-grade 
+                financial record management.
+              </p>
+            </FadeItem>
 
-          {/* Final Conversion Button */}
-          <div className="pt-6">
-            <button 
-              className={`${theme.buttons.primary} px-10 py-4 text-lg rounded-sm transition-transform hover:scale-105 active:scale-95`}
-            >
-              Schedule a Consultation
-            </button>
+            {/* Final Conversion Button */}
+            <FadeItem>
+              <div className="pt-6">
+                <button 
+                  className={`${theme.buttons.primary} px-10 py-4 text-lg rounded-sm transition-all hover:scale-105 active:scale-95 shadow-xl hover:shadow-primary/20`}
+                >
+                  Schedule a Consultation
+                </button>
+              </div>
+            </FadeItem>
+            
           </div>
-          
-        </div>
+        </FadeInStagger>
       </div>
     </section>
   );

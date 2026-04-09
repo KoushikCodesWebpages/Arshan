@@ -1,103 +1,102 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
 import { theme } from "@/lib/theme";
 import { Wallet, FolderCog, FileText, CheckCircle } from "lucide-react";
-import finance2 from '../../../public/finance2.svg'
+import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
+import finance2 from '../../../public/finance2.svg';
 
 export default function FunctionalDisciplines() {
   return (
-    <section className="py-24 bg-neutral">
-      <div className="w-full mx-auto px-28 space-y-16">
+    <section className="py-24 bg-neutral/50">
+      <div className="container mx-auto px-6 lg:px-28 space-y-16">
 
         {/* HEADER */}
-        <div className="w-full">
-          <h2 className={`text-3xl md:text-4xl font-bold ${theme.text.brand}`}>
-            Functional Disciplines
-          </h2>
+        <FadeInStagger>
+          <div className="w-full max-w-3xl">
+            <FadeItem>
+              <h2 className={`text-3xl md:text-5xl font-bold tracking-tight ${theme.text.brand}`}>
+                Functional Disciplines
+              </h2>
+            </FadeItem>
 
-          <p className={`mt-4 text-lg ${theme.text.muted}`}>
-            We bridge the gap between raw transactions and strategic oversight,
-            ensuring your operational data is boardroom-ready.
-          </p>
-        </div>
+            <FadeItem>
+              <p className={`mt-6 text-lg lg:text-xl ${theme.text.muted} leading-relaxed`}>
+                We bridge the gap between raw transactions and strategic oversight,
+                ensuring your operational data is boardroom-ready.
+              </p>
+            </FadeItem>
+          </div>
+        </FadeInStagger>
 
         {/* TOP GRID */}
-        <div className="grid lg:grid-cols-3 gap-8">
-
+        <FadeInStagger className="grid lg:grid-cols-3 gap-8">
           {/* Precision Bookkeeping */}
-          <div className="lg:col-span-2 bg-white rounded-sm border border-border-light p-10 space-y-6 shadow-sm">
+          <FadeItem className="lg:col-span-2">
+            <div className="bg-white rounded-sm border border-border-light p-10 h-full space-y-6 shadow-sm group">
+              <Wallet className="text-tertiary w-8 h-8 transition-transform group-hover:scale-110" />
 
-            <Wallet className="text-tertiary w-7 h-7" />
+              <h3 className={`text-2xl lg:text-3xl font-bold ${theme.text.main}`}>
+                Precision Bookkeeping
+              </h3>
 
-            <h3 className={`text-2xl font-semibold ${theme.text.main}`}>
-              Precision Bookkeeping
-            </h3>
+              <p className={`${theme.text.muted} text-lg max-w-xl leading-relaxed`}>
+                Systematic tracking of all operational expenditures and revenue
+                streams. We maintain the daily pulse of your organization's
+                liquidity with absolute structural integrity.
+              </p>
 
-            <p className={`${theme.text.muted} max-w-xl`}>
-              Systematic tracking of all operational expenditures and revenue
-              streams. We maintain the daily pulse of your organization's
-              liquidity with absolute structural integrity.
-            </p>
-
-            {/* Stats */}
-            <div className="grid md:grid-cols-2 gap-6 pt-4">
-
-              <div className="bg-neutral rounded-lg p-6">
-                <div className={`text-xl font-bold ${theme.text.brand}`}>
-                  99.9%
+              {/* Stats Row */}
+              <div className="grid md:grid-cols-2 gap-6 pt-4">
+                <div className="bg-background rounded-lg p-6 border border-border-light/50">
+                  <div className={`text-2xl font-bold ${theme.text.brand}`}>99.9%</div>
+                  <p className="text-xs mt-1 text-secondary uppercase font-bold tracking-widest">
+                    Accuracy Rate
+                  </p>
                 </div>
-                <p className="text-xs mt-1 text-text-muted uppercase">
-                  Accuracy Rate
-                </p>
-              </div>
 
-              <div className="bg-neutral rounded-lg p-6">
-                <div className={`text-xl font-bold ${theme.text.brand}`}>
-                  Real-time
+                <div className="bg-background rounded-lg p-6 border border-border-light/50">
+                  <div className={`text-2xl font-bold ${theme.text.brand}`}>Real-time</div>
+                  <p className="text-xs mt-1 text-secondary uppercase font-bold tracking-widest">
+                    Data Syncing
+                  </p>
                 </div>
-                <p className="text-xs mt-1 text-text-muted uppercase">
-                  Data Syncing
-                </p>
               </div>
-
             </div>
-          </div>
+          </FadeItem>
 
-          {/* Record Management */}
-          <div className="bg-primary text-white rounded-sm p-10 space-y-6 shadow-lg relative overflow-hidden">
+          {/* Record Management (Dark Card) */}
+          <FadeItem>
+            <div className="bg-primary text-white rounded-sm p-10 h-full space-y-6 shadow-lg relative overflow-hidden group">
+              <FolderCog className="w-8 h-8 opacity-90 transition-opacity group-hover:opacity-100" />
 
-            <FolderCog className="w-7 h-7 opacity-90" />
+              <h3 className="text-2xl lg:text-3xl font-bold">Record Management</h3>
 
-            <h3 className="text-2xl font-semibold">
-              Record Management
-            </h3>
+              <p className="text-blue-100/80 leading-relaxed">
+                Secure, digitized documentation of all financial activities,
+                providing an immutable audit trail for internal compliance and growth.
+              </p>
 
-            <p className="text-sm opacity-80 leading-relaxed">
-              Secure, digitized documentation of all financial activities,
-              providing an immutable audit trail for internal compliance and
-              growth.
-            </p>
-
-            {/* Decorative element */}
-            <div className="absolute bottom-0 right-0 opacity-10 text-[120px]">
-              ✓
+              {/* Background Decoration */}
+              <div className="absolute -bottom-5 -right-2.5 opacity-10 text-[140px] font-bold select-none group-hover:-translate-y-2.5 transition-transform duration-700">
+                ✓
+              </div>
             </div>
+          </FadeItem>
+        </FadeInStagger>
 
-          </div>
-
-        </div>
-
-        {/* BOTTOM GRID */}
-        <div className="bg-slate-100 rounded-sm p-10 space-y-6 shadow-sm grid lg:grid-cols-2 w-full gap-16 items-center">
-
-          {/* Statement Preparation Content */}
-          <div className="space-y-6 order-2 lg:order-1">
+        {/* BOTTOM GRID: Statement Preparation */}
+        <FadeInStagger className="bg-white rounded-sm p-10 lg:p-16 border border-border-light shadow-sm grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Content */}
+          <FadeItem className="space-y-8 order-2 lg:order-1">
             <div className="space-y-4">
-              {/* Icon placed in a white card for contrast as per design */}
-              <div className="w-12 h-12 rounded-lg bg-white shadow-sm flex items-center justify-center border border-border-light">
-                <FileText className="text-tertiary w-6 h-6" />
+              <div className="w-14 h-14 rounded-lg bg-neutral flex items-center justify-center border border-border-light">
+                <FileText className="text-tertiary w-7 h-7" />
               </div>
               
-              <h3 className={`text-3xl font-bold ${theme.text.main}`}>
+              <h3 className={`text-3xl lg:text-4xl font-bold ${theme.text.main} tracking-tight`}>
                 Statement Preparation
               </h3>
               
@@ -108,45 +107,41 @@ export default function FunctionalDisciplines() {
               </p>
             </div>
 
-            <ul className="space-y-4 pt-4">
+            <ul className="space-y-5">
               {[
                 "Quarterly Performance Reviews",
                 "Expenditure Categorization",
                 "Liquidity Forecasting"
               ].map((item, idx) => (
-                <li key={idx} className="flex items-center gap-3 group">
-                  <CheckCircle className="w-5 h-5 text-primary opacity-80 group-hover:opacity-100 transition-opacity" />
-                  <span className={`text-base font-medium ${theme.text.main}`}>{item}</span>
+                <li key={idx} className="flex items-center gap-4 group">
+                  <div className="shrink-0 w-6 h-6 rounded-full bg-primary/5 flex items-center justify-center">
+                    <CheckCircle className="w-4 h-4 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <span className={`text-lg font-medium ${theme.text.main}`}>{item}</span>
                 </li>
               ))}
             </ul>
-          </div>
+          </FadeItem>
 
-          {/* Chart Image Block */}
-          <div className="relative order-1 lg:order-2">
-            {/* White outer frame shadow as seen in reference */}
-            <div className="bg-white p-4 rounded-2xl shadow-2xl border border-border-light relative z-10">
+          {/* Image Block */}
+          <FadeItem className="relative order-1 lg:order-2">
+            <div className="bg-white p-4 rounded-2xl shadow-2xl border border-border-light relative z-10 group overflow-hidden">
               <div className="relative rounded-xl overflow-hidden aspect-4/3">
                 <Image
                   src={finance2}
                   alt="Financial analytics chart"
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-
-                {/* Cinematic overlay for depth */}
-                <div className="absolute inset-0 bg-linear-to-tr from-slate-900/40 to-transparent" />
-                
-                {/* Subtle vignetting to keep consistent with FinanceIntro */}
-                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.3)_100%)]" />
+                <div className="absolute inset-0 bg-linear-to-tr from-primary/20 to-transparent pointer-events-none" />
               </div>
             </div>
             
-            {/* Background Decorative Element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-tertiary/10 blur-3xl rounded-full -z-10" />
-          </div>
+            {/* Background Glow */}
+            <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-tertiary/10 blur-[80px] rounded-full -z-10" />
+          </FadeItem>
 
-        </div>
+        </FadeInStagger>
 
       </div>
     </section>
