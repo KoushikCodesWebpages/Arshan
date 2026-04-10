@@ -75,7 +75,7 @@ export default function Philosophy() {
                   </h3>
                   
                   {/* Fixed min-height for description ensures visual balance */}
-                  <p className={`mb-8 text-base leading-relaxed font-medium min-h-[120px] ${item.featured ? "text-slate-300" : "text-slate-500"}`}>
+                  <p className={`mb-8 text-base leading-relaxed font-medium min-h-30 ${item.featured ? "text-slate-300" : "text-slate-500"}`}>
                     {item.description}
                   </p>
 
