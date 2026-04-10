@@ -45,32 +45,36 @@ export default function HRHero() {
         </FadeInStagger>
 
         {/* Right Image Composition */}
-        <FadeItem>
-          <div className="relative group max-w-125 ml-auto">
-            {/* 1. The Blue Offset Background - Adjusted for better alignment */}
-            <div className="absolute top-12 -right-6 w-full h-full bg-primary/10 rounded-sm -z-10 transition-transform duration-700 group-hover:translate-x-2 group-hover:-translate-y-2" />
-            
-            {/* 2. The Main Image Container */}
-            <div className="relative overflow-hidden rounded-sm shadow-2xl border border-white/20 bg-muted">
-              <Image
-                src={hr1} 
-                alt="HR Professional"
-                width={500}
-                height={600}
-                // Using "w-full" here because the parent container now controls the size
-                className="object-cover w-full h-auto transform transition-transform duration-[2s] ease-out group-hover:scale-110"
-                priority
-                sizes="(max-width: 768px) 100vw, 500px"
-              />
+        <FadeInStagger className="flex-1 relative group">
+          <FadeItem>
+            <div className="relative max-w-125 ml-auto">
               
-              {/* 3. Refined Overlay - Subtle glass effect + Gradient */}
-              <div className="absolute inset-0 bg-linear-to-tr from-primary/30 via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-40" />
+              {/* 1. The Blue Offset Background - Moves with a delayed spring-like curve */}
+              <div className="absolute top-12 -right-6 w-full h-full bg-primary/10 rounded-sm -z-10 transition-transform duration-1000 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:translate-x-2 group-hover:-translate-y-2" />
               
-              {/* 4. Interactive Border (Optional "Premium" touch) */}
-              <div className="absolute inset-0 border-2 border-white/0 transition-colors duration-700 group-hover:border-white/10 pointer-events-none" />
+              {/* 2. The Main Image Container */}
+              <div className="relative overflow-hidden rounded-sm shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)] border border-white/20 bg-muted transition-transform duration-700 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:-translate-y-2">
+                <Image
+                  src={hr1} 
+                  alt="HR Professional"
+                  width={500}
+                  height={600}
+                  className="object-cover w-full h-auto transform transition-transform duration-[2.5s] ease-out group-hover:scale-105"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 500px"
+                />
+                
+                {/* 3. Refined Overlay - Subtle glass effect + Gradient */}
+                {/* We use mix-blend-overlay for a more 'integrated' high-end photo look */}
+                <div className="absolute inset-0 bg-linear-to-tr from-primary/40 via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-700 group-hover:opacity-30" />
+                
+                {/* 4. Interactive Border / Inner Glow */}
+                <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_100px_rgba(0,0,0,0.2)] border border-white/10 rounded-sm" />
+              </div>
+
             </div>
-          </div>
-        </FadeItem>
+          </FadeItem>
+        </FadeInStagger>
       </div>
     </section>
   );

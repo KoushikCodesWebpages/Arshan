@@ -50,38 +50,40 @@ export default function MarketingIntro() {
               </div>
             </FadeItem>
           </FadeInStagger>
+          {/* Change 1: Wrap the entire image section in FadeInStagger */}
+          <FadeInStagger className="flex-1 relative group">
+            {/* Change 2: Put the cinematic card structure INSIDE a FadeItem */}
+            <FadeItem>
+              <div className="relative w-full max-w-137.5 aspect-square mx-auto">
+                
+                {/* Outer Glow / Shadow - Only visible on hover */}
+                <div className="absolute -inset-6 bg-primary/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
 
-          {/* Right Side: Cinematic Image Card */}
-          <FadeItem className="flex-1 relative group">
-            <div className="relative w-full max-w-137.5 aspect-square mx-auto">
-              
-              {/* Outer Glow / Shadow - Only visible on hover */}
-              <div className="absolute -inset-6 bg-primary/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                {/* The Image Container with Lens Effects */}
+                <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900">
+                  <Image
+                    src={marketing1}
+                    alt="Digital Presence Visualization"
+                    fill
+                    className="object-cover transition-transform duration-[2s] ease-out group-hover:scale-110"
+                    priority
+                  />
 
-              {/* The Image Container with Lens Effects */}
-              <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900">
-                <Image
-                  src={marketing1}
-                  alt="Digital Presence Visualization"
-                  fill
-                  className="object-cover transition-transform duration-[2s] ease-out group-hover:scale-110"
-                  priority
-                />
+                  {/* 1. THE "HOLE": Central clarity and deep vignette for that Arshan 'Lens' look */}
+                  <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.4)_60%,rgba(0,0,0,0.9)_100%)] mix-blend-multiply" />
 
-                {/* 1. THE "HOLE": Central clarity and deep vignette for that Arshan 'Lens' look */}
-                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.4)_60%,rgba(0,0,0,0.9)_100%)] mix-blend-multiply" />
+                  {/* 2. TEAL/CYAN LIGHT LEAK: Matches the graphic's color palette */}
+                  <div className="absolute inset-0 mix-blend-screen opacity-30 bg-[radial-gradient(circle_at_70%_70%,rgba(0,255,255,0.15)_0%,transparent_50%)]" />
 
-                {/* 2. TEAL/CYAN LIGHT LEAK: Matches the graphic's color palette */}
-                <div className="absolute inset-0 mix-blend-screen opacity-30 bg-[radial-gradient(circle_at_70%_70%,rgba(0,255,255,0.15)_0%,transparent_50%)]" />
+                  {/* 3. DEPTH LAYER: Deep primary blue overlay */}
+                  <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
 
-                {/* 3. DEPTH LAYER: Deep primary blue overlay */}
-                <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
-
-                {/* 4. CARD POLISH: Subtle inner glow and glass border */}
-                <div className="absolute inset-0 rounded-2xl border border-white/20 pointer-events-none shadow-[inset_0_0_80px_rgba(0,0,0,0.4)]" />
+                  {/* 4. CARD POLISH: Subtle inner glow and glass border */}
+                  <div className="absolute inset-0 rounded-2xl border border-white/20 pointer-events-none shadow-[inset_0_0_80px_rgba(0,0,0,0.4)]" />
+                </div>
               </div>
-            </div>
-          </FadeItem>
+            </FadeItem>
+          </FadeInStagger>
 
         </div>
       </div>
