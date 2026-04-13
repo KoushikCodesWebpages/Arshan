@@ -1,8 +1,8 @@
-import ManagementEngine from "@/components/marketing/ManagementEngine";
-import MarketingCoreExpertise from "@/components/marketing/MarketingCoreExpertise";
-import MarketingFinalCTA from "@/components/marketing/MarketingFinalCTA";
-import MarketingIntro from "@/components/marketing/MarketingIntro";
-import PricingSection from "@/components/marketing/PricingSection";
+import ManagementEngine from "@/components/marketing/services/ManagementEngine";
+import MarketingCoreExpertise from "@/components/marketing/services/MarketingCoreExpertise";
+import MarketingFinalCTA from "@/components/marketing/services/MarketingFinalCTA";
+import MarketingIntro from "@/components/marketing/services/MarketingIntro";
+import PricingSection from "@/components/marketing/services/PricingSection";
 import { theme } from "@/lib/theme";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 

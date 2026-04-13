@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { theme } from "@/lib/theme";
 import { ArrowRight } from "lucide-react";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
-import finance1 from '../../../public/finance1.svg';
+import finance1 from '../../../../public/finance1.svg';
 
 export default function FinanceIntro() {
   return (
@@ -42,11 +42,15 @@ export default function FinanceIntro() {
                 <button className={`${theme.buttons.primary} px-8 py-4 shadow-xl hover:shadow-primary/20 rounded-sm transition-all active:scale-95`}>
                   View Solutions
                 </button>
-                
-                <button className={`flex items-center gap-2 font-bold text-sm ${theme.text.main} group transition-colors hover:text-primary`}>
+                 
+                {/* "Our Process" Link pointing to /finance/process */}
+                <Link 
+                  href="/finance/process/" 
+                  className={`flex items-center gap-2 font-bold text-sm ${theme.text.main} group transition-colors hover:text-primary`}
+                >
                   Our Process 
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
               </div>
             </FadeItem>
           </FadeInStagger>

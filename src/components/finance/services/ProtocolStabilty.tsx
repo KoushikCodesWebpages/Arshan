@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { theme } from "@/lib/theme";
 import { TrendingUp } from "lucide-react";
-import finance3 from '../../../public/finance3.svg'
-import finance4 from '../../../public/finance4.svg'
+import finance3 from '../../../../public/finance3.svg'
+import finance4 from '../../../../public/finance4.svg'
 
 export default function ProtocolStability() {
   return (

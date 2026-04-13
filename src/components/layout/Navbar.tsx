@@ -9,10 +9,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Finance", path: "/finance" },
-    { name: "Marketing", path: "/marketing" },
-    { name: "HR", path: "/hr" },
-    { name: "About Us", path: "/about-us" }
+    { name: "Finance", path: "/finance/" },
+    { name: "Marketing", path: "/marketing/" },
+    { name: "HR", path: "/hr/" },
+    { name: "About Us", path: "/about-us/" }
   ];
 
   return (
@@ -20,7 +20,7 @@ export default function Navbar() {
        Added 'shadow-sm' for a subtle lift.
        Added 'shadow-slate-200/50' to keep the shadow clean and professional.
     */
-    <nav className="sticky top-0 z-[100] w-full border-b border-slate-100 bg-white/80 backdrop-blur-md shadow-sm shadow-slate-200/50 transition-all duration-300">
+    <nav className="sticky top-0 z-100 w-full border-b border-slate-100 bg-white/80 backdrop-blur-md shadow-sm shadow-slate-200/50 transition-all duration-300">
       <div className="w-full px-8 md:px-16 mx-auto h-15 flex items-center justify-between gap-12">
         
         {/* Logo */}

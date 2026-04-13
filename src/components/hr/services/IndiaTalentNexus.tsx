@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { theme } from "@/lib/theme"; 
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
-import hr1 from '../../../public/hr1.svg';
+import hr1 from '../../../../public/hr1.svg';
 
 export default function IndiaTalentNexus() {
   return (

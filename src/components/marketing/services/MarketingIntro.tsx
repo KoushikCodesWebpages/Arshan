@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { theme } from "@/lib/theme";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
-import marketing1 from "../../../public/Professional workspace representing high-end social media management and brand consistency(2).svg";
+import marketing1 from "../../../../public/Professional workspace representing high-end social media management and brand consistency(2).svg";
 
 export default function MarketingIntro() {
   return (
@@ -44,9 +44,16 @@ export default function MarketingIntro() {
                   View Services
                 </button>
                 
-                <button className="px-10 py-4 border border-primary/20 text-primary font-bold text-xs tracking-widest uppercase rounded-sm hover:bg-neutral transition-all active:scale-95">
+                {/* <button className="px-10 py-4 border border-primary/20 text-primary font-bold text-xs tracking-widest uppercase rounded-sm hover:bg-neutral transition-all active:scale-95">
                   Our Pricing
-                </button>
+                </button> */}
+
+                <Link 
+                  href="/marketing/onboarding"
+                  className="px-10 py-4 border border-primary/20 text-primary font-bold text-xs tracking-widest uppercase rounded-sm hover:bg-neutral transition-all active:scale-95 inline-block"
+                >
+                  Our Pricing
+                </Link>
               </div>
             </FadeItem>
           </FadeInStagger>

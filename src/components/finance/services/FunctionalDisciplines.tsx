@@ -5,7 +5,7 @@ import Image from "next/image";
 import { theme } from "@/lib/theme";
 import { Wallet, FolderCog, FileText, CheckCircle } from "lucide-react";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
-import finance2 from '../../../public/finance2.svg';
+import finance2 from '../../../../public/finance2.svg';
 
 export default function FunctionalDisciplines() {
   return (
