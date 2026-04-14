@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 import { theme } from "@/lib/theme";
 import { FadeItem } from "@/components/animations/FadeIn";
 
@@ -36,9 +36,12 @@ export default function GermanyCTA() {
 
               {/* Button */}
               <div className="mt-8">
-                <button className="px-10 py-4 text-sm font-bold bg-tertiary text-white rounded-md transition-all hover:brightness-110 shadow-lg">
+                <Link
+                  href="/contact-us"
+                  className="inline-flex items-center justify-center px-10 py-4 text-sm font-bold bg-tertiary text-white rounded-md transition-all hover:brightness-110 shadow-lg"
+                >
                   Request a Detailed Quote
-                </button>
+                </Link>
               </div>
             </div>
 

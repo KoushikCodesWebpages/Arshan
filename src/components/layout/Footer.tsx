@@ -17,7 +17,7 @@ export default function Footer() {
       title: "COMPANY",
       links: [
         { name: "Our Process", path: "/process" },
-        { name: "Privacy Policy", path: "/privacy" },
+        { name: "Privacy Policy", path: "/terms" },
         { name: "Careers", path: "/careers" }
       ],
     },
@@ -34,7 +34,7 @@ export default function Footer() {
        distinct from the bg-gray-100 body.
     */
     <footer className="bg-slate-50 border-t border-gray-200 mt-auto font-sans">
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-12">
+      <div className="w-full mx-auto px-28 pt-20 pb-12">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
           
@@ -94,13 +94,18 @@ export default function Footer() {
           </p>
           
           <div className="flex items-center space-x-10">
-            {["TERMS", "POLICY", "COMPLIANCE"].map((item) => (
+            {[
+              { label: "TERMS", id: "terms" },
+              { label: "POLICY", id: "privacy" },
+              { label: "COMPLIANCE", id: "impressum" }
+            ].map((item) => (
               <Link 
-                key={item} 
-                href="#" 
+                key={item.label} 
+                // Using an absolute path /terms#id prevents the ## stacking
+                href={`/terms#${item.id}`} 
                 className="text-[10px] tracking-[0.15em] text-text-muted hover:text-primary uppercase transition-colors duration-300 font-semibold"
               >
-                {item}
+                {item.label}
               </Link>
             ))}
           </div>

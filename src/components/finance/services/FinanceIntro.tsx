@@ -42,12 +42,15 @@ export default function FinanceIntro() {
                 {/* <button className={`${theme.buttons.primary} px-8 py-4 shadow-xl hover:shadow-primary/20 rounded-sm transition-all active:scale-95`}>
                   View Solutions
                 </button> */}
-                <a 
-                  href="#solutions" 
-                  className={`${theme.buttons.primary} px-8 py-4 shadow-xl hover:shadow-primary/20 rounded-sm transition-all active:scale-95 inline-block`}
-                >
-                  View Solutions
-                </a>
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById("solutions");
+                      el?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className={`${theme.buttons.primary} px-8 py-4 shadow-xl hover:shadow-primary/20 rounded-sm transition-all active:scale-95 inline-flex`}
+                  >
+                    View Solutions
+                  </button>
                  
                 {/* "Our Process" Link pointing to /finance/process */}
                 <Link 

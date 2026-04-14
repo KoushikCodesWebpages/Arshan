@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 import { theme } from "@/lib/theme";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
@@ -29,17 +29,19 @@ export default function MarketingFinalCTA() {
             {/* Dual Action Buttons */}
             <FadeItem>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-                <button 
-                  className={`${theme.buttons.primary} min-w-65 py-4 shadow-xl hover:shadow-primary/20 transition-all rounded-sm font-bold text-xs tracking-widest uppercase active:scale-95`}
+                <Link
+                  href="/contact-us"
+                  className={`${theme.buttons.primary} inline-flex items-center justify-center min-w-65 py-4 shadow-xl hover:shadow-primary/20 transition-all rounded-sm font-bold text-xs tracking-widest uppercase active:scale-95`}
                 >
                   Request Account Audit
-                </button>
+                </Link>
                 
-                <button 
-                  className="min-w-55 py-4 border border-primary/20 text-primary font-bold text-xs tracking-widest uppercase hover:bg-neutral transition-all rounded-sm active:scale-95"
+                <Link
+                  href="/marketing/workflow"
+                  className="inline-flex items-center justify-center min-w-55 py-4 border border-primary/20 text-primary font-bold text-xs tracking-widest uppercase hover:bg-neutral transition-all rounded-sm active:scale-95"
                 >
                   Our Case Studies
-                </button>
+                </Link>
               </div>
             </FadeItem>
             

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { theme } from "@/lib/theme";
 import { BarChartHorizontal } from "lucide-react";
@@ -39,12 +39,13 @@ export default function CTASection() {
                   </FadeItem>
 
                   <FadeItem>
-                    <div>
-                      <button className={`${theme.buttons.tertiary} flex items-center gap-3 px-8 py-4 text-base group active:scale-95 transition-all`}>
-                        Start Your Free Audit
-                        <BarChartHorizontal className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
+                    <Link
+                      href="/contact-us"
+                      className={`${theme.buttons.tertiary} inline-flex items-center gap-3 px-8 py-4 text-base group active:scale-95 transition-all`}
+                    >
+                      Start Your Free Audit
+                      <BarChartHorizontal className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </FadeItem>
                 </FadeInStagger>
               </div>

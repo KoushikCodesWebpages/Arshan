@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { theme } from "@/lib/theme";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
@@ -35,7 +35,8 @@ export default function ArchitectCTA() {
 
           {/* ✅ NORMAL BUTTON (NO MOTION) */}
           <FadeItem className="pt-4">
-            <button
+            <Link
+            href={"/contact-us"}
               className="
                 px-10 py-4
                 rounded-md 
@@ -51,7 +52,7 @@ export default function ArchitectCTA() {
               "
             >
               Contact Us
-            </button>
+            </Link>
           </FadeItem>
 
         </FadeInStagger>

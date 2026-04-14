@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 import { theme } from "@/lib/theme";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 import { div } from "framer-motion/client";
@@ -30,9 +30,11 @@ export default function LegacyCTA() {
                 </p>
 
                 <div className="pt-4">
-                  <button className="bg-neutral text-primary hover:bg-white px-12 py-5 rounded-xl font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-xl hover:shadow-white/10 active:scale-95">
+                  <Link 
+                  href="/contact-us"
+                  className="bg-neutral text-primary hover:bg-white px-12 py-5 rounded-xl font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-xl hover:shadow-white/10 active:scale-95">
                     Book a Strategy Session
-                  </button>
+                  </Link>
                 </div>
               </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { theme } from "@/lib/theme";
 import { Check, Zap } from "lucide-react";
@@ -10,7 +10,7 @@ const plans = [
   {
     name: "Starter",
     subtitle: "Essential Brand Presence",
-    price: "250", // Removed € for easier logic handling
+    price: "250",
     features: ["8 High-Impact Posts", "Platform-Native Captions", "Monthly Performance Report"],
     buttonText: "SELECT STARTER",
     isDark: false,
@@ -38,23 +38,37 @@ export default function PricingSection() {
   const router = useRouter();
 
   const handlePlanSelection = (plan: typeof plans[0]) => {
-    // 1. Save the full plan object to localStorage (Clean URL approach)
     localStorage.setItem("selectedOnboardingPlan", JSON.stringify(plan));
-    
-    // 2. Navigate to the onboarding page without query strings
     router.push("/marketing/onboarding");
   };
 
+  // 🔥 Ensures scroll works when opening via shared link
+  useEffect(() => {
+    if (window.location.hash === "#social-media-pricing") {
+      const el = document.getElementById("social-media-pricing");
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100); // small delay for hydration
+      }
+    }
+  }, []);
+
   return (
-    <section className="py-24">
+    <section
+      id="social-media-pricing"
+      className="py-24 " // 🔥 IMPORTANT for navbar offset
+    >
       <div className="w-full mx-auto px-6 md:px-28">
-        {/* Header Section */}
+        
+        {/* Header */}
         <FadeInStagger className="text-center mb-16 space-y-4">
           <FadeItem>
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase opacity-60">
               Service Plans
             </span>
           </FadeItem>
+
           <FadeItem>
             <h2 className={`text-5xl md:text-6xl font-bold ${theme.text.brand}`}>
               Social Media Pricing.
@@ -62,18 +76,20 @@ export default function PricingSection() {
           </FadeItem>
         </FadeInStagger>
 
-        {/* Pricing Grid */}
+        {/* Grid */}
         <FadeInStagger className="grid lg:grid-cols-3 gap-8 items-stretch">
           {plans.map((plan, index) => (
             <FadeItem key={index} className="h-full">
+              
               <div
-                className={`relative flex flex-col h-full p-10 rounded-sm transition-all duration-300 cursor-pointer group ${
-                  plan.isDark 
-                    ? "bg-primary border-primary shadow-2xl text-white" 
-                    : "bg-white border-slate-100 hover:shadow-xl"
-                } ${plan.isRecommended ? "ring-2 ring-primary ring-offset-0" : ""}`}
                 onClick={() => handlePlanSelection(plan)}
+                className={`relative flex flex-col h-full p-10 rounded-sm transition-all duration-300 cursor-pointer group ${
+                  plan.isDark
+                    ? "bg-primary border-primary shadow-2xl text-white"
+                    : "bg-white border-slate-100 hover:shadow-xl"
+                } ${plan.isRecommended ? "ring-2 ring-primary" : ""}`}
               >
+                
                 {plan.isRecommended && (
                   <div className="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-4 py-1 tracking-widest uppercase">
                     Recommended
@@ -84,6 +100,7 @@ export default function PricingSection() {
                   <h3 className={`text-xl font-bold mb-1 ${plan.isDark ? "text-white" : theme.text.brand}`}>
                     {plan.name.toUpperCase()}
                   </h3>
+
                   <p className={`text-xs opacity-60 ${plan.isDark ? "text-slate-300" : theme.text.muted}`}>
                     {plan.subtitle}
                   </p>
@@ -120,7 +137,9 @@ export default function PricingSection() {
                 >
                   {plan.buttonText}
                 </button>
+
               </div>
+
             </FadeItem>
           ))}
         </FadeInStagger>

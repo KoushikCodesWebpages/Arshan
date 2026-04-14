@@ -18,7 +18,7 @@ const services = [
     icon: Building2,
     highlights: ["Monthly Financial Reporting", "Cash Flow Optimization"],
     linkText: "Explore Financial Services",
-    href: "#"
+    href: "/finance/"
   },
   {
     title: "Data-Driven Marketing & Brand Strategy",
@@ -26,7 +26,7 @@ const services = [
     icon: LineChart,
     highlights: ["Social Media Strategy", "Multi-Channel Campaigns"],
     linkText: "View Marketing Solutions",
-    href: "#"
+    href: "/marketing/"
   },
   {
     title: "Strategic HR & Global Talent Solutions",
@@ -34,13 +34,13 @@ const services = [
     icon: Users2,
     highlights: ["Digital Payroll Management", "Global Recruiting Pipeline"],
     linkText: "See HR Capabilities",
-    href: "#"
+    href: "/hr/"
   }
 ];
 
 export default function ServicePillars() {
   return (
-    <section className="py-20 bg-background overflow-hidden">
+    <section id="pillars" className="scroll-mt-8 py-20 bg-background overflow-hidden">
       <div className="w-full mx-auto px-28">
         {/* Header */}
         <FadeInStagger className="mb-16 space-y-4">

@@ -57,60 +57,63 @@ export default function ContactStrategySection() {
 
           {/* RIGHT SIDEBAR: 60% (approx 7/12 columns) */}
           <div className="lg:col-span-7">
-            <FadeItem>
-              <div className="bg-white rounded-xl p-10 shadow-sm border border-slate-100 h-full">
-                <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <FadeInStagger>
+              <FadeItem>
+                <div className="bg-white rounded-xl p-10 shadow-sm border border-slate-100 h-full">
+                  <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Full Name</label>
+                        <input 
+                          type="text" 
+                          placeholder="John Doe"
+                          className="w-full bg-[#F1F5F9] border-none rounded-lg p-4 text-sm focus:ring-2 focus:ring-slate-200 transition-all outline-none"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Work Email</label>
+                        <input 
+                          type="email" 
+                          placeholder="john@company.com"
+                          className="w-full bg-[#F1F5F9] border-none rounded-lg p-4 text-sm focus:ring-2 focus:ring-slate-200 transition-all outline-none"
+                        />
+                      </div>
+                    </div>
+
                     <div className="space-y-2">
-                      <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Full Name</label>
-                      <input 
-                        type="text" 
-                        placeholder="John Doe"
-                        className="w-full bg-[#F1F5F9] border-none rounded-lg p-4 text-sm focus:ring-2 focus:ring-slate-200 transition-all outline-none"
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Strategic Interest</label>
+                      <div className="relative">
+                        <select className="w-full bg-[#F1F5F9] border-none rounded-lg p-4 text-sm appearance-none cursor-pointer focus:ring-2 focus:ring-slate-200 transition-all outline-none">
+                          <option>Finance & Tax Advisory</option>
+                          <option>Human Capital Architecture</option>
+                          <option>Operational Excellence</option>
+                        </select>
+                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Project Scope</label>
+                      <textarea 
+                        rows={4}
+                        placeholder="Briefly describe your business goals..."
+                        className="w-full bg-[#F1F5F9] border-none rounded-lg p-4 text-sm focus:ring-2 focus:ring-slate-200 transition-all outline-none resize-none"
                       />
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Work Email</label>
-                      <input 
-                        type="email" 
-                        placeholder="john@company.com"
-                        className="w-full bg-[#F1F5F9] border-none rounded-lg p-4 text-sm focus:ring-2 focus:ring-slate-200 transition-all outline-none"
-                      />
-                    </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Strategic Interest</label>
-                    <div className="relative">
-                      <select className="w-full bg-[#F1F5F9] border-none rounded-lg p-4 text-sm appearance-none cursor-pointer focus:ring-2 focus:ring-slate-200 transition-all outline-none">
-                        <option>Finance & Tax Advisory</option>
-                        <option>Human Capital Architecture</option>
-                        <option>Operational Excellence</option>
-                      </select>
-                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
-                    </div>
-                  </div>
+                    <button className="w-full py-5 rounded-lg bg-[#001F3F] text-white font-bold text-sm tracking-wider hover:bg-black transition-all active:scale-[0.99] shadow-lg shadow-blue-900/10">
+                      Submit Inquiry
+                    </button>
 
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Project Scope</label>
-                    <textarea 
-                      rows={4}
-                      placeholder="Briefly describe your business goals..."
-                      className="w-full bg-[#F1F5F9] border-none rounded-lg p-4 text-sm focus:ring-2 focus:ring-slate-200 transition-all outline-none resize-none"
-                    />
-                  </div>
-
-                  <button className="w-full py-5 rounded-lg bg-[#001F3F] text-white font-bold text-sm tracking-wider hover:bg-black transition-all active:scale-[0.99] shadow-lg shadow-blue-900/10">
-                    Submit Inquiry
-                  </button>
-
-                  <p className="text-center text-[10px] text-slate-400 font-medium pt-2">
-                    By submitting, you agree to our privacy policy and terms of engagement.
-                  </p>
-                </form>
-              </div>
-            </FadeItem>
+                    <p className="text-center text-[10px] text-slate-400 font-medium pt-2">
+                      By submitting, you agree to our privacy policy and terms of engagement.
+                    </p>
+                  </form>
+                </div>
+              </FadeItem>
+            </FadeInStagger>
           </div>
 
         </div>

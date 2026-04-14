@@ -1,6 +1,5 @@
 "use client";
-
-import React from "react";
+import Link from "next/link";
 import { theme } from "@/lib/theme";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
@@ -30,11 +29,12 @@ export default function FinalCTA() {
             {/* Final Conversion Button */}
             <FadeItem>
               <div className="pt-6">
-                <button 
-                  className={`${theme.buttons.primary} px-10 py-4 text-lg rounded-sm transition-all hover:scale-105 active:scale-95 shadow-xl hover:shadow-primary/20`}
+                <Link
+                  href="/contact-us"
+                  className={`${theme.buttons.primary} inline-flex px-10 py-4 text-lg rounded-sm transition-all hover:scale-105 active:scale-95 shadow-xl hover:shadow-primary/20`}
                 >
                   Schedule a Consultation
-                </button>
+                </Link>
               </div>
             </FadeItem>
             

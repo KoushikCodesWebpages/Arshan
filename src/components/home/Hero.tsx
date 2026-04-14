@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { theme } from "@/lib/theme";
@@ -49,17 +49,30 @@ export default function Hero() {
         {/* CTA Group: Matching the buttons from design */}
         <FadeItem className="flex flex-wrap gap-4 pt-6">
           {/* Dark Navy Button (Shadow updated to match design lift) */}
-          <button className={`${theme.buttons.base} ${theme.buttons.primary} px-8 py-4 flex items-center gap-3 group shadow-xl shadow-primary/20 rounded-md`}>
+          <Link
+            href="/contact-us"
+            className={`${theme.buttons.base} ${theme.buttons.primary} px-8 py-4 flex items-center gap-3 group shadow-xl shadow-primary/20 rounded-md`}
+          >
             Request Technical Audit
-            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-4 h-4 transition-transform group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </button>
+          </Link>
           
-          {/* Slate 300 Button - changed back to rounded-md as per image */}
-          <button className="px-8 py-4 bg-slate-300 text-primary font-bold text-sm rounded-md hover:bg-slate-400 transition-colors">
-            View Pillars
-          </button>
+        <button
+          onClick={() => {
+            const el = document.getElementById("pillars");
+            el?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className=" px-8 py-4 bg-slate-300 text-primary font-bold text-sm rounded-md hover:bg-slate-400 transition-colors"
+        >
+          View Pillars
+        </button>
         </FadeItem>
       </FadeInStagger>
 

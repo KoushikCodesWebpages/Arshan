@@ -4,9 +4,9 @@ import React, { useState, useEffect } from "react";
 import HROnboardingHeader from "@/components/hr/onboarding/HROnboardingHeader";
 import HRPlanSummary from "@/components/hr/onboarding/HRPlanSummary";
 import CompanyInfoForm from "@/components/hr/onboarding/CompanyInfoForm";
-import PrimaryContactForm from "@/components/marketing/onboarding/PrimaryContactForm"; 
+import PrimaryContactForm from "@/components/hr/onboarding/PrimaryContactForm"; 
 import ServiceRequirementsForm from "@/components/hr/onboarding/ServiceRequirementsForm";
-import OnboardingFooter from "@/components/marketing/onboarding/OnboardingFooter";
+import OnboardingFooter from "@/components/hr/onboarding/OnboardingFooter";
 
 import type { HRPlan } from "@/components/hr/onboarding/HRPlanSelectionModal";
 

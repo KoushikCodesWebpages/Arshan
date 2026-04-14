@@ -25,7 +25,7 @@ export default function WorkflowCTA() {
 
             {/* Action Button */}
             <Link 
-              href="/onboarding" 
+              href="/contact-us" 
               className="whitespace-nowrap bg-[#031933] text-white px-10 py-5 rounded-sm font-bold text-sm tracking-widest uppercase hover:bg-slate-800 transition-all active:scale-95 shadow-xl"
             >
               Schedule a Consultation

@@ -51,7 +51,7 @@ export default function OnboardingFooter() {
                 transform-gpu will-change-transform
               "
             >
-              Submit Brand Details
+              Initialize Service
             </button>
           </FadeItem>
 

@@ -40,7 +40,13 @@ export default function MarketingIntro() {
 
             <FadeItem>
               <div className="flex flex-wrap items-center gap-6 pt-2">
-                <button className={`${theme.buttons.primary} px-10 py-4 text-xs font-bold uppercase tracking-widest rounded-sm active:scale-95 shadow-xl hover:shadow-primary/20 transition-all`}>
+                <button
+                  onClick={() => {
+                    const el = document.getElementById("services");
+                    el?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className={`${theme.buttons.primary} px-10 py-4 text-xs font-bold uppercase tracking-widest rounded-sm active:scale-95 shadow-xl hover:shadow-primary/20 transition-all`}
+                >
                   View Services
                 </button>
                 
@@ -49,7 +55,7 @@ export default function MarketingIntro() {
                 </button> */}
 
                 <Link 
-                  href="/marketing/onboarding"
+                  href="/marketing/#social-media-pricing"
                   className="px-10 py-4 border border-primary/20 text-primary font-bold text-xs tracking-widest uppercase rounded-sm hover:bg-neutral transition-all active:scale-95 inline-block"
                 >
                   Our Pricing

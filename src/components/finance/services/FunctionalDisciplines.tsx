@@ -9,7 +9,7 @@ import finance2 from '../../../../public/finance2.svg';
 
 export default function FunctionalDisciplines() {
   return (
-    <section id="solutions" className="py-24 bg-neutral/50">
+    <section id="solutions" className="scroll-mt-8 py-24 bg-neutral/50">
       <div className="w-full mx-auto px-28 space-y-16">
 
         {/* HEADER */}
