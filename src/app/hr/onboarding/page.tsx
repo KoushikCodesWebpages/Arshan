@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HROnboardingHeader from "@/components/hr/onboarding/HROnboardingHeader";
 import HRPlanSummary from "@/components/hr/onboarding/HRPlanSummary";
 import CompanyInfoForm from "@/components/hr/onboarding/CompanyInfoForm";
@@ -8,14 +8,13 @@ import PrimaryContactForm from "@/components/marketing/onboarding/PrimaryContact
 import ServiceRequirementsForm from "@/components/hr/onboarding/ServiceRequirementsForm";
 import OnboardingFooter from "@/components/marketing/onboarding/OnboardingFooter";
 
-// Import the specific HR Plan type
 import type { HRPlan } from "@/components/hr/onboarding/HRPlanSelectionModal";
 
 export default function HROnboardingPage() {
-  // 1. Initialize with the default HR 'Mid-Senior' tier
+  // 1. Initial state (Fallback if localStorage is empty)
   const [selectedPlan, setSelectedPlan] = useState<HRPlan>({
     name: "Mid-Senior Full-time",
-    price: "1000",
+    price: "999",
     desc: "Institutional level recruitment for established firms",
     features: [
       "Performance Management", 
@@ -25,32 +24,55 @@ export default function HROnboardingPage() {
     ],
   });
 
+  // 2. Hydration Logic: Pull the user's choice from the pricing grid on mount
+  useEffect(() => {
+    const savedPlan = localStorage.getItem("selectedOnboardingPlan");
+    if (savedPlan) {
+      try {
+        setSelectedPlan(JSON.parse(savedPlan));
+      } catch (e) {
+        console.error("Error hydrating plan from storage", e);
+      }
+    }
+  }, []);
+
   return (
-    <main className="min-h-screen bg-[#F8FAFC] py-24 px-28">
-      <div className="max-w-7xl mx-auto">
+    // Replaced px-28 with px-6 and used max-w-[1120px] for the 20% scale reduction
+    <main className="min-h-screen bg-background py-20 px-6">
+      <div className="max-w-280 mx-auto">
         
         {/* 1. Institutional Header */}
-        <HROnboardingHeader />
+        <div className="mb-12">
+          <HROnboardingHeader />
+        </div>
         
-        {/* 2. HR Service Plan Context */}
+        {/* 2. HR Service Plan Context - Now synced with localStorage */}
         <HRPlanSummary 
           selectedPlan={selectedPlan} 
           setSelectedPlan={setSelectedPlan} 
         />
 
         {/* 3. The HR Form Stack */}
-        <div className="space-y-4">
-          {/* Company-specific institutional data */}
-          <CompanyInfoForm />
+        <div className="space-y-6">
+          {/* Each form is wrapped in a consistent container logic 
+              if they don't already have internal padding/borders.
+          */}
+          <section className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+            <CompanyInfoForm />
+          </section>
           
-          {/* Shared component: reused from marketing */}
-          <PrimaryContactForm />
+          <section className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-400">
+            <PrimaryContactForm />
+          </section>
           
-          {/* Specific HR requirements (Slider & Textarea) */}
-          <ServiceRequirementsForm />
+          <section className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
+            <ServiceRequirementsForm />
+          </section>
           
-          {/* 4. Security & Final Initialization */}
-          <OnboardingFooter />
+          {/* 4. Final Action & Security Section */}
+          <div className="pt-8 border-t border-border-light">
+            <OnboardingFooter />
+          </div>
         </div>
       </div>
     </main>

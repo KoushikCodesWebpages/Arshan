@@ -1,19 +1,24 @@
 import { theme } from "@/lib/theme";
 import HRHero from "@/components/hr/services/HrHero";
+import StructuralHero from "@/components/hr/structure/StructuralHero";
+import ClusterDetails from "@/components/hr/structure/ClusterDetails";
+import PricingGrid from "@/components/hr/structure/PricingGrid";
+import StrategicNotes from "@/components/hr/structure/StrategicNotes";
+import GermanyOperations from "@/components/hr/structure/GermanOperations";
+import GermanyValueBlocks from "@/components/hr/structure/GermanyValueBlocks";
+import GermanyCTA from "@/components/hr/structure/GermanyCTA";
 
-import IndiaTalentNexus from "@/components/hr/services/IndiaTalentNexus";
-import PayrollSystems from "@/components/hr/services/PayRollSystem";
-import ManagementEcosystem from "@/components/hr/services/ManagementEcosystem";
-import HRContactCTA from "@/components/hr/services/HrContactCTA";
-export default function AboutPage() {
+
+export default function HRPage() {
   return (
     <main className="flex flex-col w-full"  >
-      <HRHero />
-      <IndiaTalentNexus />  
-      <PayrollSystems />
-      <ManagementEcosystem />
-      <HRContactCTA />  
-
+      <StructuralHero />
+      <ClusterDetails />
+      <PricingGrid />
+      <StrategicNotes />
+      <GermanyOperations />
+      <GermanyValueBlocks />
+      <GermanyCTA />
     </main>
   );
 }
