@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
 /* 1. DEFINE YOUR ARSHAN PALETTE VARIABLES */
 :root {
   /* Page Level */
@@ -57,3 +60,4 @@ body {
   visibility: hidden !important;
   pointer-events: none !important;
 }
+

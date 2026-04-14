@@ -84,7 +84,7 @@ export default function PricingGrid() {
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section  className="py-20 bg-background">
       {/* 20% Smaller Look: max-w-[1120px] */}
       <div className="w-full mx-auto px-28">
         

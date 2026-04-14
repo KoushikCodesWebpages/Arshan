@@ -8,11 +8,11 @@ import aboutImg from "../../../public/aboutus1.svg"; // Replace with your actual
 
 export default function AboutIntegrity() {
   return (
-    <section className="relative py-24 overflow-hidden bg-primary text-white">
+    <section className="relative py-42 overflow-hidden bg-primary text-white">
       {/* Subtle Background Pattern/Glow */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,rgba(164,134,38,0.08)_0%,transparent_70%)] pointer-events-none" />
 
-      <div className="container mx-auto px-6 lg:px-28">
+      <div className="w-full mx-auto px-6 lg:px-28">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
           
           {/* Left Side: Content */}
@@ -44,13 +44,6 @@ export default function AboutIntegrity() {
               </FadeItem>
             </div>
 
-            <FadeItem>
-              <div className="pt-4">
-                <button className="px-10 py-4 border border-white/20 hover:bg-white hover:text-primary transition-all duration-500 font-bold text-xs uppercase tracking-widest active:scale-95 shadow-2xl">
-                  Our Philosophy
-                </button>
-              </div>
-            </FadeItem>
           </FadeInStagger>
 
           {/* Right Side: Cinematic Image Composition */}

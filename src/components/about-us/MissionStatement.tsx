@@ -23,7 +23,7 @@ export default function MissionStatement() {
 
           {/* Right Side: Mission Text */}
           <FadeItem className="flex-[1.5]">
-            <p className={`text-xl md:text-xl leading-relaxed font-medium ${theme.text.muted} max-w-3xl`}>
+            <p className={`text-xl md:text-2xl leading-relaxed font-light ${theme.text.muted} max-w-3xl`}>
               To empower global enterprises through precision-engineered 
               financial strategies and human-centric HR management. We believe 
               that <span className={`${theme.text.brand} font-bold border-b-2 border-tertiary/30 pb-1`}>

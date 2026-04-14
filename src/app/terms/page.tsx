@@ -1,6 +1,6 @@
 import { theme } from "@/lib/theme";
 
-export default function AboutPage() {
+export default function TermsPage() {
   return (
     <main className="pt-20">
       <section className="container mx-auto px-6 py-16 text-center">

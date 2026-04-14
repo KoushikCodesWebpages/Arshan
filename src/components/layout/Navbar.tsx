@@ -54,8 +54,8 @@ export default function Navbar() {
 
         {/* Button */}
         <Link 
-          href="/get-started" 
-          className="bg-primary text-white text-[11px] font-bold px-8 py-3 rounded-sm hover:bg-slate-800 transition-all uppercase tracking-[0.1em] shadow-md shadow-primary/10"
+          href="/contact-us" 
+          className="bg-primary text-white text-[11px] font-bold px-8 py-3 rounded-sm hover:bg-slate-800 transition-all uppercase tracking-widest shadow-md shadow-primary/10"
         >
           Get Started
         </Link>

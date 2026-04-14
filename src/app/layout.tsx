@@ -5,6 +5,7 @@ import { theme } from "@/lib/theme";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import ScrollReset from "@/components/utils/ScrollReset";
+import GlobalBackButton from "@/components/layout/BackButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -56,7 +57,7 @@ export default function RootLayout({
         <ScrollReset />
 
         <Navbar />
-
+        <GlobalBackButton />
         <main className="grow">
           {children}
         </main>
