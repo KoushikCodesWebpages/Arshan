@@ -31,7 +31,7 @@ export default function CreativityGeneration() {
               <span className="text-6xl font-bold text-white/20">
                 03
               </span>
-              <div className="h-[1px] w-24 bg-white/20" />
+              <div className="h-px w-24 bg-white/20" />
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">

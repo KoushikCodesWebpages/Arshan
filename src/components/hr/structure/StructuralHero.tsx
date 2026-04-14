@@ -43,7 +43,7 @@ export default function StructuralHero() {
           </FadeItem>
 
           {/* RIGHT IMAGE BLOCK */}
-          <FadeItem className="relative w-full min-h-[400px] lg:min-h-full">
+          <FadeItem className="relative w-full min-h-100 lg:min-h-full">
             {/* Removed aspect-ratio and replaced with h-full. 
                 Because the parent FadeItem is stretched by the grid, 
                 h-full here forces the image container to match the left text height exactly.

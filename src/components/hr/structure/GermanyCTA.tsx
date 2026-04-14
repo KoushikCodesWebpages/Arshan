@@ -19,7 +19,7 @@ export default function GermanyCTA() {
 
             {/* Center Vertical Glow (KEY DETAIL) */}
             <div className="absolute inset-0 flex justify-center pointer-events-none">
-              <div className="w-[220px] h-full bg-white/5 blur-2xl opacity-30" />
+              <div className="w-55 h-full bg-white/5 blur-2xl opacity-30" />
             </div>
 
             {/* Content */}
