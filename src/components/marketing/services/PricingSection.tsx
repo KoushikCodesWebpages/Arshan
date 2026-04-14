@@ -1,32 +1,33 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import { theme } from "@/lib/theme";
 import { Check, Zap } from "lucide-react";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
 const plans = [
   {
-    name: "STARTER",
+    name: "Starter",
     subtitle: "Essential Brand Presence",
-    price: "250€",
+    price: "250", // Removed € for easier logic handling
     features: ["8 High-Impact Posts", "Platform-Native Captions", "Monthly Performance Report"],
     buttonText: "SELECT STARTER",
     isDark: false,
   },
   {
-    name: "GROWTH",
+    name: "Growth",
     subtitle: "Expanding Your Reach",
-    price: "320€",
+    price: "320",
     features: ["15 Posts Per Month", "Active Stories & Engagement", "Bi-Weekly Strategy Review", "Hashtag & Trend Research"],
     buttonText: "SELECT GROWTH",
     isDark: false,
     isRecommended: true,
   },
   {
-    name: "PREMIUM",
+    name: "Premium",
     subtitle: "Market Leadership",
-    price: "600€",
+    price: "600",
     features: ["Daily Posting (30+ posts)", "Premium Custom Content", "Full Platform Management", "Priority Support Desk"],
     buttonText: "SELECT PREMIUM",
     isDark: true,
@@ -34,9 +35,19 @@ const plans = [
 ];
 
 export default function PricingSection() {
+  const router = useRouter();
+
+  const handlePlanSelection = (plan: typeof plans[0]) => {
+    // 1. Save the full plan object to localStorage (Clean URL approach)
+    localStorage.setItem("selectedOnboardingPlan", JSON.stringify(plan));
+    
+    // 2. Navigate to the onboarding page without query strings
+    router.push("/marketing/onboarding");
+  };
+
   return (
     <section className="py-24">
-      <div className="w-full mx-auto px-28">
+      <div className="w-full mx-auto px-6 md:px-28">
         {/* Header Section */}
         <FadeInStagger className="text-center mb-16 space-y-4">
           <FadeItem>
@@ -54,14 +65,14 @@ export default function PricingSection() {
         {/* Pricing Grid */}
         <FadeInStagger className="grid lg:grid-cols-3 gap-8 items-stretch">
           {plans.map((plan, index) => (
-            /* h-full added to FadeItem to ensure the motion wrapper stretches */
             <FadeItem key={index} className="h-full">
               <div
-                className={`relative flex flex-col h-full p-10 rounded-sm transition-all duration-300 ${
+                className={`relative flex flex-col h-full p-10 rounded-sm transition-all duration-300 cursor-pointer group ${
                   plan.isDark 
                     ? "bg-primary border-primary shadow-2xl text-white" 
                     : "bg-white border-slate-100 hover:shadow-xl"
                 } ${plan.isRecommended ? "ring-2 ring-primary ring-offset-0" : ""}`}
+                onClick={() => handlePlanSelection(plan)}
               >
                 {plan.isRecommended && (
                   <div className="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-4 py-1 tracking-widest uppercase">
@@ -71,7 +82,7 @@ export default function PricingSection() {
 
                 <div className="mb-8">
                   <h3 className={`text-xl font-bold mb-1 ${plan.isDark ? "text-white" : theme.text.brand}`}>
-                    {plan.name}
+                    {plan.name.toUpperCase()}
                   </h3>
                   <p className={`text-xs opacity-60 ${plan.isDark ? "text-slate-300" : theme.text.muted}`}>
                     {plan.subtitle}
@@ -80,7 +91,7 @@ export default function PricingSection() {
 
                 <div className="mb-8 border-b border-slate-100/20 pb-8">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold">{plan.price}</span>
+                    <span className="text-4xl font-bold">€{plan.price}</span>
                     <span className="text-xs opacity-60">/ MONTH</span>
                   </div>
                 </div>
@@ -103,8 +114,8 @@ export default function PricingSection() {
                 <button
                   className={`w-full py-4 text-xs font-bold tracking-widest transition-all ${
                     plan.isDark
-                      ? "bg-white text-primary hover:bg-slate-100"
-                      : "bg-primary text-white hover:bg-slate-800"
+                      ? "bg-white text-primary group-hover:bg-slate-100"
+                      : "bg-primary text-white group-hover:bg-slate-800"
                   }`}
                 >
                   {plan.buttonText}

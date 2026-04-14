@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { theme } from "@/lib/theme";
 import { ArrowRight } from "lucide-react";
@@ -45,10 +45,12 @@ export default function ManagementEngine() {
               </div>
 
               <FadeItem>
-                <button className="flex items-center gap-3 text-white font-bold text-sm tracking-widest uppercase group transition-all hover:gap-5">
-                  Explore Our Workflow 
-                  <ArrowRight className={`w-5 h-5 ${theme.brand.accent}`} />
-                </button>
+                <Link href="/marketing/workflow">
+                  <button className="flex items-center gap-3 text-white font-bold text-sm tracking-widest uppercase group transition-all hover:gap-5">
+                    Explore Our Workflow 
+                    <ArrowRight className={`w-5 h-5 ${theme.brand.accent}`} />
+                  </button>
+                </Link>
               </FadeItem>
             </FadeItem>
 
