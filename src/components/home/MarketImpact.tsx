@@ -9,10 +9,10 @@ const stats = [
     value: "99.8%",
     label: "COMPLIANCE RATE",
   },
-  {
-    value: "€2.4B",
-    label: "MANAGED ASSETS",
-  },
+  // {
+  //   value: "€2.4B",
+  //   label: "MANAGED ASSETS",
+  // },
   {
     value: "15+",
     label: "GLOBAL MARKETS",
@@ -24,7 +24,7 @@ export default function MarketImpact() {
     <section className="py-20 bg-white overflow-hidden">
       <div className="w-full mx-auto px-28">
 
-        <FadeInStagger className="grid lg:grid-cols-4 gap-10 items-center">
+        <FadeInStagger className="grid lg:grid-cols-3 gap-10 items-center">
 
           {/* Left Text */}
           <FadeItem className="space-y-3">

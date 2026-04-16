@@ -46,8 +46,8 @@ export default function WhyChooseUs() {
             <FadeInStagger className="space-y-8">
                 <div className="space-y-4">
                   <FadeItem>
-                    <h2 className={`text-4xl md:text-5xl font-bold ${theme.text.brand}`}>
-                        Why Choose us for Your Business Growth?
+                    <h2 className={`text-3xl md:text-4xl font-bold ${theme.text.brand}`}>
+                        Why Choose us?
                     </h2>
                   </FadeItem>
 

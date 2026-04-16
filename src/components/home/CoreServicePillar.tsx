@@ -13,6 +13,7 @@ import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
 const services = [
   {
+    
     title: "Financial Management & Bookkeeping",
     description: "Secure your company's future with precise financial, professional bookkeeping, and advanced tax optimization strategies tailored for the European market.",
     icon: Building2,
