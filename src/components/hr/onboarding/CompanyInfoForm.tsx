@@ -3,11 +3,33 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import FormSection from "@/components/marketing/onboarding/FormSection";
-import InputField from "@/components/marketing/onboarding/InputField";
+import InputField from "./InputField";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
-export default function CompanyInfoForm() {
+interface CompanyData {
+  legalName: string;
+  website: string;
+  industry: string;
+}
+
+interface CompanyInfoFormProps {
+  onChange: (data: CompanyData) => void;
+}
+
+export default function CompanyInfoForm({ onChange }: CompanyInfoFormProps) {
   const [loading, setLoading] = useState(false);
+  
+  const [formData, setFormData] = useState<CompanyData>({
+    legalName: "",
+    website: "",
+    industry: "Financial Services",
+  });
+
+  const handleInputChange = (field: keyof CompanyData, value: string) => {
+    const updatedData = { ...formData, [field]: value };
+    setFormData(updatedData);
+    onChange(updatedData);
+  };
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,6 +55,10 @@ export default function CompanyInfoForm() {
               <InputField 
                 label="Legal Entity Name" 
                 placeholder="e.g. Arshan Global Holdings Ltd." 
+                value={formData.legalName}
+                onChange={(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => 
+                  handleInputChange("legalName", e.target.value)
+                }
               />
             </FadeItem>
 
@@ -43,16 +69,24 @@ export default function CompanyInfoForm() {
                 <InputField 
                   label="Website" 
                   placeholder="https://www.arshan.com" 
+                  value={formData.website}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => 
+                    handleInputChange("website", e.target.value)
+                  }
                 />
 
-                {/* SELECT */}
+                {/* SELECT (Restored Original Design) */}
                 <div className="relative">
                   <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">
                     Industry
                   </label>
 
                   <div className="relative group">
-                    <select className="w-full bg-slate-50/50 border border-slate-100 rounded-sm py-3 px-4 text-xs text-slate-600 appearance-none outline-none focus:ring-2 focus:ring-primary/10 focus:bg-white transition-all cursor-pointer">
+                    <select 
+                      value={formData.industry}
+                      onChange={(e) => handleInputChange("industry", e.target.value)}
+                      className="w-full bg-slate-50/50 border border-slate-100 rounded-sm py-3 px-4 text-xs text-slate-600 appearance-none outline-none focus:ring-2 focus:ring-primary/10 focus:bg-white transition-all cursor-pointer"
+                    >
                       <option>Financial Services</option>
                       <option>Technology & Software</option>
                       <option>Healthcare & Life Sciences</option>
@@ -66,7 +100,7 @@ export default function CompanyInfoForm() {
               </div>
             </FadeItem>
 
-            {/* BUTTON */}
+            {/* BUTTON (Restored Original Design) */}
             <FadeItem>
               <div className="flex justify-end pt-2">
                 <button

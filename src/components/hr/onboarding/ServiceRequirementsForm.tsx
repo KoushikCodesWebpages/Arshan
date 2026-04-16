@@ -1,94 +1,128 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormSection from "@/components/marketing/onboarding/FormSection";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
-export default function ServiceRequirementsForm() {
-  const [employeeCount, setEmployeeCount] = useState(5);
+interface RequirementsData {
+  employeeCount: number;
+  specificRoles: string;
+}
+
+interface ServiceRequirementsFormProps {
+  onChange: (data: RequirementsData) => void;
+}
+
+export default function ServiceRequirementsForm({ onChange }: ServiceRequirementsFormProps) {
   const [loading, setLoading] = useState(false);
+  
+  // 1. Local State Node
+  const [formData, setFormData] = useState<RequirementsData>({
+    employeeCount: 5,
+    specificRoles: "",
+  });
+
+  // 2. Protocol Handshake: Push changes to HROnboardingPage
+  const handleUpdate = (updates: Partial<RequirementsData>) => {
+    const newData = { ...formData, ...updates };
+    setFormData(newData);
+    onChange(newData);
+  };
+
+  const handleSave = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    // Simulate strategic computation
+    setTimeout(() => setLoading(false), 800);
+  };
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        setLoading(true);
-        setTimeout(() => setLoading(false), 1000);
-      }}
-    >
-      {/* 🔥 STAGGER */}
+    <form onSubmit={handleSave}>
       <FadeInStagger>
-        
         <FormSection
-          title="Service Requirements"
-          description="Detail the technical and strategic roles required for this placement cycle."
+          title="Service Configuration"
+          description="Define the scope of personnel requirements and specific technical mandates for this deployment cycle."
         >
-          <div className="space-y-10">
+          <div className="space-y-12">
 
-            {/* SLIDER */}
+            {/* CAPACITY SLIDER */}
             <FadeItem>
               <div className="group">
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-6 transition-colors group-focus-within:text-primary">
-                  Number of Employees Needed
+                <label className="block text-[10px] font-extrabold uppercase tracking-[0.25em] text-slate-400 mb-8 transition-colors group-focus-within:text-[#0d2649]">
+                  Personnel Capacity Required
                 </label>
 
-                <div className="flex items-center gap-8">
-                  
+                <div className="flex items-center gap-10">
                   <div className="flex-1 relative py-4">
                     <input
                       type="range"
                       min="1"
                       max="100"
-                      value={employeeCount}
-                      onChange={(e) => setEmployeeCount(parseInt(e.target.value))}
-                      className="w-full h-1 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#031933] hover:accent-primary transition-all"
+                      value={formData.employeeCount}
+                      onChange={(e) => handleUpdate({ employeeCount: parseInt(e.target.value) })}
+                      className="w-full h-[2px] bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#0d2649] hover:accent-[#a48626] transition-all"
                     />
                   </div>
 
-                  {/* 🔥 FIX: removed animate-in */}
-                  <div className="bg-[#031933] text-white w-12 h-12 rounded-sm flex items-center justify-center font-bold text-sm shadow-[0_8px_16px_-4px_rgba(3,25,51,0.4)] transition-all">
-                    {employeeCount}
+                  <div className="bg-[#0d2649] text-white w-10 h-10 rounded-sm flex flex-col items-center justify-center shadow-[0_12px_24px_-8px_rgba(13,38,73,0.3)] transition-all duration-500">
+                    <span className="text-sm font-bold leading-none">{formData.employeeCount}</span>
+                    
                   </div>
-
                 </div>
               </div>
             </FadeItem>
 
-            {/* TEXTAREA */}
+            {/* STRATEGIC ROLES TEXTAREA */}
             <FadeItem>
-              <div>
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">
-                  Specific Roles Required
+              <div className="group">
+                <label className="block text-[10px] font-extrabold uppercase tracking-[0.25em] text-slate-400 mb-4 transition-colors group-focus-within:text-[#0d2649]">
+                  Technical & Strategic Role Mandates
                 </label>
 
-                <textarea
-                  className="w-full h-40 bg-slate-50/50 border border-slate-100 rounded-sm p-4 text-xs text-slate-600 outline-none focus:ring-2 focus:ring-primary/10 focus:bg-white transition-all resize-none leading-relaxed"
-                  placeholder="Detail the technical and strategic roles required for this placement cycle..."
-                />
+                <div className="relative">
+                  <textarea
+                    value={formData.specificRoles}
+                    onChange={(e) => handleUpdate({ specificRoles: e.target.value })}
+                    className={`
+                      w-full h-44 py-5 px-5
+                      bg-slate-50/40 backdrop-blur-[2px]
+                      border border-slate-100 rounded-sm 
+                      text-[13px] text-slate-600 leading-relaxed
+                      placeholder:text-slate-300 outline-none 
+                      transition-all duration-500 resize-none
+                      focus:bg-white focus:border-slate-300
+                      focus:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)]
+                    `}
+                    placeholder="Describe the required stack, seniority, and specific responsibilities for the assets being requested..."
+                  />
+                  
+                  {/* Subtle focus accent */}
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-[#0d2649] transition-all duration-700 ease-in-out group-focus-within:w-full" />
+                </div>
               </div>
             </FadeItem>
 
-            {/* BUTTON */}
+            {/* COMMIT ACTION */}
             <FadeItem>
-              <div className="flex justify-end pt-2">
+              <div className="flex justify-end pt-4">
                 <button
                   type="submit"
                   disabled={loading}
                   className="
-                    text-[10px] font-bold uppercase tracking-widest 
-                    text-primary/40 hover:text-primary 
-                    transition-colors 
-                    disabled:opacity-30
+                    text-[10px] font-bold uppercase tracking-[0.3em] 
+                    text-slate-400 hover:text-[#0d2649] 
+                    transition-all duration-500
+                    disabled:opacity-30 flex items-center gap-2
+                    relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-[#0d2649] after:transition-all hover:after:w-full
                   "
                 >
-                  {loading ? "Saving..." : "Save Requirements"}
+                  {loading ? "Processing..." : "Commit Requirements"}
                 </button>
               </div>
             </FadeItem>
 
           </div>
         </FormSection>
-
       </FadeInStagger>
     </form>
   );

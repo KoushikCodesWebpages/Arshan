@@ -1,0 +1,22 @@
+{
+  "plan": {
+    "name": "MID-SENIOR FULL-TIME",
+    "price": "999",
+    "desc": "Institutional level recruitment for established firms.",
+    "features": ["Performance Management", "Recruitment Strategy", "Compliance Audits"]
+  },
+  "company": {
+    "legalName": "Arshan Global Holdings Ltd.",
+    "website": "https://www.arshan.com",
+    "industry": "Financial Services"
+  },
+  "contact": {
+    "fullName": "Koushik",
+    "email": "koushik@company.com",
+    "jobTitle": "Solution Architect"
+  },
+  "requirements": {
+    "employeeCount": 12,
+    "specificRoles": "Senior Backend Engineers, DevOps Specialist with AWS expertise..."
+  }
+}

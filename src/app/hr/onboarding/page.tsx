@@ -8,71 +8,104 @@ import PrimaryContactForm from "@/components/hr/onboarding/PrimaryContactForm";
 import ServiceRequirementsForm from "@/components/hr/onboarding/ServiceRequirementsForm";
 import OnboardingFooter from "@/components/hr/onboarding/OnboardingFooter";
 
-import type { HRPlan } from "@/components/hr/onboarding/HRPlanSelectionModal";
+// Import the HRPlan type
+import { type HRPlan } from "@/components/hr/onboarding/HRPlanSelectionModal";
+
+// Define the shape of our master data object
+export interface HROnboardingData {
+  company: any;
+  contact: any;
+  requirements: any;
+}
 
 export default function HROnboardingPage() {
-  // 1. Initial state (Fallback if localStorage is empty)
+  // 1. Plan State (Handles the billing/selection context)
   const [selectedPlan, setSelectedPlan] = useState<HRPlan>({
     name: "Mid-Senior Full-time",
     price: "999",
-    desc: "Institutional level recruitment for established firms",
-    features: [
-      "Performance Management", 
-      "Recruitment Strategy", 
-      "Employee Relations", 
-      "Quarterly HR Audits"
-    ],
+    desc: "Institutional level recruitment for established firms.",
+    features: ["Performance Management", "Recruitment Strategy", "Compliance Audits"],
   });
 
-  // 2. Hydration Logic: Pull the user's choice from the pricing grid on mount
+  // 2. Form Content State (The modular data blocks)
+  const [formData, setFormData] = useState<HROnboardingData>({
+    company: {},
+    contact: {},
+    requirements: {},
+  });
+
+  // 3. EFFECT: Load initial plan from Service Page & restore draft data
   useEffect(() => {
+    // Restore Plan Selection
     const savedPlan = localStorage.getItem("selectedOnboardingPlan");
     if (savedPlan) {
       try {
-        setSelectedPlan(JSON.parse(savedPlan));
-      } catch (e) {
-        console.error("Error hydrating plan from storage", e);
-      }
+        const parsedPlan = JSON.parse(savedPlan);
+        setSelectedPlan({
+          name: parsedPlan.name,
+          price: parsedPlan.price,
+          desc: parsedPlan.desc || "Standard institutional tier",
+          features: parsedPlan.features || [],
+        });
+        // We keep it in storage so HRPlanSummary can also read it if needed, 
+        // or remove it if you prefer a clean start
+      } catch (e) { console.error("Plan Restore Error", e); }
+    }
+
+    // Restore Form Draft (Persistence)
+    const savedDraft = localStorage.getItem("arshan_hr_draft");
+    if (savedDraft) {
+      try {
+        setFormData(JSON.parse(savedDraft));
+      } catch (e) { console.error("Draft Restore Error", e); }
     }
   }, []);
 
+  // 4. HANDLER: Update specific sections and sync with LocalStorage
+  const updateSection = (section: keyof HROnboardingData, data: any) => {
+    setFormData((prev) => {
+      const updated = { ...prev, [section]: data };
+      localStorage.setItem("arshan_hr_draft", JSON.stringify(updated));
+      return updated;
+    });
+  };
+
   return (
-    // Replaced px-28 with px-6 and used max-w-[1120px] for the 20% scale reduction
-    <main className="min-h-screen bg-background py-20 px-6">
-      <div className="max-w-280 mx-auto">
+    <main className="min-h-screen bg-[#F8FAFC] py-24 px-6 md:px-28">
+      <div className="max-w-7xl mx-auto">
         
-        {/* 1. Institutional Header */}
-        <div className="mb-12">
-          <HROnboardingHeader />
-        </div>
+        {/* Institutional Branding & Context */}
+        <HROnboardingHeader />
         
-        {/* 2. HR Service Plan Context - Now synced with localStorage */}
+        {/* Pricing/Billing Context */}
         <HRPlanSummary 
           selectedPlan={selectedPlan} 
           setSelectedPlan={setSelectedPlan} 
         />
 
-        {/* 3. The HR Form Stack */}
-        <div className="space-y-6">
-          {/* Each form is wrapped in a consistent container logic 
-              if they don't already have internal padding/borders.
-          */}
-          <section className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-            <CompanyInfoForm />
-          </section>
+        <hr className="my-16 border-slate-200" />
+
+        {/* Modular Form Stack */}
+        <div className="space-y-4">
+          <CompanyInfoForm 
+            onChange={(data) => updateSection("company", data)} 
+          />
           
-          <section className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-400">
-            <PrimaryContactForm />
-          </section>
+          <PrimaryContactForm 
+            onChange={(data) => updateSection("contact", data)} 
+          />
           
-          <section className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
-            <ServiceRequirementsForm />
-          </section>
+          <ServiceRequirementsForm 
+            onChange={(data) => updateSection("requirements", data)} 
+          />
           
-          {/* 4. Final Action & Security Section */}
-          <div className="pt-8 border-t border-border-light">
-            <OnboardingFooter />
-          </div>
+          {/* Submission Logic: Passes everything to the footer */}
+          <OnboardingFooter 
+            allData={{ 
+              ...formData, 
+              plan: selectedPlan 
+            }} 
+          />
         </div>
       </div>
     </main>
