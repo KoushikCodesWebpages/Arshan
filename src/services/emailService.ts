@@ -1,7 +1,7 @@
 import emailjs from '@emailjs/browser';
 
 const SERVICE_ID = "service_waoi10r";
-const TEMPLATE_ID = "template_wg6j1dt"; // Your primary reusable template
+const TEMPLATE_ID = "template_wg6j1dt";
 const PUBLIC_KEY = "0JVb8gLK6MsDRBCRI";
 
 interface EmailPayload {
@@ -15,29 +15,30 @@ interface EmailPayload {
 
 /**
  * Arshan Unified Inquiry Protocol
- * Sends all data (HR, Marketing, Contact) through a single institutional template.
+ * Dispatches institutional data through a centralized template architecture.
  */
 export const sendArshanInquiry = async (
   payload: EmailPayload, 
-  source: 'Marketing' | 'HR' | 'Contact'
+  source: 'Marketing' | 'HR' | 'Strategy' | 'Contact'
 ) => {
   
   const templateParams = {
-    // Target inbox (Matches {{email}} in EmailJS Dashboard)
+    // Matches Dashboard Variable: {{email}}
     email: "koushikbabuforwork@gmail.com", 
     
-    // Sender context (Matches {{fullName}})
-    fullName: payload.fullName || `Arshan ${source} Lead`,
+    // Matches Dashboard Variable: {{fullName}}
+    fullName: payload.fullName || `Arshan ${source} Partner`,
 
-    // Header context (Matches {{selected_plan}})
-    // For Contact forms, this can be "General Inquiry"
-    selected_plan: payload.selected_plan || `${source} Service`,
+    // Matches Dashboard Variable: {{selected_plan}}
+    selected_plan: payload.selected_plan || `${source} Deployment`,
 
-    // Dynamic HTML injection (Matches {{{html_content}}})
+    // Matches Dashboard Variable: {{{html_content}}}
     html_content: payload.html_content,
 
-    // Metadata & Subject
-    subject: payload.subject,
+    // Matches Dashboard Variable: {{subject}}
+    subject: payload.subject || `[SYSTEM] New ${source} Handshake`,
+
+    // Matches Dashboard Variable: {{inquiry_id}}
     inquiry_id: payload.inquiry_id || `ARS-${Math.random().toString(36).substr(2, 6).toUpperCase()}`
   };
 
@@ -49,10 +50,10 @@ export const sendArshanInquiry = async (
       PUBLIC_KEY
     );
     
-    console.log(`✅ [${source}] Handshake successful. ID: ${templateParams.inquiry_id}`);
+    console.log(`✅ [${source}] Handshake successful. Trace: ${templateParams.inquiry_id}`);
     return { success: true, result };
   } catch (error: any) {
-    console.error(`❌ [${source}] Transmission Error:`, error?.text || error);
+    console.error(`❌ [${source}] Protocol Error:`, error?.text || error);
     return { success: false, error };
   }
 };

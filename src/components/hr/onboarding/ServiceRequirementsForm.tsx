@@ -60,7 +60,7 @@ export default function ServiceRequirementsForm({ onChange }: ServiceRequirement
                       max="100"
                       value={formData.employeeCount}
                       onChange={(e) => handleUpdate({ employeeCount: parseInt(e.target.value) })}
-                      className="w-full h-[2px] bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#0d2649] hover:accent-[#a48626] transition-all"
+                      className="w-full h-0.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-[#0d2649] hover:accent-[#a48626] transition-all"
                     />
                   </div>
 
