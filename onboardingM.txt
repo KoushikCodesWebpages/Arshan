@@ -1,0 +1,37 @@
+{
+  // 1. BILLING & PLAN CONTEXT
+  // Automatically captured from the PlanSummary / Service Page
+  "plan": {
+    "name": string;      // e.g., "Starter", "Professional", "Enterprise"
+    "price": string;     // e.g., "250"
+    "desc": string;      // Essential social presence
+    "features": string[]; // Array of perks included
+  },
+
+  // 2. BRAND IDENTITY (from BrandIdentityForm)
+  "brand": {
+    "brandName": string;  // Official company name
+    "websiteUrl": string; // https://...
+  },
+
+  // 3. PRIMARY CONTACT (from PrimaryContactForm)
+  "contact": {
+    "fullName": string;   // Decision maker's name
+    "email": string;      // Professional email address
+    "jobTitle": string;   // Role within the company
+  },
+
+  // 4. SOCIAL CONNECTIVITY (from SocialConnectivity)
+  "socials": {
+    "instagram": string;  // Handle or Link
+    "linkedin": string;   // Company Page Link
+    "twitter": string;    // Handle
+    "other": string;      // Specific platform requests
+  },
+
+  // 5. VOICE & GOALS (from VoiceGoalsForm)
+  "goals": {
+    "brandVoice": string;  // Detailed tone description (Professional, Minimalist, etc.)
+    "primaryGoal": string; // e.g., "Thought Leadership" or "Lead Generation"
+  }
+}

@@ -1,87 +1,88 @@
 "use client";
 
-import React, { useState } from "react";
-import { theme } from "@/lib/theme";
+import React from "react";
 import FormSection from "./FormSection";
 import InputField from "./InputField";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
-export default function PrimaryContactForm() {
-  const [loading, setLoading] = useState(false);
+interface PrimaryContactProps {
+  values: {
+    fullName?: string;
+    email?: string;
+    jobTitle?: string;
+  };
+  onChange: (data: any) => void;
+}
 
-  const handleSave = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    console.log("Saving Primary Contact data...");
-    setTimeout(() => setLoading(false), 1000);
+export default function PrimaryContactForm({ values, onChange }: PrimaryContactProps) {
+  
+  // Unified handler to pipe data to the parent OnboardingPage
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    onChange({
+      ...values,
+      [name]: value,
+    });
   };
 
   return (
-    <form onSubmit={handleSave}>
-      
-      {/* 🔥 STAGGER WRAPPER */}
+    <div className="w-full">
       <FadeInStagger>
-        
         <FormSection 
           title="Primary Contact Information" 
           description="The main point of contact for all brand-related communications and strategy approvals."
         >
-          
           <div className="space-y-6">
             
-            {/* INPUT 1 */}
+            {/* INPUT 1: Full Name */}
             <FadeItem>
               <InputField 
+                name="fullName"
                 label="Full Name of Contact Person" 
                 placeholder="e.g. Jane Doe" 
+                value={values?.fullName || ""}
+                onChange={handleInputChange}
                 required 
               />
             </FadeItem>
 
-            {/* INPUT 2 */}
+            {/* INPUT 2: Email */}
             <FadeItem>
               <InputField 
+                name="email"
                 label="Professional Email Address" 
                 placeholder="jane.doe@company.com" 
                 type="email"
+                value={values?.email || ""}
+                onChange={handleInputChange}
                 required 
               />
             </FadeItem>
 
-            {/* INPUT 3 */}
+            {/* INPUT 3: Job Title */}
             <FadeItem>
               <InputField 
+                name="jobTitle"
                 label="Role/Job Title" 
                 placeholder="e.g. Marketing Director" 
+                value={values?.jobTitle || ""}
+                onChange={handleInputChange}
                 required 
               />
             </FadeItem>
 
-            {/* BUTTON */}
+            {/* Subtle auto-save indicator for Arshan UX */}
             <FadeItem>
               <div className="flex justify-end pt-2">
-                <button 
-                  type="submit"
-                  disabled={loading}
-                  className="
-                    text-[10px] font-bold uppercase tracking-widest 
-                    text-primary/40 hover:text-primary 
-                    transition-colors 
-                    disabled:opacity-30
-                  "
-                >
-                  {loading ? "Saving..." : "Save Contact Info"}
-                </button>
+                <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-primary/30">
+                  Securing point of contact...
+                </span>
               </div>
             </FadeItem>
 
           </div>
-
         </FormSection>
-
       </FadeInStagger>
-
-    </form>
+    </div>
   );
 }

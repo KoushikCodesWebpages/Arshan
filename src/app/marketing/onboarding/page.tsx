@@ -9,11 +9,19 @@ import SocialConnectivity from "@/components/marketing/onboarding/SocialConnecti
 import VoiceGoalsForm from "@/components/marketing/onboarding/VoiceGoalsForm";
 import OnboardingFooter from "@/components/marketing/onboarding/OnboardingFooter";
 
-// Import the Plan type from your Modal component
+// Import the Plan type
 import { type Plan } from "@/components/marketing/onboarding/PlanSelectionModal";
 
+// Define the shape of our master data object
+export interface MarketingOnboardingData {
+  brand: any;
+  contact: any;
+  socials: any;
+  goals: any;
+}
+
 export default function OnboardingPage() {
-  // 1. Initialize with a default 'Starter' plan
+  // 1. Plan State (Handles the billing/selection context)
   const [selectedPlan, setSelectedPlan] = useState<Plan>({
     name: "Starter",
     price: "250",
@@ -21,38 +29,57 @@ export default function OnboardingPage() {
     features: ["2 Social Platforms", "8 Posts Per Month", "Basic Monthly Report"],
   });
 
-  // 2. Check for plan passed from the Service Page via localStorage
+  // 2. Form Content State (The modular data blocks)
+  const [formData, setFormData] = useState<MarketingOnboardingData>({
+    brand: {},
+    contact: {},
+    socials: {},
+    goals: {},
+  });
+
+  // 3. EFFECT: Load initial plan from Service Page & restore draft data
   useEffect(() => {
+    // Restore Plan Selection
     const savedPlan = localStorage.getItem("selectedOnboardingPlan");
-    
     if (savedPlan) {
       try {
         const parsedPlan = JSON.parse(savedPlan);
-        
-        // Map the PricingSection data format to the Onboarding Plan type
         setSelectedPlan({
           name: parsedPlan.name,
           price: parsedPlan.price,
           desc: parsedPlan.subtitle || parsedPlan.desc,
           features: parsedPlan.features,
         });
-
-        // Optional: Clear storage so refresh doesn't reset manual changes later
         localStorage.removeItem("selectedOnboardingPlan");
-      } catch (error) {
-        console.error("Error parsing saved plan:", error);
-      }
+      } catch (e) { console.error("Plan Restore Error", e); }
+    }
+
+    // Restore Form Draft (Persistence)
+    const savedDraft = localStorage.getItem("arshan_marketing_draft");
+    if (savedDraft) {
+      try {
+        setFormData(JSON.parse(savedDraft));
+      } catch (e) { console.error("Draft Restore Error", e); }
     }
   }, []);
+
+  // 4. HANDLER: Update specific sections and sync with LocalStorage
+  const updateSection = (section: keyof MarketingOnboardingData, data: any) => {
+    setFormData((prev) => {
+      const updated = { ...prev, [section]: data };
+      localStorage.setItem("arshan_marketing_draft", JSON.stringify(updated));
+      return updated;
+    });
+  };
 
   return (
     <main className="min-h-screen bg-[#F8FAFC] py-24 px-6 md:px-28">
       <div className="max-w-7xl mx-auto">
         
-        {/* 1. Header context */}
+        {/* Institutional Branding & Context */}
         <OnboardingHeader />
         
-        {/* 2. Plan Context - Reflects the data from the Service Page immediately */}
+        {/* Pricing/Billing Context */}
         <PlanSummary 
           selectedPlan={selectedPlan} 
           setSelectedPlan={setSelectedPlan} 
@@ -60,15 +87,37 @@ export default function OnboardingPage() {
 
         <hr className="my-16 border-slate-200" />
 
-        {/* 3. The Onboarding Form Stack */}
+        {/* Modular Form Stack */}
         <div className="space-y-4">
-          <BrandIdentityForm />
-          <PrimaryContactForm />
-          <SocialConnectivity />
-          <VoiceGoalsForm />
+          <BrandIdentityForm 
+            values={formData.brand} 
+            onChange={(data) => updateSection("brand", data)} 
+          />
           
-          {/* 4. Security & Submission */}
-          <OnboardingFooter />
+          <PrimaryContactForm 
+            values={formData.contact} 
+            onChange={(data) => updateSection("contact", data)} 
+          />
+          
+          <SocialConnectivity 
+            values={formData.socials} 
+            onChange={(data) => updateSection("socials", data)} 
+          />
+          
+          <VoiceGoalsForm 
+            values={formData.goals} 
+            onChange={(data) => updateSection("goals", data)} 
+          />
+          
+          {/* Submission Logic: 
+              Passes everything (Plan + Form Data) to the footer 
+          */}
+          <OnboardingFooter 
+            allData={{ 
+              ...formData, 
+              plan: selectedPlan 
+            }} 
+          />
         </div>
       </div>
     </main>
