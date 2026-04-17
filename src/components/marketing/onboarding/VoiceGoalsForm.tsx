@@ -59,7 +59,7 @@ export default function VoiceGoalsForm({ values, onChange }: VoiceGoalsProps) {
                   name="brandVoice"
                   value={values?.brandVoice || ""}
                   onChange={handleTextChange}
-                  className="w-full h-40 bg-slate-200 border border-slate-100 rounded-sm p-4 text-sm text-slate-600 outline-none focus:ring-2 focus:ring-primary/10 focus:bg-white transition-all resize-none"
+                  className="w-full h-40 bg-slate-100 border border-slate-100 rounded-sm p-4 text-sm text-slate-600 outline-none focus:ring-2 focus:ring-primary/10 focus:bg-white transition-all resize-none"
                   placeholder="Describe your tone: Professional, authoritative, minimalist, yet accessible..."
                 />
               </div>

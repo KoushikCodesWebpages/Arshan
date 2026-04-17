@@ -31,14 +31,14 @@ export default function MarketingFinalCTA() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
                 <Link
                   href="/contact-us"
-                  className={`${theme.buttons.primary} inline-flex items-center justify-center min-w-65 py-4 shadow-xl hover:shadow-primary/20 transition-all rounded-sm font-bold text-xs tracking-widest uppercase active:scale-95`}
+                  className={`${theme.buttons.primary} inline-flex items-center justify-center min-w-65 py-4 shadow-xl hover:shadow-primary/20 transition-all rounded-md font-bold text-xs tracking-widest uppercase active:scale-95`}
                 >
                   Request Account Audit
                 </Link>
                 
                 <Link
                   href="/marketing/workflow"
-                  className="inline-flex items-center justify-center min-w-55 py-4 border border-primary/20 text-primary font-bold text-xs tracking-widest uppercase hover:bg-neutral transition-all rounded-sm active:scale-95"
+                  className="inline-flex items-center justify-center min-w-55 py-4 border border-primary/20 text-primary font-bold text-sm tracking-widest uppercase hover:bg-neutral transition-all rounded-sm active:scale-95"
                 >
                   Our Case Studies
                 </Link>

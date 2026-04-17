@@ -53,7 +53,7 @@ export default function PlanSelectionModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-primary/20 backdrop-blur-md animate-in fade-in duration-500">
+    <div className="fixed mt-10 inset-0 z-50 flex items-center justify-center p-6 bg-primary/20 backdrop-blur-md animate-in fade-in duration-500">
       
       {/* Main Modal Container */}
       <div className={`${theme.ui.modal} w-full max-w-7xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] animate-in fade-in zoom-in-95 slide-in-from-bottom-12 duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative`}>
@@ -70,12 +70,18 @@ export default function PlanSelectionModal({
           
           {/* Header Animation */}
           <div className="text-center mb-10 animate-in fade-in slide-in-from-top-4 duration-1000 delay-200">
-            <span className={`uppercase tracking-[0.3em] text-[9px] font-bold ${theme.brand.accent}`}>
+            <span className={`uppercase tracking-[0.2em] text-[11px] font-bold ${theme.brand.accent}`}>
               Service Management
             </span>
-            <h2 className={`text-3xl md:text-4xl font-bold mt-2 ${theme.text.brand}`}>
+            <h2 className={`text-3xl md:text-4
+              xl font-bold mt-2 ${theme.text.brand}`}>
               Change Your Plan
             </h2>
+
+            <p className={`mt-2 text-sm lg:text-lg leading-relaxed  text-secondary`}>
+Select the plan that best fits your current brand requirements and future ambitions.
+            </p>
+            
           </div>
 
           {/* Plan Grid */}
@@ -105,23 +111,28 @@ export default function PlanSelectionModal({
                     </div>
                   )}
 
-                  <div className="flex justify-between items-start mb-6 relative z-10">
+                  {/* Header Stacked vertically */}
+                  <div className="flex flex-col gap-4 mb-6 relative z-10">
                     <div>
-                      <h4 className="text-lg font-bold group-hover:text-primary transition-colors duration-300">{plan.name}</h4>
-                      <p className={`text-[11px] ${plan.featured ? "text-slate-400" : "text-slate-500"}`}>
+                      <h4 className="text-xl uppercase font-bold group-hover:text-primary transition-colors duration-300">
+                        {plan.name}
+                      </h4>
+                      <p className={`text-[13px] ${plan.featured ? "text-slate-400" : "text-slate-500"}`}>
                         {plan.desc}
                       </p>
                     </div>
-                    <div className="text-right">
-                      <span className="text-2xl font-bold">€{plan.price}</span>
-                      <span className="text-[10px] opacity-60 ml-0.5">/mo</span>
+                    
+                    {/* Price moved below name/description */}
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-3xl font-bold">€{plan.price}</span>
+                      <span className="text-[12px] opacity-60 font-medium tracking-wider uppercase">/ month</span>
                     </div>
                   </div>
 
                   <ul className="space-y-3 mb-8 flex-1 relative z-10">
                     {plan.features.map((feat, i) => (
-                      <li key={feat} className="flex items-center gap-2 text-[12px] group-hover:translate-x-1 transition-transform duration-300" style={{ transitionDelay: `${i * 40}ms` }}>
-                        <CheckCircle2 className={`w-3.5 h-3.5 ${plan.featured ? "text-blue-400" : "text-primary opacity-60"}`} />
+                      <li key={feat} className="flex items-center gap-2 text-[14px] group-hover:translate-x-1 transition-transform duration-300" style={{ transitionDelay: `${i * 40}ms` }}>
+                        <CheckCircle2 className={`w-3.5 h-3.5 ${plan.featured ? "text-blue-400" : "text-primary "}`} />
                         {feat}
                       </li>
                     ))}
@@ -131,7 +142,7 @@ export default function PlanSelectionModal({
                     onClick={() => onSelectPlan(plan)}
                     disabled={isCurrent}
                     className={`
-                      relative z-10 w-full py-3 rounded-sm font-bold text-xs transition-all duration-300 active:scale-95
+                      relative z-10 w-full py-3 rounded-sm font-bold text-sm uppercase transition-all duration-300 active:scale-95
                       ${isCurrent 
                         ? "bg-slate-100 text-slate-400 cursor-not-allowed" 
                         : plan.featured 
@@ -149,14 +160,10 @@ export default function PlanSelectionModal({
         </div>
 
         {/* Footer Bar */}
-        <div className="bg-slate-50/50 border-t border-slate-100 px-12 py-5 flex justify-between items-center text-[9px] text-slate-400 font-bold tracking-widest uppercase animate-in slide-in-from-bottom-full duration-1000 delay-700 fill-mode-both">
+        <div className="bg-slate-50/50 border-t border-slate-100 px-12 py-5 flex justify-between items-center text-[11px] text-slate-400 font-bold tracking-widest uppercase animate-in slide-in-from-bottom-full duration-1000 delay-700 fill-mode-both">
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-3.5 h-3.5" />
             Changes effective next billing cycle
-          </div>
-          <div className="flex gap-8">
-            <span className="hover:text-primary cursor-pointer transition-colors">Support</span>
-            <span className="hover:text-primary cursor-pointer transition-colors">Terms</span>
           </div>
         </div>
       </div>
