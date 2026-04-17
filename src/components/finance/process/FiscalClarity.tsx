@@ -19,7 +19,7 @@ export default function FiscalClarity() {
           {/* Left Content - 2/3 Width */}
           <FadeInStagger className="lg:flex-2 space-y-8">
             <FadeItem>
-              <span className={`uppercase tracking-[0.3em] text-xs font-bold ${theme.brand.accent}`}>
+              <span className={`uppercase tracking-[0.3em] text-md font-bold ${theme.brand.accent}`}>
                 Sovereign Ledger
               </span>
             </FadeItem>
@@ -32,7 +32,7 @@ export default function FiscalClarity() {
             </FadeItem>
             
             <FadeItem>
-              <p className="text-lg lg:text-xl leading-relaxed max-w-xl text-slate-300/80">
+              <p className="text-lg lg:text-xl leading-relaxed w-[80%] text-slate-300/80">
                 We provide an open, structured approach to managing your
                 financial data, ensuring transparent processes and collaborative
                 record keeping for complete peace of mind.

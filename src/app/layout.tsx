@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { theme } from "@/lib/theme"; 
 import Footer from "@/components/layout/Footer";
@@ -7,8 +8,13 @@ import Navbar from "@/components/layout/Navbar";
 import ScrollReset from "@/components/utils/ScrollReset";
 import GlobalBackButton from "@/components/layout/BackButton";
 
-const inter = Inter({ subsets: ["latin"] });
-
+// const inter = Inter({ subsets: ["latin"] });
+// Configure Manrope
+const manrope = Manrope({ 
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-manrope", // Recommended for better CSS integration
+});
 export const metadata: Metadata = {
   title: "Arshan ",
   description: "High-performance infrastructure for finance, marketing, and HR.",
@@ -44,7 +50,7 @@ export default function RootLayout({
       </head>
       <body 
         className={`
-          ${inter.className} 
+          ${manrope.className} 
           bg-white 
           ${theme.text.main}
           antialiased 

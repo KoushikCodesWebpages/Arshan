@@ -43,16 +43,16 @@ export default function WhyChooseUs() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
 
             {/* Left Content */}
-            <FadeInStagger className="space-y-8">
+            <FadeInStagger className="space-y-10">
                 <div className="space-y-4">
                   <FadeItem>
-                    <h2 className={`text-3xl md:text-4xl font-bold ${theme.text.brand}`}>
+                    <h2 className={`text-3xl md:text-5xl font-bold ${theme.text.brand}`}>
                         Why Choose us?
                     </h2>
                   </FadeItem>
 
                   <FadeItem>
-                    <p className={`text-lg leading-relaxed ${theme.text.muted}`}>
+                    <p className={`text-secondary text-[18px]  font-medium leading-snug w-[90%]`}>
                         We specialize in building the high-performance foundations that
                         propel newly established SMBs. Our methodology combines modern
                         regulatory agility with global talent advantages to scale your
@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Features */}
-                <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+                <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
                 {features.map((feature, index) => (
                     <FadeItem key={index} className="flex gap-4">
                     <feature.icon className="w-6 h-6 text-primary mt-1" strokeWidth={2.5} />
@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
                         <h3 className={`font-bold text-lg ${theme.text.main}`}>
                         {feature.title}
                         </h3>
-                        <p className={`text-sm mt-1 leading-snug ${theme.text.muted}`}>
+                        <p className={`text-sm mt-1 leading-snug font-medium text-secondary`}>
                         {feature.description}
                         </p>
                     </div>

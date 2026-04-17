@@ -44,7 +44,7 @@ export const OnboardingStatusModal = ({
       subtext: currentContext.subtext,
       icon: <CheckCircle2 className="w-12 h-12 text-emerald-500" />,
       bg: "bg-emerald-50",
-      description: `Data sent successful. ${submissionCount > 0 ? `${submissionCount} of 5 daily attempts utilized.` : "Wait for contact from Arshan."}`,
+      description: `Data sent successful. ${submissionCount > 0 ? `${submissionCount} of 20 daily attempts utilized.` : "Wait for contact from Arshan."}`,
       actionLabel: "Return to Interface"
     },
     error: {

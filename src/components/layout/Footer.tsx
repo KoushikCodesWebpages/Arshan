@@ -43,7 +43,7 @@ export default function Footer() {
             <h2 className={`${theme.text.brand} text-3xl uppercase tracking-tighter`}>
               ARSHAN
             </h2>
-            <p className={`${theme.text.muted} text-sm leading-relaxed max-w-xs font-medium`}>
+            <p className={`${theme.text.muted} text-md leading-relaxed max-w-xs font-medium`}>
               Professional social media management and content design for brands seeking digital authority and consistent growth.
             </p>
           </div>
@@ -52,7 +52,7 @@ export default function Footer() {
           <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
             {footerSections.map((section) => (
               <div key={section.title}>
-                <h3 className="text-[11px] font-bold tracking-[0.2em] text-primary mb-8 uppercase opacity-80">
+                <h3 className="text-[13px] font-bold tracking-[0.2em] text-primary mb-8 uppercase opacity-80">
                   {section.title}
                 </h3>
                   <ul className="space-y-4">
@@ -63,7 +63,7 @@ export default function Footer() {
                         */}
                         <a
                           href={link.path}
-                          className={`${theme.text.muted} hover:text-primary transition-colors duration-300 text-[14px] font-medium`}
+                          className={`${theme.text.muted} hover:text-primary transition-colors duration-300 text-[16px] font-medium`}
                         >
                           {link.name}
                         </a>
@@ -92,7 +92,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-100 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[10px] tracking-[0.15em] text-text-muted uppercase font-semibold">
+          <p className="text-[12px] tracking-[0.15em] text-text-muted uppercase font-semibold">
             © {currentYear} ARSHAN CONSULTING GROUP. ALL RIGHTS RESERVED.
           </p>
           
@@ -105,7 +105,7 @@ export default function Footer() {
             <a 
               key={item.label} 
               href={`/terms#${item.id}`} 
-              className="text-[10px] tracking-[0.15em] text-text-muted hover:text-primary uppercase transition-colors duration-300 font-semibold"
+              className="text-[12px] tracking-[0.15em] text-text-muted hover:text-primary uppercase transition-colors duration-300 font-semibold"
             >
               {item.label}
             </a>

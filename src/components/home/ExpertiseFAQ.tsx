@@ -8,7 +8,7 @@ const faqs = [
   {
     question: "How does we handle HGB compliance?",
     answer:
-      "Our finance team includes specialists who build HGB-compliant systems from the ground up. We ensure your new venture meets all German Commercial Code standards from day one, providing a rock-solid foundation for future audits.",
+      "Our finance team includes specialists in new venture building all German Commercial Code standards from day one, providing a rock-solid foundation for future audits.",
   },
   {
     question: "Is offshore talent integration difficult to manage?",
@@ -33,15 +33,15 @@ export default function ExpertiseFAQ() {
       <div className="w-full mx-auto px-28">
 
         {/* Header */}
-        <FadeInStagger className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <FadeInStagger className="text-center w-[60%] mx-auto mb-16 space-y-4">
           <FadeItem>
-            <h2 className={`text-4xl font-bold ${theme.text.brand}`}>
+            <h2 className={`text-5xl font-bold ${theme.text.brand}`}>
               Expertise & Frequently Asked Questions
             </h2>
           </FadeItem>
 
           <FadeItem>
-            <p className={`text-lg ${theme.text.muted}`}>
+            <p className={`text-xl ${theme.text.muted}`}>
               Providing clarity on how Arshan helps small businesses navigate the
               complexities of global operations.
             </p>
@@ -53,11 +53,11 @@ export default function ExpertiseFAQ() {
           {faqs.map((faq, index) => (
             <FadeItem key={index}>
               <div className="group">
-                <h3 className={`text-lg font-semibold mb-3 ${theme.text.main} transition-colors group-hover:text-primary`}>
+                <h3 className={`text-xl font-semibold mb-3 ${theme.text.main} transition-colors group-hover:text-primary`}>
                   {faq.question}
                 </h3>
 
-                <p className={`leading-relaxed text-sm ${theme.text.muted}`}>
+                <p className={`leading-relaxed text-lg font-medium   text-secondary`}>
                   {faq.answer}
                 </p>
               </div>

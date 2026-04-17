@@ -10,19 +10,18 @@ export default function NoticeBanner() {
       <div className="w-full mx-auto px-28">
         <FadeInStagger>
           <FadeItem>
-            <div className={`relative ${theme.ui.card} bg-neutral/50 p-8 md:p-10 flex items-start gap-6 group transition-colors hover:bg-neutral`}>
+            <div className={`relative ${theme.ui.card} bg-background p-8 md:p-10 flex items-start gap-6 group transition-colors hover:bg-neutral`}>
               
               {/* Vertical Accent Line - Using Tertiary Gold */}
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-tertiary shadow-[2px_0_10px_rgba(164,134,38,0.1)]" />
 
               <div className="space-y-3">
-                <h4 className={`text-xs font-bold uppercase tracking-[0.2em] ${theme.brand.accent}`}>
+                <h4 className={`text-md font-extrabold uppercase tracking-[0.2em] ${theme.text.brand}`}>
                   Notice of Services
                 </h4>
-                <p className={`text-base lg:text-lg italic leading-relaxed ${theme.text.muted} max-w-4xl`}>
-                  Arshan Consulting Group provides administrative bookkeeping and financial record management. 
-                  We are <span className="text-primary font-medium not-italic">not</span> a licensed accounting firm 
-                  and do not provide audit, tax, or legal advice.
+                <p className={`text-base lg:text-lg italic leading-relaxed text-secondary w-full`}>
+                  We provide administrative bookkeeping and financial record management. We are not a licensed accounting firm and do not provide audit, tax, or
+legal advice.
                 </p>
               </div>
             </div>

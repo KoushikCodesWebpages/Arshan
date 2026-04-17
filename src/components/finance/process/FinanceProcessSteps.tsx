@@ -58,17 +58,17 @@ export default function FinanceProcessSteps() {
                 </div>
 
                 {/* Phase Label */}
-                <span className={`block uppercase tracking-[0.2em] text-xs font-bold ${theme.brand.accent} mb-6`}>
+                <span className={`block uppercase tracking-[0.2em] text-md font-bold ${theme.brand.accent} mb-6`}>
                   {item.phase}
                 </span>
 
                 {/* Title */}
-                <h3 className={`text-xl font-bold ${theme.text.brand} leading-tight mb-6`}>
+                <h3 className={`text-2xl font-bold ${theme.text.brand} leading-tight mb-6`}>
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className={`text-sm leading-relaxed ${theme.text.muted}`}>
+                <p className={`text-md font-medium leading-relaxed text-secondary`}>
                   {item.description}
                 </p>
                 

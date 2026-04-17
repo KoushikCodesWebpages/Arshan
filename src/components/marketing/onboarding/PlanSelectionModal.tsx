@@ -16,22 +16,22 @@ const plans: Plan[] = [
   {
     name: "Starter",
     price: "250",
-    desc: "Essential social presence",
-    features: ["2 Social Platforms", "8 Posts Per Month", "Basic Monthly Report"],
+    desc: "Essential Brand presence",
+    features: ["8 High-Impact Posts", "Platform-Native Captions", "Monthly Performance Report"],
     featured: false,
   },
   {
     name: "Growth",
     price: "450",
     desc: "Comprehensive management",
-    features: ["4 Social Platforms", "20 Posts Per Month", "Advanced Analytics", "Bi-Weekly Strategy Call"],
+    features: ["15 Posts Per Month", "Active Stories & Engagement", "Bi-Weekly Strategy Review", "Full Profile makeover & Trend Research"],
     featured: true,
   },
   {
     name: "Premium",
     price: "800",
     desc: "Full-scale digital authority",
-    features: ["All Social Platforms", "Unlimited Scheduled Posts", "Custom Reporting", "Dedicated Manager"],
+    features: ["Daily Posting (30+ posts)", "Premium Custom Content", "Full Platform Management", "Priority Support Desk"],
     featured: false,
   },
 ];

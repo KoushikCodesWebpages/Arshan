@@ -14,7 +14,7 @@ const stats = [
   //   label: "MANAGED ASSETS",
   // },
   {
-    value: "15+",
+    value: "5+",
     label: "GLOBAL MARKETS",
   },
 ];
@@ -28,11 +28,11 @@ export default function MarketImpact() {
 
           {/* Left Text */}
           <FadeItem className="space-y-3">
-            <p className="text-xs tracking-widest text-tertiary font-semibold uppercase">
+            <p className="text-sm tracking-widest text-tertiary font-semibold uppercase">
               Market Impact
             </p>
 
-            <h3 className={`text-2xl font-semibold ${theme.text.main}`}>
+            <h3 className={`w-[90%] text-3xl font-semibold ${theme.text.main}`}>
               Proven results across global industries.
             </h3>
           </FadeItem>
@@ -41,11 +41,11 @@ export default function MarketImpact() {
           {stats.map((stat, index) => (
             <FadeItem key={index} className="text-left lg:text-center">
 
-              <div className={`text-3xl font-bold ${theme.text.brand}`}>
+              <div className={`text-4xl font-bold ${theme.text.brand}`}>
                 {stat.value}
               </div>
 
-              <p className="text-xs mt-2 tracking-widest text-text-muted uppercase">
+              <p className="text-sm mt-2 tracking-widest text-text-muted uppercase">
                 {stat.label}
               </p>
 

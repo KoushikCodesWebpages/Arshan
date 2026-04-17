@@ -32,14 +32,14 @@ export default function Hero() {
 
               {/* Header: Removed <br /> so it fills the expanded 7-column width naturally */}
               <FadeItem>
-                <h1 className={`${theme.text.brand} text-4xl md:text-6xl font-extrabold tracking-tighter leading-[1.1] text-primary`}>
+                <h1 className={`${theme.text.brand} text-4xl md:text-6xl tracking-tighter leading-[1.1] text-primary`}>
                   Integrated Finance, Marketing, and HR Solutions for SMBs
                 </h1>
               </FadeItem>
 
               {/* Muted body text: Fixed with max-w-xl to keep it at a normal, readable size */}
               <FadeItem>
-                <p className="text-secondary opacity-80 text-[18px] leading-relaxed font-light max-w-xl">
+                <p className="text-secondary text-[18px] leading-relaxed font-medium max-w-xl">
                   Empower your small-to-medium business with precision-
                   engineered operational support. We bridge the gap between
                   strategic vision and execution through expert financial

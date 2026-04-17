@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { theme } from "@/lib/theme";
-import { BarChart3 } from "lucide-react";
+import { ChartColumn } from "lucide-react";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 import home3 from '../../../public/home3.svg';
 
@@ -44,7 +44,7 @@ export default function CTASection() {
                       className={`${theme.buttons.tertiary} inline-flex items-center gap-3 px-8 py-4 text-base group active:scale-95 transition-all`}
                     >
                       Start Your Free Audit
-                      <BarChart3 className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      <ChartColumn className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </FadeItem>
                 </FadeInStagger>

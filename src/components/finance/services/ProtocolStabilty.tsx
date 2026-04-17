@@ -19,7 +19,7 @@ export default function ProtocolStability() {
                 A Protocol for Stability.
               </h2>
 
-              <p className="text-secondary max-w-lg">
+              <p className="text-xl opacity-60 max-w-lg">
                 Our methodology ensures that your financial operations are
                 never a bottleneck for growth.
               </p>
@@ -33,11 +33,11 @@ export default function ProtocolStability() {
                 <span className="text-tertiary font-bold text-2xl">01</span>
 
                 <div>
-                  <h4 className="font-semibold text-lg">
+                  <h4 className=" font-semibold text-lg">
                     Discovery & Onboarding
                   </h4>
 
-                  <p className="text-secondary text-sm mt-1 max-w-md">
+                  <p className="opacity-60  text-md mt-1 max-w-md">
                     Mapping your existing ledger structure and identifying
                     data capture points across your organization.
                   </p>
@@ -53,7 +53,7 @@ export default function ProtocolStability() {
                     Systems Integration
                   </h4>
 
-                  <p className="text-secondary text-sm mt-1 max-w-md">
+                  <p className="opacity-60  text-md mt-1 max-w-md">
                     Automating transaction flows while maintaining manual
                     oversight for complex journal entries.
                   </p>
@@ -69,7 +69,7 @@ export default function ProtocolStability() {
                     Continuous Management
                   </h4>
 
-                  <p className="text-secondary text-sm mt-1 max-w-md">
+                  <p className="opacity-60 text-md mt-1 max-w-md">
                     Weekly reconciliation cycles to ensure your data is
                     always current and compliant with internal standards.
                   </p>

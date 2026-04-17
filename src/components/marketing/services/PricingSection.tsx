@@ -19,7 +19,7 @@ const plans = [
     name: "Growth",
     subtitle: "Expanding Your Reach",
     price: "320",
-    features: ["15 Posts Per Month", "Active Stories & Engagement", "Bi-Weekly Strategy Review", "Hashtag & Trend Research"],
+    features: ["15 Posts Per Month", "Active Stories & Engagement", "Bi-Weekly Strategy Review", "Full Profile makeover & Trend Research"],
     buttonText: "SELECT GROWTH",
     isDark: false,
     isRecommended: true,
@@ -64,7 +64,7 @@ export default function PricingSection() {
         {/* Header */}
         <FadeInStagger className="text-center mb-16 space-y-4">
           <FadeItem>
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase opacity-60">
+            <span className={`${theme.text.brand} text-[13px] font-bold tracking-[0.2em] uppercase `}>
               Service Plans
             </span>
           </FadeItem>
@@ -97,11 +97,11 @@ export default function PricingSection() {
                 )}
 
                 <div className="mb-8">
-                  <h3 className={`text-xl font-bold mb-1 ${plan.isDark ? "text-white" : theme.text.brand}`}>
+                  <h3 className={`text-2xl font-bold mb-1 ${plan.isDark ? "text-white" : theme.text.brand}`}>
                     {plan.name.toUpperCase()}
                   </h3>
 
-                  <p className={`text-xs opacity-60 ${plan.isDark ? "text-slate-300" : theme.text.muted}`}>
+                  <p className={`text-sm  ${plan.isDark ? "text-slate-300" : "text-secondary"}`}>
                     {plan.subtitle}
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export default function PricingSection() {
                 <div className="mb-8 border-b border-slate-100/20 pb-8">
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold">€{plan.price}</span>
-                    <span className="text-xs opacity-60">/ MONTH</span>
+                    <span className="text-sm text-secondary">/ MONTH</span>
                   </div>
                 </div>
 
@@ -121,7 +121,15 @@ export default function PricingSection() {
                       ) : (
                         <Check className={`w-4 h-4 ${plan.isDark ? "text-white" : "text-primary"}`} />
                       )}
-                      <span className={`text-sm ${plan.isDark ? "text-slate-200" : "text-slate-600"}`}>
+                      
+                      {/* Updated text logic for the first point */}
+                      <span 
+                        className={`text-md ${
+                          fIdx === 0 
+                            ? (plan.isDark ? "text-white font-semibold" : "text-slate-950 font-bold") 
+                            : (plan.isDark ? "text-slate-300" : "text-slate-600")
+                        }`}
+                      >
                         {feature}
                       </span>
                     </li>
@@ -129,7 +137,7 @@ export default function PricingSection() {
                 </ul>
 
                 <button
-                  className={`w-full py-4 text-xs font-bold tracking-widest transition-all ${
+                  className={`w-full py-4 text-sm font-bold tracking-widest transition-all ${
                     plan.isDark
                       ? "bg-white text-primary group-hover:bg-slate-100"
                       : "bg-primary text-white group-hover:bg-slate-800"

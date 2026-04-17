@@ -5,22 +5,22 @@ import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
 export default function FinalCTA() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-30 bg-white overflow-hidden">
       <div className=" w-full mx-auto px-6  text-center ">
         <FadeInStagger>
-          <div className="space-y-8">
+          <div className="space-y-8 w-full">
             
             {/* Main Heading */}
             <FadeItem>
-              <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight ${theme.text.brand}`}>
-                Ready to secure your <br className="hidden md:block" /> 
+              <h2 className={`w-full text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight ${theme.text.brand}`}>
+                Ready to secure your 
                 fiscal foundation?
               </h2>
             </FadeItem>
 
             {/* Supporting Subtext */}
             <FadeItem>
-              <p className={`text-lg md:text-xl leading-relaxed ${theme.text.muted} max-w-2xl mx-auto`}>
+              <p className={`font-medium text-lg w-full md:text-2xl leading-relaxed text-secondary mx-auto`}>
                 Join the organizations that trust Arshan for architectural-grade 
                 financial record management.
               </p>

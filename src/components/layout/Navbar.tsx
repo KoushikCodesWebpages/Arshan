@@ -24,7 +24,7 @@ export default function Navbar() {
       <div className="w-full px-8 md:px-16 mx-auto h-15 flex items-center justify-between gap-12">
         
         {/* Logo */}
-        <Link href="/" className="text-2xl font-extrabold text-primary tracking-tighter uppercase">
+        <Link href="/" className="text-2xl font-extrabold text-primary tracking-tighter ">
           Arshan
         </Link>
 
@@ -37,7 +37,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.path}
-                className={`relative py-7 text-[13px] font-bold tracking-wide transition-colors duration-200 ${
+                className={`relative py-7 text-[14px] font-bold tracking-wide transition-colors duration-200 ${
                   isActive ? "text-primary" : "text-slate-500 hover:text-primary"
                 }`}
               >
@@ -55,7 +55,7 @@ export default function Navbar() {
         {/* Button */}
         <Link 
           href="/contact-us" 
-          className="bg-primary text-white text-[11px] font-bold px-8 py-3 rounded-sm hover:bg-slate-800 transition-all uppercase tracking-widest shadow-md shadow-primary/10"
+          className="bg-primary text-white text-[12px] font-bold px-8 py-3 rounded-sm hover:bg-slate-800 transition-all uppercase tracking-widest shadow-md shadow-primary/10"
         >
           Get Started
         </Link>

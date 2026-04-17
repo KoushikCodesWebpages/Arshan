@@ -10,7 +10,7 @@ export const theme = {
   // ELEMENT STYLES
   ui: {
     input: " border border-border-light text-sm px-4 py-2 rounded-sm transition focus:ring-2 focus:ring-primary/20 outline-none",
-    card: "bg-neutral shadow-sm border border-border-light rounded-sm transition",
+    card: "shadow-sm border border-border-light rounded-sm transition",
     modal: "bg-white rounded-sm shadow-2xl relative",
     overlay: "fixed inset-0 bg-slate-900/40 backdrop-blur-md z-[9999]",
   },

@@ -22,7 +22,7 @@ export default function FunctionalDisciplines() {
             </FadeItem>
 
             <FadeItem>
-              <p className={`mt-6 text-lg lg:text-xl ${theme.text.muted} leading-relaxed`}>
+              <p className={`mt-6 text-lg lg:text-xl text-secondary leading-relaxed`}>
                 We bridge the gap between raw transactions and strategic oversight,
                 ensuring your operational data is boardroom-ready.
               </p>
@@ -41,7 +41,7 @@ export default function FunctionalDisciplines() {
                 Precision Bookkeeping
               </h3>
 
-              <p className={`${theme.text.muted} text-lg max-w-xl leading-relaxed`}>
+              <p className={`text-secondary text-lg max-w-xl leading-relaxed`}>
                 Systematic tracking of all operational expenditures and revenue
                 streams. We maintain the daily pulse of your organization's
                 liquidity with absolute structural integrity.
@@ -100,7 +100,7 @@ export default function FunctionalDisciplines() {
                 Statement Preparation
               </h3>
               
-              <p className={`${theme.text.muted} text-lg leading-relaxed max-w-lg`}>
+              <p className={`text-secondary text-lg leading-relaxed max-w-lg`}>
                 We synthesize complex ledger data into clear, high-impact account
                 statements that provide stakeholders with a comprehensive view
                 of fiscal health.

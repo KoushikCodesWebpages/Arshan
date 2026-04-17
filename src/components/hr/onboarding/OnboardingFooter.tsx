@@ -16,7 +16,7 @@ export default function OnboardingFooter({ allData }: { allData: any }) {
   }, []);
 
   const handleFinalSubmit = async () => {
-    if (count >= 5) return setStatus("limit_reached");
+    if (count >= 20) return setStatus("limit_reached");
     if (status === "loading") return;
     
     setStatus("loading");

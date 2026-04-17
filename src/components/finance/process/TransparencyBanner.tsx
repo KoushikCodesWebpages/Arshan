@@ -23,7 +23,7 @@ export default function TransparencyBanner() {
                   <h4 className={`text-lg font-bold ${theme.text.brand} tracking-tight`}>
                     Supportive Administrative Transparency
                   </h4>
-                  <p className={`text-base leading-relaxed max-w-5xl ${theme.text.muted}`}>
+                  <p className={`text-base leading-relaxed max-w-5xl text-secondary`}>
                     Our Business Services provides administrative infrastructure and financial record management. 
                     We operate with full transparency in our processes, though we are not a licensed accounting 
                     firm and do not provide audit, tax, or legal advice. Our mission is to provide 

@@ -16,13 +16,13 @@ export default function FinanceIntro() {
           {/* Text Content */}
           <FadeInStagger className="flex-1 space-y-6">
             <FadeItem>
-              <span className={`uppercase tracking-[0.2em] text-xs font-bold ${theme.brand.accent} opacity-90`}>
+              <span className={`uppercase tracking-[0.2em] text-sm font-bold ${theme.brand.accent} opacity-90`}>
                 Strategic Management
               </span>
             </FadeItem>
             
             <FadeItem>
-              <h2 className={`text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight ${theme.text.brand}`}>
+              <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight ${theme.text.brand}`}>
                 Structural Precision <br />
                 for Financial <br />
                 Excellence.
@@ -30,7 +30,7 @@ export default function FinanceIntro() {
             </FadeItem>
             
             <FadeItem>
-              <p className={`text-lg lg:text-xl leading-relaxed max-w-xl ${theme.text.muted}`}>
+              <p className={`text-lg lg:text-xl leading-relaxed max-w-xl text-secondary`}>
                 Arshan provides high-fidelity financial record management and
                 administrative bookkeeping designed for clarity, scale, and
                 uncompromising accuracy.
