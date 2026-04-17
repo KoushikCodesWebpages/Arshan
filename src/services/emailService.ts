@@ -1,8 +1,14 @@
 import emailjs from '@emailjs/browser';
 
-const SERVICE_ID = "service_waoi10r";
-const TEMPLATE_ID = "template_wg6j1dt";
-const PUBLIC_KEY = "0JVb8gLK6MsDRBCRI";
+// const SERVICE_ID = "service_waoi10r";
+// const TEMPLATE_ID = "template_wg6j1dt";
+// const PUBLIC_KEY = "0JVb8gLK6MsDRBCRI";
+
+
+const SERVICE_ID = "service_dfkmrmx";
+const TEMPLATE_ID = "template_siuudnb";
+const PUBLIC_KEY = "PXRPeIHpf1zmPiIku";
+
 
 interface EmailPayload {
   html_content: string; 
