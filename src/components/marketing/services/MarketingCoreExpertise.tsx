@@ -40,7 +40,7 @@ export default function MarketingCoreExpertise() {
             
             <div className="space-y-4">
               <FadeItem>
-                <h2 className={`text-5xl font-bold tracking-tight ${theme.text.brand}`}>
+                <h2 className={`text-6xl font-bold tracking-tight ${theme.text.brand}`}>
                   Our Core Expertise.
                 </h2>
               </FadeItem>
@@ -54,7 +54,7 @@ export default function MarketingCoreExpertise() {
             </div>
 
             <FadeItem>
-              <span className={`text-[10px] font-bold tracking-[0.2em] uppercase opacity-40 ${theme.text.main}`}>
+              <span className={`text-[12px] font-bold tracking-[0.2em] uppercase opacity-40 ${theme.text.main}`}>
                 Services / 01-03
               </span>
             </FadeItem>
@@ -86,11 +86,11 @@ export default function MarketingCoreExpertise() {
                   />
 
                   <div className="space-y-4">
-                    <h3 className={`text-lg font-bold tracking-tight ${theme.text.brand}`}>
+                    <h3 className={`text-xl font-bold tracking-tight ${theme.text.brand}`}>
                       {item.title}
                     </h3>
 
-                    <p className={`text-sm leading-relaxed opacity-80 ${theme.text.muted}`}>
+                    <p className={`text-md leading-relaxed opacity-80 ${theme.text.muted}`}>
                       {item.description}
                     </p>
                   </div>
@@ -99,7 +99,7 @@ export default function MarketingCoreExpertise() {
                     {item.points.map((point, pIdx) => (
                       <li key={pIdx} className="flex items-center gap-3">
                         <span className="w-1.5 h-1.5 bg-tertiary rounded-full shadow-[0_0_5px_rgba(164,134,38,0.4)]" />
-                        <span className="text-[10px] font-bold tracking-widest uppercase opacity-60">
+                        <span className="text-[12px] font-bold tracking-widest uppercase opacity-60">
                           {point}
                         </span>
                       </li>

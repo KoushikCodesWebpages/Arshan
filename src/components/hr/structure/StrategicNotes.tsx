@@ -23,11 +23,11 @@ export default function StrategicNotes() {
 
             {/* Content */}
             <div className="space-y-2">
-              <h4 className={`text-base font-bold tracking-tight ${theme.text.brand}`}>
+              <h4 className={`text-xl font-bold tracking-tight ${theme.text.brand}`}>
                 Strategic Framework Notes
               </h4>
               
-              <p className={`text-[13px] leading-relaxed max-w-4xl ${theme.text.muted}`}>
+              <p className={`text-[15px] leading-relaxed max-w-4xl ${theme.text.muted}`}>
                 Includes salary, management, and procurement. Managed collectively by Arshan & Etisalar. 
                 Etisalar handles localized payroll administration. A minimum 3-month commitment is 
                 required for all cluster engagements to ensure operational stability and ROI.

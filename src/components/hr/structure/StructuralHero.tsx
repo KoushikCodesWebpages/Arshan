@@ -18,18 +18,18 @@ export default function StructuralHero() {
           {/* LEFT CONTENT BLOCK */}
           <FadeItem className="flex flex-col items-start justify-center">
             <div className="bg-[#E0E7FF] px-3 py-1 rounded-xs mb-8">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#4353a3]">
+              <span className="text-[12px] font-bold uppercase tracking-widest text-[#4353a3]">
                 Institutional Strategy
               </span>
             </div>
 
-            <h1 className={`text-5xl md:text-[64px] font-bold leading-[1.05] tracking-tight ${theme.text.brand} mb-8`}>
+            <h1 className={`text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight ${theme.text.brand} mb-8`}>
               Strategic Talent <br className="hidden md:block" />
               Investment <br className="hidden md:block" />
               Structure
             </h1>
 
-            <p className={`text-lg leading-relaxed ${theme.text.muted} max-w-120 mb-10`}>
+            <p className={`text-lg leading-relaxed ${theme.text.muted} w-[90%] mb-10`}>
               Consolidating global talent costs through architectural precision. We
               provides the framework for sovereign labor markets, balancing efficiency
               with operational excellence.
@@ -37,7 +37,7 @@ export default function StructuralHero() {
 
             <a
             href="/hr/architecture" 
-            className={`${theme.buttons.base} ${theme.buttons.primary} px-8 py-4 text-base shadow-lg`}>
+            className={`${theme.buttons.base} ${theme.buttons.primary} px-8 py-4 text-lg shadow-lg`}>
               Explore Clusters
             </a>
           </FadeItem>

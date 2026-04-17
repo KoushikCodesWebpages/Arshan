@@ -16,7 +16,7 @@ export default function MarketingIntro() {
           <FadeInStagger className="flex-1 space-y-8">
             <div className="space-y-6">
               <FadeItem>
-                <span className={`uppercase tracking-[0.2em] text-[10px] font-bold ${theme.brand.accent} border-l-2 border-tertiary pl-3`}>
+                <span className={`uppercase tracking-[0.2em] text-[12px] font-bold ${theme.brand.accent} border-l-2 border-tertiary pl-3`}>
                   Elevate Your Digital Presence
                 </span>
               </FadeItem>
@@ -28,9 +28,9 @@ export default function MarketingIntro() {
                   Management.
                 </h2>
               </FadeItem>
-              
+
               <FadeItem>
-                <p className={`text-lg lg:text-xl leading-relaxed max-w-xl ${theme.text.muted}`}>
+                <p className={`text-lg lg:text-xl leading-relaxed max-w-xl text-secondary`}>
                   We manage your brand&apos;s digital narrative through consistent 
                   posting, strategic scheduling, and professional account 
                   maintenance. Build authority and scale your influence.
@@ -45,7 +45,7 @@ export default function MarketingIntro() {
                     const el = document.getElementById("services");
                     el?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className={`${theme.buttons.primary} px-10 py-4 text-xs font-bold uppercase tracking-widest rounded-sm active:scale-95 shadow-xl hover:shadow-primary/20 transition-all`}
+                  className={`${theme.buttons.primary} px-10 py-4 text-sm font-bold uppercase tracking-widest rounded-sm active:scale-95 shadow-xl hover:shadow-primary/20 transition-all`}
                 >
                   View Services
                 </button>
@@ -56,7 +56,7 @@ export default function MarketingIntro() {
 
                 <Link 
                   href="/marketing/#social-media-pricing"
-                  className="px-10 py-4 border border-primary/20 text-primary font-bold text-xs tracking-widest uppercase rounded-sm hover:bg-neutral transition-all active:scale-95 inline-block"
+                  className="px-10 py-4 border border-primary/20 text-primary font-bold text-sm tracking-widest uppercase rounded-sm hover:bg-neutral transition-all active:scale-95 inline-block"
                 >
                   Our Pricing
                 </Link>

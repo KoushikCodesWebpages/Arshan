@@ -24,7 +24,7 @@ export default function Footer() {
     {
       title: "CONTACT",
       links: [
-        { name: "info@arshan.consulting", path: "mailto:inquiries@arshan.de" },
+        { name: "inquiries@arshan.de", path: "mailto:inquiries@arshan.de" },
       ],
     },
   ];

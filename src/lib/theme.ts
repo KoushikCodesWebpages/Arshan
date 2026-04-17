@@ -26,15 +26,15 @@ export const theme = {
 
   // TYPOGRAPHY
   text: {
-    brand: "text-primary font-semibold",
+    brand: "text-primary font-bold",
     main: "text-text-main",
-    muted: "text-text-muted",
+    muted: "text-secondary font-medium",
     danger: "text-danger",
   },
 
   // BUTTON STYLES
   buttons: {
-    base: "inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium rounded-sm transition active:scale-[0.98] disabled:opacity-50",
+    base: "inline-flex items-center justify-center px-5 py-2.5 text-md font-medium rounded-sm transition active:scale-[0.98] disabled:opacity-50",
     primary: "bg-primary text-white hover:bg-slate-800 transition shadow-md font-semibold",
     secondary: "bg-secondary/10 text-secondary hover:bg-secondary/20 transition font-medium",
     tertiary: "bg-tertiary text-white hover:brightness-110 transition font-bold shadow-sm",

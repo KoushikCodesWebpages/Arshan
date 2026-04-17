@@ -26,7 +26,7 @@ const tiers: PricingTier[] = [
     badge: "ENTRY LEVEL",
     subtitle: "Administrative Support",
     desc: "Ideal for high-volume execution, data processing, and foundational technical tasks.",
-    icon: <User className="w-7 h-7 stroke-[1.5px]" />, 
+    icon: <User className="w-10 h-10 stroke-[1.5px]" />, 
     features: [
       "Execution of standardized workflows and operational protocols.",
       "High-speed data synthesis and elementary problem solving.",
@@ -41,7 +41,7 @@ const tiers: PricingTier[] = [
     badge: "MOST SELECTED",
     subtitle: "Institutional Management",
     desc: "Bridges the gap between strategy and execution; capable of autonomous project management.",
-    icon: <Users className="w-7 h-7 stroke-[1.5px]" />, 
+    icon: <Users className="w-10 h-10 stroke-[1.5px]" />, 
     features: [
       "Advanced technical specialization and complex project ownership.",
       "Direct stakeholder communication and progress reporting.",
@@ -56,7 +56,7 @@ const tiers: PricingTier[] = [
     badge: "EXPERT",
     subtitle: "Strategic Oversight",
     desc: "Strategic leaders who architect solutions and manage entire functional departments.",
-    icon: <BrainCircuit className="w-7 h-7 stroke-[1.5px]" />,
+    icon: <BrainCircuit className="w-10 h-10 stroke-[1.5px]" />,
     features: [
       "Strategic roadmap development and architectural leadership.",
       "High-impact procurement and vendor management oversight.",
@@ -127,7 +127,7 @@ export default function PricingGrid() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className={`text-[22px] font-bold tracking-tight mb-1 ${
+                    className={`text-[24px] font-bold tracking-tight mb-1 ${
                       tier.isDark ? "text-white" : theme.text.brand
                     }`}
                   >
@@ -141,22 +141,22 @@ export default function PricingGrid() {
                     transition={{ delay: 0.2 }}
                     className="flex items-baseline"
                   >
-                    <span className="text-[36px] font-bold tracking-tighter">
+                    <span className="text-[40px] font-bold tracking-tighter">
                       €{tier.price}
                     </span>
-                    <span className="text-xs ml-1 opacity-60 font-medium">/mo</span>
+                    <span className="text-base ml-1 opacity-60 font-medium">/mo</span>
                   </motion.div>
                 </div>
 
                 {/* Role Capability Header */}
                 <div className="mb-6">
-                  <p className={`text-[10px] font-bold uppercase tracking-widest mb-2 ${
-                      tier.isDark ? "text-tertiary" : "text-secondary"
+                  <p className={`text-[16px] font-bold tracking-widest mb-2 ${
+                      tier.isDark ? "text-tertiary" : "text-primary"
                     }`}
                   >
                     Role & Capability:
                   </p>
-                  <p className={`text-[12px] leading-relaxed italic font-medium ${
+                  <p className={`text-[14px] leading-relaxed italic font-medium ${
                       tier.isDark ? "text-white/70" : theme.text.muted
                     }`}
                   >
@@ -180,7 +180,7 @@ export default function PricingGrid() {
                           tier.isDark ? "text-tertiary" : "text-secondary"
                         }`}
                       />
-                      <span className={`text-[13px] leading-snug ${
+                      <span className={`text-[15px] leading-snug ${
                           tier.isDark ? "text-white/90" : theme.text.main
                         }`}
                       >
@@ -192,7 +192,7 @@ export default function PricingGrid() {
 
                 {/* CTA Button using theme variables */}
                 <button
-                  className={`w-full py-4 text-[11px] font-bold uppercase tracking-widest rounded-brand transition-all active:scale-[0.97] ${
+                  className={`w-full py-4 text-[13px] font-bold uppercase tracking-widest rounded-brand transition-all active:scale-[0.97] ${
                     tier.isDark
                       ? "bg-tertiary text-white hover:brightness-110 shadow-lg shadow-tertiary/20"
                       : `${theme.buttons.primary}`

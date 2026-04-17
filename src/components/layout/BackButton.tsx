@@ -8,7 +8,13 @@ export default function GlobalBackButton() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const excludedPaths = ["/"];
+  const excludedPaths = [
+    "/",
+    "/marketing",
+    "/hr",
+    "/finance",
+    "/about-us",
+  ];
   const currentPath = pathname.replace(/\/$/, "") || "/";
 
   if (excludedPaths.includes(currentPath)) {

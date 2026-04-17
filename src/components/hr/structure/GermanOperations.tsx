@@ -30,66 +30,65 @@ function ModuleCard({ module }: { module: (typeof modules)[0] }) {
       {/* Accent Bar */}
       <div className={`absolute left-0 top-0 bottom-0 w-1 ${theme.brand.primary}`} />
       
-      <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-tertiary">
+      <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-tertiary">
         Service Module {module.number}
       </span>
 
-      <h4 className={`text-xl font-bold mt-2 mb-4 tracking-tight ${theme.text.brand}`}>
+      <h4 className={`text-2xl font-bold mt-2 mb-4 tracking-tight ${theme.text.brand}`}>
         {module.title}
       </h4>
 
-      <p className={`text-[13px] leading-relaxed ${theme.text.muted}`}>
+      <p className={`text-[15px] leading-relaxed ${theme.text.muted}`}>
         {module.desc}
       </p>
     </div>
   );
 }
-
 export default function GermanyOperations() {
   return (
-    <section className="py-16 bg-[#F8FAFC]">
+    <section className="py-20 bg-[#F8FAFC]">
       <div className="w-full mx-auto px-28">
         
-        {/* MAIN GRID */}
-        <FadeInStagger className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+        {/* MAIN GRID - Changed to 6/6 split */}
+        <FadeInStagger className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
-          {/* LEFT SIDE */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* LEFT SIDE - Occupies 6 columns */}
+          <div className="lg:col-span-6 space-y-8">
             <FadeItem>
-              <h2 className={`text-4xl font-bold tracking-tight ${theme.text.brand} mb-6`}>
+              <h2 className={`text-5xl font-bold tracking-tight ${theme.text.brand} mb-6 leading-[1.1]`}>
                 Germany Operations
               </h2>
-              <p className={`text-lg leading-relaxed ${theme.text.muted} max-w-xl`}>
-                High-compliance, bespoke labor management for the DACH region. 
-                Our German infrastructure is built on regulatory excellence and 
-                precise fiscal oversight, designed to mitigate the inherent 
-                complexities of the German labor market.
+              <p className={`text-xl leading-relaxed ${theme.text.muted} max-w-lg`}>
+                High-compliance, bespoke labor management for the DACH
+                region. Our German infrastructure is built on regulatory
+                excellence and precise fiscal oversight, designed to mitigate the
+                inherent complexities of the German labor market.
               </p>
             </FadeItem>
 
             {/* Compliance Box */}
             <FadeItem className="bg-[#f1f5f9]/60 border border-border-light rounded-brand p-10">
-              <h3 className={`text-xl font-bold ${theme.text.brand} mb-4`}>
+              <h3 className={`text-2xl font-bold ${theme.text.brand} mb-4`}>
                 The Compliance Standard
               </h3>
-              <p className={`text-[13px] leading-relaxed ${theme.text.muted} mb-8 max-w-md`}>
+              <p className={`text-[15px] leading-relaxed ${theme.text.muted} mb-8`}>
                 Operating in Germany requires strict adherence to GoBD standards. 
                 Arshan provides a defensive shield for international firms, ensuring 
-                that every employment contract, social security filing, and tax 
-                reporting action is executed with mathematical precision.
+                every employment contract and tax reporting action is executed with 
+                mathematical precision.
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <div className="bg-white px-4 py-2 rounded-brand border border-border-light flex items-center gap-2 shadow-sm">
+                <div className="bg-white px-5 py-2.5 rounded-brand border border-border-light flex items-center gap-3 shadow-sm">
                   <Landmark className="w-4 h-4 text-primary" />
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-primary">
+                  <span className="text-[15px] font-bold tracking-wider text-primary">
                     Lexware Integrated
                   </span>
                 </div>
 
-                <div className="bg-white px-4 py-2 rounded-brand border border-border-light flex items-center gap-2 shadow-sm">
+                <div className="bg-white px-5 py-2.5 rounded-brand border border-border-light flex items-center gap-3 shadow-sm">
                   <ShieldCheck className="w-4 h-4 text-primary" />
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-primary">
+                  <span className="text-[15px] font-bold tracking-wider text-primary">
                     Audit-Ready
                   </span>
                 </div>
@@ -97,21 +96,23 @@ export default function GermanyOperations() {
             </FadeItem>
           </div>
 
-          {/* RIGHT SIDE */}
-          <div className="lg:col-span-5 flex flex-col h-full gap-6">
+          {/* RIGHT SIDE - Occupies 6 columns */}
+          <div className="lg:col-span-6 flex flex-col h-full gap-6">
             
-            {/* TOP ROW */}
+            {/* TOP ROW - Balanced distribution */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {modules.slice(0, 2).map((module, idx) => (
-                <FadeItem key={idx} className="h-full">
+                <FadeItem key={idx}>
                   <ModuleCard module={module} />
                 </FadeItem>
               ))}
             </div>
 
-            {/* BOTTOM CARD (STRETCHES) */}
-            <FadeItem className="flex-1">
-              <ModuleCard module={modules[2]} />
+            {/* BOTTOM CARD - Ensuring it expands to match left height */}
+            <FadeItem className="grow">
+              <div className="h-full">
+                <ModuleCard module={modules[2]} />
+              </div>
             </FadeItem>
 
           </div>

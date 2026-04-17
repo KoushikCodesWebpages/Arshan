@@ -31,15 +31,14 @@ export default function ClusterDetails() {
           
           {/* TOP PARTNERSHIP HEADER */}
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-12 pb-16 border-b border-slate-200 mb-20">
-            <FadeItem className="max-w-2xl">
-              <h2 className={`text-4xl font-bold tracking-tight ${theme.text.brand} mb-6`}>
+            <FadeItem className="w-[60%]">
+              <h2 className={`text-5xl font-bold tracking-tight ${theme.text.brand} mb-6`}>
                 India Strategic Cluster
               </h2>
-              <p className={`text-lg leading-relaxed ${theme.text.muted}`}>
-                In strategic partnership with <span className="font-semibold text-slate-900">Etisalar</span>, 
-                we offer a specialized labor cost model designed for scalability. This joint venture 
-                integrates high-caliber talent with institutional-grade risk management, providing a 
-                sovereign solution for global resource allocation.
+              <p className={`text-xl leading-relaxed ${theme.text.muted}`}>
+In strategic partnership with Etisalar, we offer a specialized labor cost model designed for
+scalability. This joint venture integrates high-caliber talent with institutional-grade risk
+management, providing a sovereign solution for global resource allocation.
               </p>
             </FadeItem>
 
@@ -50,10 +49,10 @@ export default function ClusterDetails() {
                   <Handshake className="w-8 h-8 text-tertiary" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">
+                  <p className="text-[12px] font-bold uppercase tracking-widest text-slate-400 mb-1">
                     Joint Venture Partner
                   </p>
-                  <p className={`text-xl font-bold ${theme.text.brand}`}>
+                  <p className={`text-2xl font-bold ${theme.text.brand}`}>
                     Etisalar
                   </p>
                 </div>
@@ -66,15 +65,15 @@ export default function ClusterDetails() {
             {features.map((feature, idx) => (
               <FadeItem key={idx} className="flex flex-col space-y-6">
                 {/* Icon Container */}
-                <div className="w-12 h-12 bg-slate-200/50 flex items-center justify-center rounded-sm">
+                <div className="w-14 h-14 bg-slate-200/50 flex items-center justify-center rounded-sm">
                   {feature.icon}
                 </div>
                 
-                <h3 className={`text-xl font-bold ${theme.text.brand}`}>
+                <h3 className={`text-2xl font-bold ${theme.text.brand}`}>
                   {feature.title}
                 </h3>
                 
-                <p className={`text-[15px] leading-relaxed ${theme.text.muted}`}>
+                <p className={`text-[17px] leading-relaxed ${theme.text.muted}`}>
                   {feature.description}
                 </p>
               </FadeItem>
