@@ -10,9 +10,9 @@ import GlobalBackButton from "@/components/layout/BackButton";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Arshan | Integrated Business Solutions",
+  title: "Arshan ",
   description: "High-performance infrastructure for finance, marketing, and HR.",
-  metadataBase: new URL('https://arshan.services'), 
+  metadataBase: new URL('https://arshan.de'), 
   openGraph: {
     title: "Arshan",
     description: "Building data-driven tools and high-performance applications.",

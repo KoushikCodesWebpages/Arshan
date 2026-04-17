@@ -8,23 +8,23 @@ export default function Footer() {
     {
       title: "EXPERTISE",
       links: [
-        { name: "Social Management", path: "/expertise/social" },
-        { name: "Content Strategy", path: "/expertise/strategy" },
-        { name: "Account Maintenance", path: "/expertise/maintenance" },
+      { name: "Social Management", path: "/marketing/#expertise" },
+      { name: "Content Strategy", path: "/marketing/#expertise" },
+      { name: "Account Maintenance", path: "/marketing/#expertise" },
       ],
     },
     {
       title: "COMPANY",
       links: [
-        { name: "Our Process", path: "/process" },
+        { name: "Our Process", path: "/finance/process" },
         { name: "Privacy Policy", path: "/terms" },
-        { name: "Careers", path: "/careers" }
+        { name: "Careers", path: "/contact-us" }
       ],
     },
     {
       title: "CONTACT",
       links: [
-        { name: "info@arshan.consulting", path: "mailto:info@arshan.consulting" },
+        { name: "info@arshan.consulting", path: "mailto:inquiries@arshan.de" },
       ],
     },
   ];
@@ -55,17 +55,20 @@ export default function Footer() {
                 <h3 className="text-[11px] font-bold tracking-[0.2em] text-primary mb-8 uppercase opacity-80">
                   {section.title}
                 </h3>
-                <ul className="space-y-4">
-                  {section.links.map((link) => (
-                    <li key={link.name}>
-                      <Link
-                        href={link.path}
-                        className={`${theme.text.muted} hover:text-primary transition-colors duration-300 text-[14px] font-medium`}
-                      >
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
+                  <ul className="space-y-4">
+                    {section.links.map((link) => (
+                      <li key={link.name}>
+                        {/* Using <a> instead of <Link> forces a hard refresh.
+                            This ensures the browser catches the #hash even if you're already on the page.
+                        */}
+                        <a
+                          href={link.path}
+                          className={`${theme.text.muted} hover:text-primary transition-colors duration-300 text-[14px] font-medium`}
+                        >
+                          {link.name}
+                        </a>
+                      </li>
+                    ))}
                   
                   {section.title === "CONTACT" && (
                     <div className="flex items-center space-x-5 pt-4">
@@ -93,22 +96,21 @@ export default function Footer() {
             © {currentYear} ARSHAN CONSULTING GROUP. ALL RIGHTS RESERVED.
           </p>
           
-          <div className="flex items-center space-x-10">
-            {[
-              { label: "TERMS", id: "terms" },
-              { label: "POLICY", id: "privacy" },
-              { label: "COMPLIANCE", id: "impressum" }
-            ].map((item) => (
-              <Link 
-                key={item.label} 
-                // Using an absolute path /terms#id prevents the ## stacking
-                href={`/terms#${item.id}`} 
-                className="text-[10px] tracking-[0.15em] text-text-muted hover:text-primary uppercase transition-colors duration-300 font-semibold"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+        <div className="flex items-center space-x-10">
+          {[
+            { label: "TERMS", id: "terms" },
+            { label: "POLICY", id: "privacy" },
+            { label: "COMPLIANCE", id: "impressum" }
+          ].map((item) => (
+            <a 
+              key={item.label} 
+              href={`/terms#${item.id}`} 
+              className="text-[10px] tracking-[0.15em] text-text-muted hover:text-primary uppercase transition-colors duration-300 font-semibold"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
         </div>
       </div>
     </footer>

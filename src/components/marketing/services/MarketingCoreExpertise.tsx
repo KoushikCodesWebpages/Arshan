@@ -36,7 +36,7 @@ export default function MarketingCoreExpertise() {
 
         {/* ✅ HEADER (separate animation) */}
         <FadeInStagger>
-          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+          <div id="expertise" className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
             
             <div className="space-y-4">
               <FadeItem>
