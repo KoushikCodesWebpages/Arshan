@@ -24,7 +24,7 @@ export const sendArshanInquiry = async (
   
   const templateParams = {
     // Matches Dashboard Variable: {{email}}
-    email: "koushikbabuforwork@gmail.com", 
+    email: "Inquiries@arshan.de", 
     
     // Matches Dashboard Variable: {{fullName}}
     fullName: payload.fullName || `Arshan ${source} Partner`,

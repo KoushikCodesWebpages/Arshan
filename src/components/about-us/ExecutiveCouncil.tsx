@@ -14,12 +14,6 @@ const executives = [
     image: "/exec-1.jpg", // Replace with actual paths
   },
   {
-    name: "Elena Weber",
-    role: "Chief Operations Officer",
-    bio: "Leading digital transformation and cross-border logistics across our European and Asian hubs.",
-    image: "/exec-2.jpg",
-  },
-  {
     name: "Marc Hoffmann",
     role: "Head of Marketing & HR",
     bio: "Expert in cultural engineering and brand psychology for the modern workforce.",
@@ -58,39 +52,50 @@ export default function ExecutiveCouncil() {
           </FadeItem>
         </div>
 
-        {/* Executive Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {executives.map((member, idx) => (
-            <FadeInStagger key={idx}>
-              <FadeItem className="space-y-6 group">
-                {/* Grayscale Image Wrapper */}
-                <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-200 shadow-xl">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out group-hover:scale-105"
-                  />
-                  {/* Subtle Top-down Vignette to maintain Arshan 'Lens' look */}
-                  <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-transparent opacity-60 pointer-events-none" />
-                </div>
-
-                {/* Member Info */}
-                <div className="space-y-2">
-                  <h3 className={`text-2xl font-bold ${theme.text.brand}`}>
-                    {member.name}
-                  </h3>
-                  <p className="uppercase tracking-widest text-[10px] font-bold text-secondary">
-                    {member.role}
-                  </p>
-                  <p className={`text-sm leading-relaxed pt-2 ${theme.text.muted} font-medium`}>
-                    {member.bio}
-                  </p>
-                </div>
-              </FadeItem>
-            </FadeInStagger>
-          ))}
+        {/* Executive Cards Grid - Max-w-5xl centers and slims the overall layout */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-5xl mx-auto">
+  {executives.map((member, idx) => (
+    <FadeInStagger key={idx}>
+      <FadeItem className="space-y-6 group">
+        
+        {/* Scaled Down Image Wrapper 
+            - Changed aspect-square to aspect-[4/5] for a more 'Executive Portrait' look
+            - Added max-w-sm to prevent the image from being too huge on desktop
+        */}
+        <div className="relative aspect-4/5 max-w-sm mx-auto rounded-xl overflow-hidden bg-slate-200 shadow-lg">
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            /* OPTIMIZATION: 
+               1. 'sizes' tells the browser exactly how big the image will be.
+               2. 'quality={85}' balances file size and clarity.
+            */
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 400px, 350px"
+            quality={85}
+            className="object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-transparent opacity-60 pointer-events-none" />
         </div>
+
+        {/* Member Info - Text centered to match the scaled-down image */}
+        <div className="space-y-2 text-center max-w-sm mx-auto">
+          <h3 className={`text-2xl font-bold tracking-tight ${theme.text.brand}`}>
+            {member.name}
+          </h3>
+          <div className="flex justify-center">
+            <p className="uppercase tracking-[0.2em] text-[10px] font-black text-tertiary bg-tertiary/5 px-3 py-1 rounded-full">
+              {member.role}
+            </p>
+          </div>
+          <p className={`text-[15px] leading-relaxed pt-3 ${theme.text.muted} font-medium opacity-90`}>
+            {member.bio}
+          </p>
+        </div>
+      </FadeItem>
+    </FadeInStagger>
+  ))}
+</div>
       </div>
     </section>
   );
