@@ -16,13 +16,13 @@ export default function FunctionalDisciplines() {
         <FadeInStagger>
           <div className="w-full max-w-3xl">
             <FadeItem>
-              <h2 className={`text-3xl md:text-5xl font-bold tracking-tight ${theme.text.brand}`}>
+              <h2 className={`text-3xl md:text-4xl font-bold tracking-tight ${theme.text.brand}`}>
                 Functional Disciplines
               </h2>
             </FadeItem>
 
             <FadeItem>
-              <p className={`mt-6 text-lg lg:text-xl text-secondary leading-relaxed`}>
+              <p className={`mt-6 text-lg lg:text-lg text-secondary leading-relaxed`}>
                 We bridge the gap between raw transactions and strategic oversight,
                 ensuring your operational data is boardroom-ready.
               </p>
@@ -41,7 +41,7 @@ export default function FunctionalDisciplines() {
                 Precision Bookkeeping
               </h3>
 
-              <p className={`text-secondary text-lg max-w-xl leading-relaxed`}>
+              <p className={`text-secondary text-md w-[60%] leading-relaxed`}>
                 Systematic tracking of all operational expenditures and revenue
                 streams. We maintain the daily pulse of your organization's
                 liquidity with absolute structural integrity.
@@ -74,8 +74,10 @@ export default function FunctionalDisciplines() {
               <h3 className="text-2xl lg:text-3xl font-bold">Record Management</h3>
 
               <p className="text-blue-100/80 leading-relaxed">
-                Secure, digitized documentation of all financial activities,
-                providing an immutable audit trail for internal compliance and growth.
+               Secure, digitized documentation of all
+financial activities, providing an immutable
+structure for internal compliance and
+growth.
               </p>
 
               {/* Background Decoration */}
@@ -87,7 +89,7 @@ export default function FunctionalDisciplines() {
         </FadeInStagger>
 
         {/* BOTTOM GRID: Statement Preparation */}
-        <FadeInStagger className="bg-white rounded-sm p-10 lg:p-16 border border-border-light shadow-sm grid lg:grid-cols-2 gap-16 items-center">
+        <FadeInStagger className="bg-white rounded-sm p-5 lg:p-10 border border-border-light shadow-sm grid lg:grid-cols-2 gap-16 items-center">
           
           {/* Content */}
           <FadeItem className="space-y-8 order-2 lg:order-1">
@@ -96,11 +98,11 @@ export default function FunctionalDisciplines() {
                 <FileText className="text-tertiary w-7 h-7" />
               </div>
               
-              <h3 className={`text-3xl lg:text-4xl font-bold ${theme.text.main} tracking-tight`}>
+              <h3 className={`text-3xl lg:text-3xl font-bold ${theme.text.main} tracking-tight`}>
                 Statement Preparation
               </h3>
               
-              <p className={`text-secondary text-lg leading-relaxed max-w-lg`}>
+              <p className={`text-secondary text-md leading-relaxed w-[80%]`}>
                 We synthesize complex ledger data into clear, high-impact account
                 statements that provide stakeholders with a comprehensive view
                 of fiscal health.
@@ -117,7 +119,7 @@ export default function FunctionalDisciplines() {
                   <div className="shrink-0 w-6 h-6 rounded-full bg-primary/5 flex items-center justify-center">
                     <CheckCircle className="w-4 h-4 text-primary opacity-60 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <span className={`text-lg font-medium ${theme.text.main}`}>{item}</span>
+                  <span className={`text-md font-medium ${theme.text.main}`}>{item}</span>
                 </li>
               ))}
             </ul>

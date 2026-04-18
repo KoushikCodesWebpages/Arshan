@@ -13,7 +13,7 @@ export default function MarketingFinalCTA() {
             
             {/* Headline */}
             <FadeItem>
-              <h2 className={`text-5xl md:text-8xl font-bold tracking-tight ${theme.text.brand}`}>
+              <h2 className={`text-5xl md:text-7xl font-bold tracking-tight ${theme.text.brand}`}>
                 Ready to scale?
               </h2>
             </FadeItem>

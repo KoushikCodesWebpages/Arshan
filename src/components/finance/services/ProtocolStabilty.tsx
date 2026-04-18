@@ -15,11 +15,11 @@ export default function ProtocolStability() {
           <div className="space-y-10">
 
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+              <h2 className="text-4xl md:text-4xl font-bold leading-tight">
                 A Protocol for Stability.
               </h2>
 
-              <p className="text-xl opacity-60 max-w-lg">
+              <p className="text-lg opacity-60 w-[80%]">
                 Our methodology ensures that your financial operations are
                 never a bottleneck for growth.
               </p>
