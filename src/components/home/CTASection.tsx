@@ -19,7 +19,7 @@ export default function CTASection() {
               <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/images/pattern-hex.png')] bg-repeat" />
 
               {/* Left Content Side */}
-              <div className="flex-1 p-10 md:p-16 z-10 flex flex-col justify-center">
+              <div className="flex-1 p-10 md:p-24 z-10 flex flex-col justify-center">
                 <FadeInStagger className="space-y-6">
                   <FadeItem>
                     <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">

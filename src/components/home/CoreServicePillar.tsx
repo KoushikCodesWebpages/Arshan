@@ -33,7 +33,7 @@ const services = [
     title: "Strategic HR & Global Talent Solutions",
     description: "Modernize your workforce with scalable payroll management, rigorous HR compliance audits, and offshore talent acquisition from our high-performance hubs in India.",
     icon: Users2,
-    highlights: ["Digital Payroll Management", "Global Recruiting Pipeline"],
+    highlights: ["Digital Employee Management", "Global Recruiting Pipeline"],
     linkText: "See HR Capabilities",
     href: "/hr/"
   }
@@ -46,12 +46,12 @@ export default function ServicePillars() {
         {/* Header */}
         <FadeInStagger className="mb-16 space-y-4">
           <FadeItem>
-            <h2 className={`text-5xl font-bold ${theme.text.brand}`}>
+            <h2 className={`text-4xl font-bold ${theme.text.brand}`}>
               Our Core Service Pillars
             </h2>
           </FadeItem>
           <FadeItem>
-            <p className={`max-w-2xl text-lg font-medium text-secondary`}>
+            <p className={`max-w-2xl text-md font-medium text-secondary`}>
               Comprehensive business infrastructure designed for performance, growth and further visibilty.
             </p>
           </FadeItem>
@@ -73,7 +73,7 @@ export default function ServicePillars() {
 
                 {/* Content */}
                 <div className="space-y-4 flex-1">
-                  <h3 className={`text-2xl font-bold leading-tight ${theme.text.main}`}>
+                  <h3 className={`w-[80%] text-2xl font-bold leading-tight ${theme.text.main}`}>
                     {service.title}
                   </h3>
                   <p className={`text-md leading-relaxed font-medium text-secondary`}>
@@ -85,7 +85,7 @@ export default function ServicePillars() {
                     {service.highlights.map((item, i) => (
                       <li key={i} className="flex items-center gap-3">
                         <CheckCircle2 className="w-4 h-4 text-tertiary" />
-                        <span className={`text-md font-medium ${theme.text.main}`}>
+                        <span className={`text-sm font-medium ${theme.text.main}`}>
                           {item}
                         </span>
                       </li>

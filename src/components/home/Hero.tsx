@@ -32,7 +32,7 @@ export default function Hero() {
 
               {/* Header: Removed <br /> so it fills the expanded 7-column width naturally */}
               <FadeItem>
-                <h1 className={`${theme.text.brand} text-4xl md:text-6xl tracking-tighter leading-[1.1] text-primary`}>
+                <h1 className={`${theme.text.brand} text-4xl md:text-5xl tracking-tighter leading-[1.1] text-primary`}>
                   Integrated Finance, Marketing, and HR Solutions for SMBs
                 </h1>
               </FadeItem>

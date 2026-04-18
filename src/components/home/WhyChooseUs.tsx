@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
                         <h3 className={`font-bold text-lg ${theme.text.main}`}>
                         {feature.title}
                         </h3>
-                        <p className={`text-sm mt-1 leading-snug font-medium text-secondary`}>
+                        <p className={`w-[80%] text-sm mt-1 leading-snug font-medium text-secondary`}>
                         {feature.description}
                         </p>
                     </div>
