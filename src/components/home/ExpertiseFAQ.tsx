@@ -29,35 +29,38 @@ const faqs = [
 
 export default function ExpertiseFAQ() {
   return (
-    <section className="py-20 overflow-hidden">
-      <div className="w-full mx-auto px-28">
+    /* py-16 (Mobile) -> md:py-20 (PC) */
+    <section className="py-16 md:py-20 overflow-hidden">
+      {/* px-6 (Mobile) -> md:px-28 (PC) */}
+      <div className="w-full mx-auto px-6 md:px-28">
 
-        {/* Header */}
-        <FadeInStagger className="text-center w-[60%] mx-auto mb-16 space-y-4">
+        {/* Header: w-full (Mobile) -> md:w-[60%] (PC) */}
+        <FadeInStagger className="text-center w-full md:w-[60%] mx-auto mb-12 md:mb-16 space-y-4">
           <FadeItem>
-            <h2 className={`text-4xl font-bold ${theme.text.brand}`}>
+            {/* text-3xl (Mobile) -> md:text-4xl (PC) */}
+            <h2 className={`text-3xl md:text-4xl font-bold ${theme.text.brand}`}>
               Expertise & Frequently Asked Questions
             </h2>
           </FadeItem>
 
           <FadeItem>
-            <p className={`text-lg ${theme.text.muted}`}>
+            <p className={`text-base md:text-lg ${theme.text.muted}`}>
               Providing clarity on how Arshan helps small businesses navigate the
               complexities of global operations.
             </p>
           </FadeItem>
         </FadeInStagger>
 
-        {/* FAQ GRID */}
-        <FadeInStagger className="grid md:grid-cols-2 gap-x-16 gap-y-12">
+        {/* FAQ GRID: 1 column on mobile -> 2 columns on md (768px+) */}
+        <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 md:gap-y-12">
           {faqs.map((faq, index) => (
             <FadeItem key={index}>
-              <div className="group">
-                <h3 className={`text-xl font-semibold mb-3 ${theme.text.main} transition-colors group-hover:text-primary`}>
+              <div className="group border-b border-gray-100 pb-6 md:border-none md:pb-0">
+                <h3 className={`text-lg md:text-xl font-semibold mb-3 ${theme.text.main} transition-colors group-hover:text-primary`}>
                   {faq.question}
                 </h3>
 
-                <p className={`leading-relaxed text-lg font-medium   text-secondary`}>
+                <p className={`leading-relaxed text-sm md:text-lg font-medium text-secondary`}>
                   {faq.answer}
                 </p>
               </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { theme } from "@/lib/theme";
 import brand from "../../../public/brand.svg";
@@ -10,9 +12,9 @@ export default function Footer() {
     {
       title: "EXPERTISE",
       links: [
-      { name: "Social Management", path: "/marketing/#expertise" },
-      { name: "Content Strategy", path: "/marketing/#expertise" },
-      { name: "Account Maintenance", path: "/marketing/#expertise" },
+        { name: "Social Management", path: "/marketing/#expertise" },
+        { name: "Content Strategy", path: "/marketing/#expertise" },
+        { name: "Account Maintenance", path: "/marketing/#expertise" },
       ],
     },
     {
@@ -32,52 +34,48 @@ export default function Footer() {
   ];
 
   return (
-    /* We use bg-white here so the footer block is clearly 
-       distinct from the bg-gray-100 body.
-    */
     <footer className="bg-slate-50 border-t border-gray-200 mt-auto font-sans">
-      <div className="w-full mx-auto px-28 pt-20 pb-12">
+      {/* px-6 (Mobile) -> md:px-28 (PC) */}
+      <div className="w-full mx-auto px-6 md:px-28 pt-16 md:pt-20 pb-12">
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16 md:mb-24">
           
-          {/* Brand Column */}
-          <div className="md:col-span-5 space-y-6">
-          <Link href="/" className="flex items-center">
-            <Image 
-              src={brand} 
-              alt="Arshan - Your Growth Partner" 
-              width={200} // Adjusted for the wide aspect ratio
-              height={80}  // This will maintain proportions
-              priority     // Ensures the logo loads immediately
-              className="h-10 w-auto object-contain transition-opacity hover:opacity-80" 
-            />
-          </Link>
-            <p className={`${theme.text.muted} text-md leading-relaxed max-w-xs font-medium`}>
+          {/* Brand Column: Centered on mobile */}
+          <div className="md:col-span-5 space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
+            <Link href="/" className="flex items-center">
+              <Image 
+                src={brand} 
+                alt="Arshan - Your Growth Partner" 
+                width={160} 
+                height={60}
+                priority
+                /* Fixed h-10; h-1 was too small to see */
+                className="h-10 w-auto object-contain transition-opacity hover:opacity-80" 
+              />
+            </Link>
+            <p className={`${theme.text.muted} text-[15px] md:text-md leading-relaxed max-w-xs font-medium`}>
               Professional social media management and content design for brands seeking digital authority and consistent growth.
             </p>
           </div>
 
-          {/* Links Columns */}
-          <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
+          {/* Links Columns: 2 cols on small mobile, 3 on tablet+ */}
+          <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-y-10 gap-x-4">
             {footerSections.map((section) => (
-              <div key={section.title}>
-                <h3 className="text-[13px] font-bold tracking-[0.2em] text-primary mb-8 uppercase opacity-80">
+              <div key={section.title} className="text-left">
+                <h3 className="text-[11px] md:text-[13px] font-bold tracking-[0.2em] text-primary mb-6 md:mb-8 uppercase opacity-80">
                   {section.title}
                 </h3>
-                  <ul className="space-y-4">
-                    {section.links.map((link) => (
-                      <li key={link.name}>
-                        {/* Using <a> instead of <Link> forces a hard refresh.
-                            This ensures the browser catches the #hash even if you're already on the page.
-                        */}
-                        <a
-                          href={link.path}
-                          className={`${theme.text.muted} hover:text-primary transition-colors duration-300 text-[16px] font-medium`}
-                        >
-                          {link.name}
-                        </a>
-                      </li>
-                    ))}
+                <ul className="space-y-4">
+                  {section.links.map((link) => (
+                    <li key={link.name}>
+                      <a
+                        href={link.path}
+                        className={`${theme.text.muted} hover:text-primary transition-colors duration-300 text-sm md:text-[16px] font-medium`}
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
                   
                   {section.title === "CONTACT" && (
                     <div className="flex items-center space-x-5 pt-4">
@@ -99,27 +97,27 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-100 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[12px] tracking-[0.15em] text-text-muted uppercase font-semibold">
+        {/* Bottom Bar: Center text on mobile */}
+        <div className="border-t border-gray-100 pt-10 flex flex-col md:flex-row justify-between items-center gap-8 text-center">
+          <p className="text-[10px] md:text-[12px] tracking-[0.15em] text-text-muted uppercase font-semibold">
             © {currentYear} ARSHAN CONSULTING GROUP. ALL RIGHTS RESERVED.
           </p>
           
-        <div className="flex items-center space-x-10">
-          {[
-            { label: "TERMS", id: "terms" },
-            { label: "POLICY", id: "privacy" },
-            { label: "COMPLIANCE", id: "impressum" }
-          ].map((item) => (
-            <a 
-              key={item.label} 
-              href={`/terms#${item.id}`} 
-              className="text-[12px] tracking-[0.15em] text-text-muted hover:text-primary uppercase transition-colors duration-300 font-semibold"
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
+            {[
+              { label: "TERMS", id: "terms" },
+              { label: "POLICY", id: "privacy" },
+              { label: "COMPLIANCE", id: "impressum" }
+            ].map((item) => (
+              <a 
+                key={item.label} 
+                href={`/terms#${item.id}`} 
+                className="text-[10px] md:text-[12px] tracking-[0.15em] text-text-muted hover:text-primary uppercase transition-colors duration-300 font-semibold"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
