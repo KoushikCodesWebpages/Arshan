@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
+import brand from "../../../public/brand.svg";
 import { theme } from "@/lib/theme";
 
 export default function Navbar() {
@@ -23,10 +25,16 @@ export default function Navbar() {
     <nav className="sticky top-0 z-100 w-full border-b border-slate-100 bg-white/80 backdrop-blur-md shadow-sm shadow-slate-200/50 transition-all duration-300">
       <div className="w-full px-8 md:px-16 mx-auto h-15 flex items-center justify-between gap-12">
         
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-extrabold text-primary tracking-tighter ">
-          Arshan
-        </Link>
+      <Link href="/" className="flex items-center">
+        <Image 
+          src={brand} 
+          alt="Arshan - Your Growth Partner" 
+          width={140} // Adjusted for the wide aspect ratio
+          height={40}  // This will maintain proportions
+          priority     // Ensures the logo loads immediately
+          className="h-10 w-auto object-contain transition-opacity hover:opacity-80" 
+        />
+      </Link>
 
         {/* Links Container */}
         <div className="hidden md:flex items-center gap-10">

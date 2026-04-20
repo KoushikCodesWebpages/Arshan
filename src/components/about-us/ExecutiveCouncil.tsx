@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { theme } from "@/lib/theme";
+import professional1 from "../../../public/Professional_photo_Arjhun.jpg.jpeg"
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
@@ -11,13 +12,13 @@ const executives = [
     name: "Arjhun Mohanarangam",
     role: "Founder & CEO",
     bio: "Economic structuralist with 30 years of corporate governance experience in Germany and beyond.",
-    image: "/exec-1.jpg", // Replace with actual paths
+    image: professional1
   },
   {
     name: "Marc Hoffmann",
     role: "Head of Marketing & HR",
     bio: "Expert in cultural engineering and brand psychology for the modern workforce.",
-    image: "/exec-3.jpg",
+    image: professional1,
   },
 ];
 
@@ -40,16 +41,6 @@ export default function ExecutiveCouncil() {
               </p>
             </FadeItem>
           </FadeInStagger>
-
-          {/* Slider Navigation */}
-          <FadeItem className="flex items-center gap-4">
-            <button className="p-4 rounded-lg border border-border-light hover:bg-neutral transition-all active:scale-90 group">
-              <ChevronLeft className="w-5 h-5 text-primary group-hover:-translate-x-1 transition-transform" />
-            </button>
-            <button className="p-4 rounded-lg border border-border-light hover:bg-neutral transition-all active:scale-90 group">
-              <ChevronRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" />
-            </button>
-          </FadeItem>
         </div>
 
         {/* Executive Cards Grid - Max-w-5xl centers and slims the overall layout */}
@@ -67,15 +58,10 @@ export default function ExecutiveCouncil() {
             src={member.image}
             alt={member.name}
             fill
-            /* OPTIMIZATION: 
-               1. 'sizes' tells the browser exactly how big the image will be.
-               2. 'quality={85}' balances file size and clarity.
-            */
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 400px, 350px"
             quality={85}
-            className="object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out group-hover:scale-105"
+            className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-110 group-hover:scale-115 origin-top"
           />
-          <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-transparent opacity-60 pointer-events-none" />
         </div>
 
         {/* Member Info - Text centered to match the scaled-down image */}

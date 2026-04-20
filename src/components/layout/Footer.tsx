@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { theme } from "@/lib/theme";
+import brand from "../../../public/brand.svg";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -40,9 +42,16 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div className="md:col-span-5 space-y-6">
-            <h2 className={`${theme.text.brand} text-3xl uppercase tracking-tighter`}>
-              ARSHAN
-            </h2>
+          <Link href="/" className="flex items-center">
+            <Image 
+              src={brand} 
+              alt="Arshan - Your Growth Partner" 
+              width={200} // Adjusted for the wide aspect ratio
+              height={80}  // This will maintain proportions
+              priority     // Ensures the logo loads immediately
+              className="h-10 w-auto object-contain transition-opacity hover:opacity-80" 
+            />
+          </Link>
             <p className={`${theme.text.muted} text-md leading-relaxed max-w-xs font-medium`}>
               Professional social media management and content design for brands seeking digital authority and consistent growth.
             </p>
