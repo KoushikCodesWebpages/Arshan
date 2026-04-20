@@ -21,7 +21,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-[100] w-full border-b border-slate-100 bg-white/80 backdrop-blur-md shadow-sm shadow-slate-200/50 transition-all duration-300">
+    <nav className="sticky top-0 z-100 w-full border-b border-slate-100 bg-white/80 backdrop-blur-md shadow-sm shadow-slate-200/50 transition-all duration-300">
       <div className="w-full px-6 md:px-16 mx-auto h-16 md:h-15 flex items-center justify-between">
         
         {/* Logo */}
@@ -79,7 +79,7 @@ export default function Navbar() {
       {/* Mobile Menu Drawer */}
       <div 
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white border-b border-slate-100 ${
-          isMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          isMenuOpen ? "max-h-100 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-6 py-8 flex flex-col gap-6">
