@@ -92,7 +92,7 @@ export default function FunctionalDisciplines() {
           {/* Image Block: Ensuring visibility on mobile */}
           <FadeItem className="relative order-1 lg:order-2 w-full">
             <div className="bg-white p-2 md:p-4 rounded-xl md:rounded-2xl shadow-2xl border border-border-light relative z-10 group overflow-hidden">
-              <div className="relative rounded-lg md:rounded-xl overflow-hidden aspect-video lg:aspect-4/3 min-h-[220px]">
+              <div className="relative rounded-lg md:rounded-xl overflow-hidden aspect-video lg:aspect-4/3 min-h-55">
                 <Image
                   src={finance2}
                   alt="Financial analytics chart"
