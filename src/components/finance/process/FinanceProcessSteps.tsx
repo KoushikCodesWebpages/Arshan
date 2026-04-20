@@ -34,41 +34,44 @@ const processes = [
 
 export default function FinanceProcessSteps() {
   return (
-    <section className="py-24 bg-background">
-      <div className="w-full mx-auto px-28">
+    /* py-16 (Mobile) -> md:py-24 (PC) */
+    <section className="py-16 md:py-24 bg-background">
+      {/* px-6 (Mobile) -> md:px-28 (PC) */}
+      <div className="w-full mx-auto px-6 md:px-28">
         
         {/* Section Header */}
-        <div className="mb-20">
-          <h2 className={`text-4xl md:text-5xl font-bold ${theme.text.brand} mb-4`}>
+        <div className="mb-12 md:mb-20 text-center md:text-left flex flex-col items-center md:items-start">
+          <h2 className={`text-3xl md:text-5xl font-bold ${theme.text.brand} mb-4`}>
             Our Transparent Process
           </h2>
-          {/* The Gold Underline from the design */}
+          {/* The Gold Underline */}
           <div className="w-16 h-1 bg-tertiary" />
         </div>
 
-        {/* Process Grid */}
+        {/* Process Grid: 1 column on mobile, 2 on tablet, 4 on desktop */}
         <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {processes.map((item, index) => (
             <FadeItem key={index}>
-              <div className={`${theme.cards.base} p-10 h-full min-h-105 hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}>
+              {/* md:min-h-105 preserves your desktop height; min-h-0 for mobile */}
+              <div className={`${theme.cards.base} p-8 md:p-10 h-full min-h-0 md:min-h-105 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col`}>
                 
                 {/* Icon */}
-                <div className="mb-10">
+                <div className="mb-8 md:mb-10">
                   <item.icon className={`w-10 h-10 ${theme.text.brand}`} strokeWidth={1.5} />
                 </div>
 
                 {/* Phase Label */}
-                <span className={`block uppercase tracking-[0.2em] text-md font-bold ${theme.brand.accent} mb-6`}>
+                <span className={`block uppercase tracking-[0.2em] text-sm md:text-md font-bold ${theme.brand.accent} mb-4 md:mb-6`}>
                   {item.phase}
                 </span>
 
                 {/* Title */}
-                <h3 className={`text-2xl font-bold ${theme.text.brand} leading-tight mb-6`}>
+                <h3 className={`text-xl md:text-2xl font-bold ${theme.text.brand} leading-tight mb-4 md:mb-6`}>
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className={`text-md font-medium leading-relaxed text-secondary`}>
+                <p className={`text-sm md:text-md font-medium leading-relaxed text-secondary`}>
                   {item.description}
                 </p>
                 
