@@ -8,21 +8,21 @@ import hrstructure1 from "../../../../public/hrstructure1.svg";
 
 export default function StructuralHero() {
   return (
-    /* py-16 (Mobile) -> md:py-24 (PC) */
+    /* py-12 (Mobile) -> md:py-12 (PC) */
     <section className="py-12 md:py-12 bg-white overflow-hidden">
       <div className="w-full mx-auto px-6 md:px-28">
-        {/* Switched order-2/order-1 logic to keep image prominent on mobile stack */}
         <FadeInStagger className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-stretch">
           
           {/* LEFT CONTENT BLOCK */}
-          <FadeItem className="flex flex-col items-start justify-center order-2 lg:order-1">
-            <div className=" px-3 py-1 rounded-xs mb-6 md:mb-4">
+          {/* order-1: Appears first on mobile */}
+          {/* lg:order-1: Remains first on desktop */}
+          <FadeItem className="flex flex-col items-start justify-center order-1 lg:order-1">
+            <div className="px-3 py-1 rounded-xs mb-6 md:mb-4">
               <span className={`uppercase tracking-[0.2em] text-[10px] md:text-[12px] font-bold ${theme.brand.accent} border-l-2 border-tertiary pl-3`}>
                 Institutional Strategy
               </span>
             </div>
 
-            {/* text-4xl (Mobile) -> md:text-7xl (PC) */}
             <h1 className={`text-4xl md:text-7xl font-bold leading-[1.1] md:leading-[1.05] tracking-tight ${theme.text.brand} mb-6 md:mb-8`}>
               Strategic Talent <br className="hidden md:block" />
               Investment <br className="hidden md:block" />
@@ -44,7 +44,9 @@ export default function StructuralHero() {
           </FadeItem>
 
           {/* RIGHT IMAGE BLOCK */}
-          <FadeItem className="relative w-full min-h-75 md:min-h-112.5 lg:min-h-full order-1 lg:order-2">
+          {/* order-2: Appears second (bottom) on mobile */}
+          {/* lg:order-2: Remains second (right side) on desktop */}
+          <FadeItem className="relative w-full min-h-75 md:min-h-112.5 lg:min-h-full order-2 lg:order-2">
             <div className="relative h-full w-full overflow-hidden rounded-3xl md:rounded-brand shadow-2xl border border-border-light">
               <Image
                 src={hrstructure1}

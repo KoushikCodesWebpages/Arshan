@@ -77,7 +77,7 @@ export default function FinanceIntro() {
           <FadeInStagger className="w-full lg:flex-[0_0_40%]">
             <FadeItem className="relative w-full group">
               
-              <div className="relative w-full scale-120 sm:max-w-125 aspect-square mx-auto lg:mx-0 lg:-ml-12">
+              <div className="relative w-full scale-[0.9] lg:scale-120 sm:max-w-125 aspect-square mx-auto lg:mx-0 lg:-ml-12">
                 
                 {/* Back Layer */}
                 <div className="absolute inset-0 bg-primary rounded-md rotate-2 md:rotate-3 translate-x-2 md:translate-x-4 translate-y-2 opacity-90 shadow-xl transition-transform duration-700 group-hover:rotate-1 group-hover:translate-x-2" />

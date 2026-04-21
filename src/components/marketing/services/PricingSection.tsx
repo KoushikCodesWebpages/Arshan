@@ -2,152 +2,190 @@
 
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import { theme } from "@/lib/theme";
-import { Check, Zap } from "lucide-react";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
+import { CheckCircle2, Zap, Camera, Rocket, Crown } from "lucide-react";
 
-const plans = [
+interface SocialMediaPlan {
+  id: string;
+  name: string;
+  subtitle: string;
+  price: string;
+  features: string[];
+  isDark: boolean;
+  badge: string;
+  icon: React.ReactNode;
+  desc: string;
+}
+
+const plans: SocialMediaPlan[] = [
   {
+    id: "starter",
     name: "Starter",
     subtitle: "Essential Brand Presence",
     price: "250",
-    features: ["8 High-Impact Posts", "Platform-Native Captions", "Monthly Performance Report"],
-    buttonText: "SELECT STARTER",
+    badge: "ESSENTIAL",
+    desc: "Perfect for emerging brands looking to establish a professional baseline.",
+    icon: <Camera className="w-10 h-10 stroke-[1.5px]" />,
+    features: [
+      "8 High-Impact Posts",
+      "Platform-Native Captions",
+      "Monthly Performance Report",
+    ],
     isDark: false,
   },
   {
+    id: "growth",
     name: "Growth",
     subtitle: "Expanding Your Reach",
     price: "320",
-    features: ["15 Posts Per Month", "Active Stories & Engagement", "Bi-Weekly Strategy Review", "Full Profile makeover & Trend Research"],
-    buttonText: "SELECT GROWTH",
-    isDark: false,
-    isRecommended: true,
+    badge: "MOST SELECTED",
+    desc: "Bridges the gap between presence and engagement with active strategy.",
+    icon: <Rocket className="w-10 h-10 stroke-[1.5px]" />,
+    features: [
+      "15 Posts Per Month",
+      "Active Stories & Engagement",
+      "Bi-Weekly Strategy Review",
+      "Full Profile Makeover & Trend Research",
+    ],
+    isDark: true,
   },
   {
+    id: "premium",
     name: "Premium",
     subtitle: "Market Leadership",
     price: "600",
-    features: ["Daily Posting (30+ posts)", "Premium Custom Content", "Full Platform Management", "Priority Support Desk"],
-    buttonText: "SELECT PREMIUM",
-    isDark: true,
+    badge: "EXPERT",
+    desc: "Total platform dominance with daily custom content and priority management.",
+    icon: <Crown className="w-10 h-10 stroke-[1.5px]" />,
+    features: [
+      "Daily Posting (30+ posts)",
+      "Premium Custom Content",
+      "Full Platform Management",
+      "Priority Support Desk",
+    ],
+    isDark: false,
   },
 ];
 
-export default function PricingSection() {
+export default function PricingGrid() {
   const router = useRouter();
 
-  const handlePlanSelection = (plan: typeof plans[0]) => {
-    localStorage.setItem("selectedOnboardingPlan", JSON.stringify(plan));
-    router.push("/marketing/onboarding");
-  };
-
-  // 🔥 Ensures scroll works when opening via shared link
   useEffect(() => {
     if (window.location.hash === "#social-media-pricing") {
       const el = document.getElementById("social-media-pricing");
       if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: "smooth" });
-        }, 100); // small delay for hydration
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
       }
     }
   }, []);
 
+  const handlePlanSelection = (plan: SocialMediaPlan) => {
+    const { icon, ...planData } = plan;
+    localStorage.setItem("selectedOnboardingPlan", JSON.stringify(planData));
+    router.push("/marketing/onboarding");
+  };
+
   return (
-    <section
-      id="social-media-pricing"
-      className="py-24 " // 🔥 IMPORTANT for navbar offset
-    >
+    <section id="social-media-pricing" className="py-16 md:py-24 bg-background overflow-hidden">
       <div className="w-full mx-auto px-6 md:px-28">
         
-        {/* Header */}
         <FadeInStagger className="text-center mb-16 space-y-4">
           <FadeItem>
-            <span className={`${theme.text.brand} text-[13px] font-bold tracking-[0.2em] uppercase `}>
+            <span className={`${theme.text.brand} text-[13px] font-bold tracking-[0.2em] uppercase`}>
               Service Plans
             </span>
           </FadeItem>
-
           <FadeItem>
-            <h2 className={`text-5xl md:text-6xl font-bold ${theme.text.brand}`}>
-              Social Media Pricing.
+            <h2 className={`text-4xl md:text-6xl font-bold tracking-tight ${theme.text.brand}`}>
+              Social Media Pricing<span className="text-primary">.</span>
             </h2>
           </FadeItem>
         </FadeInStagger>
 
-        {/* Grid */}
-        <FadeInStagger className="grid lg:grid-cols-3 gap-8 items-stretch">
-          {plans.map((plan, index) => (
-            <FadeItem key={index} className="h-full">
-              
+        {/* items-stretch ensures all columns are equal height */}
+        <FadeInStagger className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-stretch">
+          {plans.map((plan) => (
+            <FadeItem key={plan.id} className="flex">
               <div
                 onClick={() => handlePlanSelection(plan)}
-                className={`relative flex flex-col h-full p-10 rounded-sm transition-all duration-300 cursor-pointer group ${
+                className={`relative flex flex-col w-full p-8 md:p-10 rounded-brand transition-all duration-500 cursor-pointer group shadow-sm ${
                   plan.isDark
-                    ? "bg-primary border-primary shadow-2xl text-white"
-                    : "bg-white border-slate-100 hover:shadow-xl"
-                } ${plan.isRecommended ? "ring-2 ring-primary" : ""}`}
+                    ? `${theme.brand.primary} text-white z-10 shadow-2xl lg:scale-100`
+                    : `${theme.ui.card} text-foreground border border-border-light hover:shadow-md hover:-translate-y-1`
+                }`}
               >
-                
-                {plan.isRecommended && (
-                  <div className="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-4 py-1 tracking-widest uppercase">
-                    Recommended
+                {/* Badge */}
+                <div className="absolute top-6 right-6">
+                  <span className={`text-[9px] font-bold tracking-widest px-2.5 py-1 rounded-full ${
+                    plan.isDark ? "bg-white/10 text-white" : "bg-neutral text-tertiary border border-border-light"
+                  }`}>
+                    {plan.badge}
+                  </span>
+                </div>
+
+                {/* Icon */}
+                <div className={`mb-6 ${plan.isDark ? "text-tertiary" : "text-secondary"}`}>
+                  <div className="w-10 h-10 flex items-center justify-center">
+                    {plan.icon}
                   </div>
-                )}
+                </div>
 
-                <div className="mb-8">
-                  <h3 className={`text-2xl font-bold mb-1 ${plan.isDark ? "text-white" : theme.text.brand}`}>
-                    {plan.name.toUpperCase()}
+                {/* Header */}
+                <div className="mb-6">
+                  <h3 className={`text-[22px] md:text-[24px] font-bold tracking-tight mb-1 uppercase ${
+                    plan.isDark ? "text-white" : theme.text.brand
+                  }`}>
+                    {plan.name}
                   </h3>
+                  <div className="flex items-baseline">
+                    <span className="text-[36px] md:text-[40px] font-bold tracking-tighter">€{plan.price}</span>
+                    <span className="text-sm md:text-base ml-1 opacity-60 font-medium uppercase">/mo</span>
+                  </div>
+                </div>
 
-                  <p className={`text-sm  ${plan.isDark ? "text-slate-300" : "text-secondary"}`}>
-                    {plan.subtitle}
+                {/* Description */}
+                <div className="mb-6">
+                  <p className={`text-[12px] md:text-[13px] font-bold uppercase tracking-widest mb-2 ${
+                    plan.isDark ? "text-tertiary" : "text-primary"
+                  }`}>
+                    Target & Goal:
+                  </p>
+                  <p className={`text-[14px] leading-relaxed italic font-medium min-h-10 ${
+                    plan.isDark ? "text-white/70" : theme.text.muted
+                  }`}>
+                    {plan.desc}
                   </p>
                 </div>
 
-                <div className="mb-8 border-b border-slate-100/20 pb-8">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold">€{plan.price}</span>
-                    <span className="text-sm text-secondary">/ MONTH</span>
-                  </div>
-                </div>
-
-                <ul className="space-y-4 mb-12 grow">
-                  {plan.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="flex items-center gap-3">
+                {/* Features - grow class pushes the button to the bottom */}
+                <ul className="space-y-4 mb-10 grow">
+                  {plan.features.map((feat, fIdx) => (
+                    <li key={fIdx} className="flex gap-3 items-start">
                       {plan.isDark && fIdx === 0 ? (
-                        <Zap className="w-4 h-4 text-white fill-white" />
+                        <Zap className="w-4 h-4 mt-0.5 shrink-0 text-tertiary fill-tertiary" />
                       ) : (
-                        <Check className={`w-4 h-4 ${plan.isDark ? "text-white" : "text-primary"}`} />
+                        <CheckCircle2 className={`w-4 h-4 mt-0.5 shrink-0 stroke-[2px] ${
+                          plan.isDark ? "text-tertiary" : "text-secondary"
+                        }`} />
                       )}
-                      
-                      {/* Updated text logic for the first point */}
-                      <span 
-                        className={`text-md ${
-                          fIdx === 0 
-                            ? (plan.isDark ? "text-white font-semibold" : "text-slate-950 font-bold") 
-                            : (plan.isDark ? "text-slate-300" : "text-slate-600")
-                        }`}
-                      >
-                        {feature}
+                      <span className={`text-[14px] md:text-[15px] leading-snug ${
+                        plan.isDark ? "text-white/90" : theme.text.main
+                      }`}>
+                        {feat}
                       </span>
                     </li>
                   ))}
                 </ul>
 
-                <button
-                  className={`w-full py-4 text-sm font-bold tracking-widest transition-all ${
-                    plan.isDark
-                      ? "bg-white text-primary group-hover:bg-slate-100"
-                      : "bg-primary text-white group-hover:bg-slate-800"
-                  }`}
-                >
-                  {plan.buttonText}
+                {/* Button stays at bottom */}
+                <button className={`w-full py-4 text-[12px] md:text-[13px] font-bold uppercase tracking-widest rounded-brand transition-all active:scale-[0.97] mt-auto ${
+                  plan.isDark ? "bg-tertiary text-white hover:brightness-110 shadow-lg shadow-tertiary/20" : `${theme.buttons.primary}`
+                }`}>
+                  Select {plan.name}
                 </button>
-
               </div>
-
             </FadeItem>
           ))}
         </FadeInStagger>
@@ -155,4 +193,3 @@ export default function PricingSection() {
     </section>
   );
 }
-
