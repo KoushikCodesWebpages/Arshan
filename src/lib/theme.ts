@@ -26,7 +26,7 @@ export const theme = {
 
   // TYPOGRAPHY
   text: {
-    brand: "text-primary font-bold",
+    brand: "text-primary",
     main: "text-text-main",
     muted: "text-secondary font-medium",
     danger: "text-danger",

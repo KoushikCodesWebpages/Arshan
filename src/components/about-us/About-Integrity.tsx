@@ -20,15 +20,15 @@ export default function AboutIntegrity() {
             <div className="space-y-6">
               <FadeItem>
                 <div className="flex items-center gap-4">
-                  <div className="h-4 w-0.5 bg-tertiary" />
-                  <span className="uppercase tracking-[0.3em] text-[10px] font-bold text-tertiary">
+                 
+                  <span className={`uppercase tracking-[0.2em] text-[10px] md:text-[12px] font-bold ${theme.brand.accent} border-l-2 border-tertiary pl-3`}>
                     Established 2024
                   </span>
                 </div>
               </FadeItem>
               
               <FadeItem>
-                <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+                <h2 className="text-5xl md:text-7xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
                   Architects of <br />
                   Business <br />
                   Integrity.
@@ -36,7 +36,7 @@ export default function AboutIntegrity() {
               </FadeItem>
               
               <FadeItem>
-                <p className="text-lg lg:text-xl leading-relaxed max-w-xl text-slate-300 font-medium">
+                <p className={`text-base md:text-lg leading-relaxed text-slate-300 w-full md:w-[90%] mb-8 md:mb-10`}>
                   We combine traditional fiscal discipline with modern 
                   technological agility to build sustainable corporate legacies 
                   across the DACH region and beyond.

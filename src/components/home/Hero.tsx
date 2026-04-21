@@ -10,7 +10,7 @@ import home1 from '../../../public/home1.svg'
 export default function Hero() {
   return (
     /* OUTER WRAPPER: Fixed background, sits directly on body. */
-    <section className="relative w-full border-b border-gray-100 overflow-hidden font-sans">
+    <section className="relative w-full border-b border-gray-100 overflow-hidden ">
       
       {/* INNER CONTAINER: 
           - lg:grid-cols-12: Using a 12-column grid for better control.
@@ -18,28 +18,28 @@ export default function Hero() {
           - px-12 md:px-28: Keeping your preferred wide horizontal gutter.
       */}
       <div className="w-full mx-auto px-6 md:px-28 pt-12 pb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
           
           {/* Content Column: Spans 7 out of 12 columns to allow the title to expand */}
           <FadeInStagger className="space-y-8 lg:col-span-7"> 
             <div className="space-y-5">
               {/* Refined Gold Label spacing */}
               <FadeItem>
-                <span className="text-[12px] font-bold tracking-[0.2em] text-tertiary uppercase mb-4 block">
+                <span className={`uppercase tracking-[0.2em] text-[10px] md:text-[12px] font-bold ${theme.brand.accent} border-l-2 border-tertiary pl-3`}>
                   Arshan Business Services
                 </span>
               </FadeItem>
 
               {/* Header: Removed <br /> so it fills the expanded 7-column width naturally */}
               <FadeItem>
-                <h1 className={`${theme.text.brand} text-4xl md:text-5xl tracking-tighter leading-[1.1] text-primary`}>
+                <h1 className={`text-4xl md:text-7xl font-bold leading-[1.1] md:leading-[1.05] tracking-tight ${theme.text.brand} mb-6 md:mb-8`}>
                   Integrated Finance, Marketing, and HR Solutions for SMBs
                 </h1>
               </FadeItem>
 
               {/* Muted body text: Fixed with max-w-xl to keep it at a normal, readable size */}
               <FadeItem>
-                <p className="text-secondary text-[18px] leading-relaxed font-medium max-w-xl">
+                <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[90%] mb-8 md:mb-10`}>
                   Empower your small-to-medium business with precision-
                   engineered operational support. We bridge the gap between
                   strategic vision and execution through expert financial

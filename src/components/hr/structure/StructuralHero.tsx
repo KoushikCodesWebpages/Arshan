@@ -16,8 +16,8 @@ export default function StructuralHero() {
           
           {/* LEFT CONTENT BLOCK */}
           <FadeItem className="flex flex-col items-start justify-center order-2 lg:order-1">
-            <div className="bg-[#E0E7FF] px-3 py-1 rounded-xs mb-6 md:mb-8">
-              <span className="text-[10px] md:text-[12px] font-bold uppercase tracking-widest text-[#4353a3]">
+            <div className=" px-3 py-1 rounded-xs mb-6 md:mb-8">
+              <span className={`uppercase tracking-[0.2em] text-[10px] md:text-[12px] font-bold ${theme.brand.accent} border-l-2 border-tertiary pl-3`}>
                 Institutional Strategy
               </span>
             </div>

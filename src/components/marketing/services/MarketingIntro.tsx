@@ -22,11 +22,11 @@ export default function MarketingIntro() {
               </FadeItem>
               
               <FadeItem className="order-1">
-                <h2 className={`text-4xl md:text-6xl lg:text-8xl font-bold leading-[1.05] tracking-tight ${theme.text.brand}`}>
+                <h1 className={`text-4xl md:text-7xl font-bold leading-[1.1] md:leading-[1.05] tracking-tight ${theme.text.brand} mb-6 md:mb-8`}>
                   Professional <br className="hidden sm:block" />
                   Social Media <br className="hidden sm:block" />
                   Management.
-                </h2>
+                </h1>
               </FadeItem>
 
               {/* MOBILE IMAGE: High-Contrast Version */}
@@ -50,7 +50,7 @@ export default function MarketingIntro() {
               </FadeItem>
 
               <FadeItem className="order-3">
-                <p className={`text-base md:text-lg lg:text-xl leading-relaxed max-w-xl text-secondary mx-auto lg:mx-0`}>
+                <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[90%]`}>
                   We manage your brand&apos;s digital narrative through consistent 
                   posting, strategic scheduling, and professional account 
                   maintenance. Build authority and scale your influence.

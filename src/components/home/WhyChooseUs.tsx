@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
 
                   <FadeItem>
                     {/* Removed w-[90%] fixed width for better mobile flow; mx-auto centers it */}
-                    <p className={`text-secondary text-[16px] md:text-[18px] font-medium leading-snug lg:w-[90%] mx-auto lg:mx-0`}>
+                    <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[90%] mb-8 md:mb-10`}>
                         We specialize in building the high-performance foundations that
                         propel newly established SMBs. Our methodology combines modern
                         regulatory agility with global talent advantages to scale your
