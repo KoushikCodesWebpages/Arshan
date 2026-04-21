@@ -50,7 +50,7 @@ export default function Navbar() {
               >
                 {link.name}
                 {isActive && (
-                  <span className="absolute bottom-5 left-0 w-full h-0.5 bg-primary" />
+                  <span className="absolute bottom-5 left-0 w-full h-0.5 bg-tertiary" />
                 )}
               </Link>
             );

@@ -12,13 +12,13 @@ const executives = [
   {
     name: "Arjhun Mohanarangam",
     role: "Founder & CEO",
-    bio: "Economic structuralist with 30 years of corporate governance experience in Germany and beyond.",
+  
     image: arjhun
   },
   {
     name: "Anupam Devikalavathy",
     role: "Finance Operations",
-    bio: "Expert in cultural engineering and brand psychology for the modern workforce.",
+
     image: anupam,
   },
 ];
@@ -75,9 +75,7 @@ export default function ExecutiveCouncil() {
               {member.role}
             </p>
           </div>
-          <p className={`text-[15px] leading-relaxed pt-3 ${theme.text.muted} font-medium opacity-90`}>
-            {member.bio}
-          </p>
+
         </div>
       </FadeItem>
     </FadeInStagger>
