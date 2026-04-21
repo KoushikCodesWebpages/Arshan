@@ -16,8 +16,6 @@ export default function GlobalHero({ onPricingClick }: GlobalArchitectureHeroPro
   const router = useRouter();
 
   const handleNavigation = () => {
-    // If we're already on the HR page, we scroll. 
-    // If not, we navigate to the page with the hash.
     if (onPricingClick) {
       onPricingClick();
     } else {
@@ -26,22 +24,25 @@ export default function GlobalHero({ onPricingClick }: GlobalArchitectureHeroPro
   };
 
   return (
-    <section className="relative w-full py-20 lg:py-24 bg-white overflow-hidden">
-      <div className="w-full mx-auto px-28"> 
+    /* py-16 (Mobile) -> lg:py-24 (PC) */
+    <section className="relative w-full py-16 lg:py-24 bg-white overflow-hidden">
+      {/* px-6 (Mobile) -> md:px-28 (PC) */}
+      <div className="w-full mx-auto px-6 md:px-28"> 
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch min-h-[500px] lg:min-h-[600px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* LEFT CONTENT */}
-          <div className="lg:col-span-6 space-y-8 flex flex-col justify-center">
+          <div className="lg:col-span-6 space-y-8 flex flex-col justify-center order-2 lg:order-1">
             <FadeInStagger className="space-y-6">
               <FadeItem >
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-tertiary">
+                <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-tertiary">
                   Sovereign Human Capital
                 </span>
               </FadeItem>
 
               <FadeItem >
-                <h1 className="flex flex-col text-5xl md:text-6xl font-bold tracking-tight leading-[1.1]">
+                {/* Scaled from text-4xl on mobile to text-6xl+ on desktop */}
+                <h1 className="flex flex-col text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
                   <span className={theme.text.brand}>Global Human</span>
                   <span className="text-slate-400">Capital</span>
                   <span className="text-slate-400">Architecture.</span>
@@ -49,7 +50,7 @@ export default function GlobalHero({ onPricingClick }: GlobalArchitectureHeroPro
               </FadeItem>
 
               <FadeItem >
-                <p className={`text-base md:text-lg leading-relaxed max-w-xl ${theme.text.muted}`}>
+                <p className={`text-sm md:text-lg leading-relaxed max-w-xl ${theme.text.muted}`}>
                   Engineering cross-border talent ecosystems. From the innovation hubs 
                   of the Subcontinent to the precision-driven industries of the Rhine, 
                   we orchestrate your global workforce with absolute cultural and 
@@ -57,10 +58,10 @@ export default function GlobalHero({ onPricingClick }: GlobalArchitectureHeroPro
                 </p>
               </FadeItem>
 
-              <FadeItem  className="pt-4">
+              <FadeItem className="pt-4">
                 <button
                   onClick={handleNavigation}
-                  className={`${theme.buttons.base} ${theme.buttons.primary} px-10 py-5 text-sm shadow-xl hover:brightness-110 active:scale-95 transition-all`}
+                  className={`${theme.buttons.base} ${theme.buttons.primary} w-full sm:w-auto px-10 py-5 text-sm shadow-xl hover:brightness-110 active:scale-95 transition-all`}
                 >
                   View HR Pricing
                 </button>
@@ -69,18 +70,17 @@ export default function GlobalHero({ onPricingClick }: GlobalArchitectureHeroPro
           </div>
 
           {/* RIGHT IMAGE WITH ANIMATION */}
-          <div className="lg:col-span-6 relative h-full group">
+          <div className="lg:col-span-6 relative h-full group order-1 lg:order-2">
             
-            <FadeItem  className="h-full">
-              {/* Image Reveal Animation */}
+            <FadeItem className="h-full">
+              {/* min-h-[350px] on mobile to maintain vertical impact */}
               <motion.div 
                 initial={{ scale: 1.1, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl"
+                className="relative w-full min-h-[350px] md:min-h-[500px] lg:min-h-[600px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl"
               >
-                {/* Active Hover Zoom */}
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 1, ease: "easeOut" }}
@@ -95,25 +95,25 @@ export default function GlobalHero({ onPricingClick }: GlobalArchitectureHeroPro
                   />
                 </motion.div>
 
-                {/* Arshan Brand Tint Overlay */}
                 <div className="absolute inset-0 bg-blue-950/10 mix-blend-multiply pointer-events-none" />
               </motion.div>
             </FadeItem>
 
-            {/* Overlapping Quote Card */}
+            {/* Overlapping Quote Card - Responsive Positioning */}
             <motion.div 
-              initial={{ x: 40, opacity: 0 }}
+              initial={{ x: 20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
-              className="absolute -bottom-8 -left-6 md:-left-12 max-w-[280px] md:max-w-[320px] bg-white rounded-brand p-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border-l-4 border-tertiary z-20"
+              /* Adjusted positioning: -bottom-4 (Mobile) vs -bottom-8 (PC) */
+              className="absolute -bottom-4 -right-4 md:-bottom-8 md:-left-12 max-w-[240px] md:max-w-[320px] bg-white rounded-brand p-6 md:p-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border-l-4 border-tertiary z-20"
             >
-              <p className={`text-sm md:text-base font-bold italic leading-relaxed ${theme.text.brand}`}>
+              <p className={`text-xs md:text-base font-bold italic leading-relaxed ${theme.text.brand}`}>
                 "We unify the depth of local expertise with the height of global standards."
               </p>
               <div className="mt-4 flex items-center gap-2">
                 <div className="w-4 h-px bg-slate-300" />
-                <span className="text-[9px] font-bold uppercase tracking-widest text-slate-400">
+                <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-widest text-slate-400">
                   ARSHAN
                 </span>
               </div>

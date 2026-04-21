@@ -53,87 +53,80 @@ export default function PlanSelectionModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed mt-10 inset-0 z-50 flex items-center justify-center p-6 bg-primary/20 backdrop-blur-md animate-in fade-in duration-500">
+    /* 1. OVERLAY: items-start + py-10 ensures the modal doesn't get cut off at the top. overflow-y-auto enables the scroll. */
+    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 md:p-10 bg-primary/20 backdrop-blur-md overflow-y-auto animate-in fade-in duration-500">
       
-      {/* Main Modal Container */}
-      <div className={`${theme.ui.modal} w-full max-w-7xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] animate-in fade-in zoom-in-95 slide-in-from-bottom-12 duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative`}>
+      {/* 2. MODAL: Removed overflow-hidden so the internal grid doesn't get clipped. */}
+      <div className={`${theme.ui.modal} w-full max-w-7xl my-auto shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] animate-in fade-in zoom-in-95 slide-in-from-bottom-12 duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative flex flex-col bg-white`}>
         
-        {/* Close Button */}
+        {/* Close Button - Stays sticky/fixed relative to the modal top */}
         <button 
           onClick={onClose} 
-          className="absolute top-6 right-8 p-2 hover:bg-slate-100 rounded-full transition-all duration-300 hover:rotate-90 z-20 animate-in fade-in zoom-in delay-500"
+          className="absolute top-4 right-4 md:top-6 md:right-8 p-3 bg-slate-100/80 backdrop-blur-sm md:bg-transparent hover:bg-slate-100 rounded-full transition-all duration-300 z-50"
         >
-          <X className="w-5 h-5 text-slate-400" />
+          <X className="w-5 h-5 text-slate-500" />
         </button>
 
-        <div className="px-12 md:px-20 py-10 md:py-12">
+        <div className="px-6 md:px-20 py-12 md:py-16">
           
-          {/* Header Animation */}
-          <div className="text-center mb-10 animate-in fade-in slide-in-from-top-4 duration-1000 delay-200">
-            <span className={`uppercase tracking-[0.2em] text-[11px] font-bold ${theme.brand.accent}`}>
+          {/* Header */}
+          <div className="text-center mb-12">
+            <span className={`uppercase tracking-[0.2em] text-[10px] md:text-[11px] font-bold ${theme.brand.accent}`}>
               Service Management
             </span>
-            <h2 className={`text-3xl md:text-4
-              xl font-bold mt-2 ${theme.text.brand}`}>
+            <h2 className={`text-3xl md:text-5xl font-bold mt-2 ${theme.text.brand} tracking-tight`}>
               Change Your Plan
             </h2>
-
-            <p className={`mt-2 text-sm lg:text-lg leading-relaxed  text-secondary`}>
-Select the plan that best fits your current brand requirements and future ambitions.
+            <p className={`mt-3 text-sm md:text-lg leading-relaxed text-secondary max-w-2xl mx-auto`}>
+              Select the plan that best fits your current brand requirements and future ambitions.
             </p>
-            
           </div>
 
-          {/* Plan Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          {/* Plan Grid: Vertical on mobile, Horizontal on LG */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
             {plans.map((plan, index) => {
               const isCurrent = currentPlanName === plan.name;
 
               return (
                 <div 
                   key={plan.name}
-                  style={{ animationDelay: `${400 + index * 100}ms` }}
+                  style={{ animationDelay: `${200 + index * 100}ms` }}
                   className={`
                     relative p-8 rounded-2xl flex flex-col border transition-all duration-500 group
                     animate-in fade-in zoom-in-95 slide-in-from-bottom-8 fill-mode-both
                     ${plan.featured 
-                      ? "bg-[#031933] text-white border-primary/50 shadow-2xl lg:scale-105 z-10 py-10 hover:scale-[1.08] hover:border-primary" 
-                      : "bg-white text-slate-900 border-slate-100 hover:border-primary/30 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-2"
+                      ? "bg-[#031933] text-white border-primary/50 shadow-2xl py-12 lg:scale-105 z-10" 
+                      : "bg-white text-slate-900 border-slate-100 shadow-sm"
                     }
                   `}
                 >
-                  {/* Internal Glow Effect on Hover */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-[radial-gradient(circle_at_top,rgba(164,134,38,0.05),transparent_70%)]" />
-
                   {plan.featured && (
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#A48626] text-[8px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg z-20">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-tertiary text-[9px] font-bold uppercase tracking-widest px-5 py-2 rounded-full shadow-lg z-20 whitespace-nowrap text-white">
                       Most Popular
                     </div>
                   )}
 
-                  {/* Header Stacked vertically */}
-                  <div className="flex flex-col gap-4 mb-6 relative z-10">
+                  <div className="flex flex-col gap-4 mb-8 relative z-10">
                     <div>
-                      <h4 className="text-xl uppercase font-bold group-hover:text-primary transition-colors duration-300">
+                      <h4 className="text-xl uppercase font-bold tracking-tight">
                         {plan.name}
                       </h4>
-                      <p className={`text-[13px] ${plan.featured ? "text-slate-400" : "text-slate-500"}`}>
+                      <p className={`text-[13px] mt-1 ${plan.featured ? "text-slate-400" : "text-slate-500"}`}>
                         {plan.desc}
                       </p>
                     </div>
                     
-                    {/* Price moved below name/description */}
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-bold">€{plan.price}</span>
+                      <span className="text-4xl font-bold">€{plan.price}</span>
                       <span className="text-[12px] opacity-60 font-medium tracking-wider uppercase">/ month</span>
                     </div>
                   </div>
 
-                  <ul className="space-y-3 mb-8 flex-1 relative z-10">
-                    {plan.features.map((feat, i) => (
-                      <li key={feat} className="flex items-center gap-2 text-[14px] group-hover:translate-x-1 transition-transform duration-300" style={{ transitionDelay: `${i * 40}ms` }}>
-                        <CheckCircle2 className={`w-3.5 h-3.5 ${plan.featured ? "text-blue-400" : "text-primary "}`} />
-                        {feat}
+                  <ul className="space-y-4 mb-10 flex-1 relative z-10">
+                    {plan.features.map((feat) => (
+                      <li key={feat} className="flex items-start gap-3 text-[14px]">
+                        <CheckCircle2 className={`w-4 h-4 mt-0.5 shrink-0 ${plan.featured ? "text-blue-400" : "text-primary "}`} />
+                        <span className="leading-snug">{feat}</span>
                       </li>
                     ))}
                   </ul>
@@ -142,11 +135,11 @@ Select the plan that best fits your current brand requirements and future ambiti
                     onClick={() => onSelectPlan(plan)}
                     disabled={isCurrent}
                     className={`
-                      relative z-10 w-full py-3 rounded-sm font-bold text-sm uppercase transition-all duration-300 active:scale-95
+                      relative z-10 w-full py-4 rounded-sm font-bold text-xs uppercase tracking-widest transition-all duration-300 active:scale-95
                       ${isCurrent 
                         ? "bg-slate-100 text-slate-400 cursor-not-allowed" 
                         : plan.featured 
-                          ? "bg-white text-primary hover:bg-[#FCD34D] hover:text-primary shadow-xl" 
+                          ? "bg-white text-primary hover:bg-tertiary shadow-xl" 
                           : "border border-primary/20 text-primary hover:bg-primary hover:text-white"
                       }
                     `}
@@ -160,9 +153,9 @@ Select the plan that best fits your current brand requirements and future ambiti
         </div>
 
         {/* Footer Bar */}
-        <div className="bg-slate-50/50 border-t border-slate-100 px-12 py-5 flex justify-between items-center text-[11px] text-slate-400 font-bold tracking-widest uppercase animate-in slide-in-from-bottom-full duration-1000 delay-700 fill-mode-both">
+        <div className="bg-slate-50/80 backdrop-blur-sm border-t border-slate-100 px-6 md:px-12 py-5 flex justify-center items-center text-[10px] md:text-[11px] text-slate-400 font-bold tracking-widest uppercase shrink-0">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-3.5 h-3.5" />
+            <ShieldCheck className="w-4 h-4" />
             Changes effective next billing cycle
           </div>
         </div>

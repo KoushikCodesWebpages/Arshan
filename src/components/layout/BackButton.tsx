@@ -14,6 +14,7 @@ export default function GlobalBackButton() {
     "/hr",
     "/finance",
     "/about-us",
+    "contact-us"
   ];
   const currentPath = pathname.replace(/\/$/, "") || "/";
 

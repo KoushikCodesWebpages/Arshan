@@ -35,12 +35,12 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-50 border-t border-gray-200 mt-auto font-sans">
-      {/* px-6 (Mobile) -> md:px-28 (PC) */}
-      <div className="w-full mx-auto px-6 md:px-28 pt-16 md:pt-20 pb-12">
+    
+      <div className="w-full mx-auto px-6 md:px-28 pt-8 md:pt-8 pb-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16 md:mb-24">
+        {/* <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16 md:mb-24">
           
-          {/* Brand Column: Centered on mobile */}
+        
           <div className="md:col-span-5 space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
             <Link href="/" className="flex items-center">
               <Image 
@@ -49,7 +49,7 @@ export default function Footer() {
                 width={160} 
                 height={60}
                 priority
-                /* Fixed h-10; h-1 was too small to see */
+              
                 className="h-10 w-auto object-contain transition-opacity hover:opacity-80" 
               />
             </Link>
@@ -58,7 +58,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Links Columns: 2 cols on small mobile, 3 on tablet+ */}
+       
           <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-y-10 gap-x-4">
             {footerSections.map((section) => (
               <div key={section.title} className="text-left">
@@ -95,19 +95,19 @@ export default function Footer() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Bar: Center text on mobile */}
-        <div className="border-t border-gray-100 pt-10 flex flex-col md:flex-row justify-between items-center gap-8 text-center">
+        <div className="border-t border-gray-100 pt-2 flex flex-col md:flex-row justify-between items-center gap-8 text-center">
           <p className="text-[10px] md:text-[12px] tracking-[0.15em] text-text-muted uppercase font-semibold">
-            © {currentYear} ARSHAN CONSULTING GROUP. ALL RIGHTS RESERVED.
+            © {currentYear} ARSHAN UG. ALL RIGHTS RESERVED.
           </p>
           
           <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
             {[
-              { label: "TERMS", id: "terms" },
-              { label: "POLICY", id: "privacy" },
-              { label: "COMPLIANCE", id: "impressum" }
+              { label: "TERMS AND CONDITIONS", id: "terms" },
+              { label: "PRIVACY POLICY", id: "privacy" },
+              { label: "IMPRESSUM", id: "impressum" }
             ].map((item) => (
               <a 
                 key={item.label} 

@@ -69,7 +69,7 @@ const tiers: PricingTier[] = [
 export default function PricingGrid() {
   const router = useRouter();
 
-  const handlePlanSelection = (tier: PricingTier) => {
+  const handlePlanSelection = (tier: any) => {
     /** * FIX: Destructure 'icon' out of the object. 
      * React components (JSX) cannot be stringified into localStorage 
      * and cause the 'Cyclic object value' error.
@@ -84,28 +84,32 @@ export default function PricingGrid() {
   };
 
   return (
-    <section  className="py-20 bg-background">
-      {/* 20% Smaller Look: max-w-[1120px] */}
-      <div className="w-full mx-auto px-28">
+    <section className="py-16 md:py-20 bg-background overflow-hidden">
+      {/* MOBILE RESPONSIVE FIX:
+          Switched px-28 to px-6 for mobile. 
+          md:px-28 restores your original desktop design perfectly.
+          max-w-[1120px] maintains that "20% smaller" aesthetic on large screens.
+      */}
+      <div className="w-full w-full mx-auto px-6 md:px-28">
         
-        <FadeInStagger className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-          {tiers.map((tier, idx) => (
+        <FadeInStagger className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-stretch">
+          {tiers.map((tier) => (
             <FadeItem 
               key={tier.id} 
               className="h-full"
             >
               <div
                 onClick={() => handlePlanSelection(tier)}
-                className={`relative flex flex-col h-full p-8 rounded-brand transition-all duration-500 cursor-pointer group shadow-sm ${
+                className={`relative flex flex-col h-full p-8 md:p-10 rounded-brand transition-all duration-500 cursor-pointer group shadow-sm ${
                   tier.isDark
                     ? `${theme.brand.primary} text-white z-10 shadow-2xl`
-                    : `${theme.ui.card} text-foreground border-border-light hover:shadow-md hover:-translate-y-1`
+                    : `${theme.ui.card} text-foreground border border-border-light hover:shadow-md hover:-translate-y-1`
                 }`}
               >
                 {/* Badge Tag */}
                 <div className="absolute top-6 right-6">
                   <span
-                    className={`text-[9px] font-bold tracking-widest px-2 py-1 rounded-brand ${
+                    className={`text-[9px] font-bold tracking-widest px-2.5 py-1 rounded-full ${
                       tier.isDark
                         ? "bg-white/10 text-white"
                         : "bg-neutral text-tertiary border border-border-light"
@@ -117,7 +121,9 @@ export default function PricingGrid() {
 
                 {/* Brand Icon */}
                 <div className={`mb-6 ${tier.isDark ? "text-tertiary" : "text-secondary"}`}>
-                  {tier.icon}
+                  <div className="w-10 h-10 flex items-center justify-center">
+                    {tier.icon}
+                  </div>
                 </div>
 
                 {/* Title & Price Block */}
@@ -127,7 +133,7 @@ export default function PricingGrid() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className={`text-[24px] font-bold tracking-tight mb-1 ${
+                    className={`text-[22px] md:text-[24px] font-bold tracking-tight mb-1 ${
                       tier.isDark ? "text-white" : theme.text.brand
                     }`}
                   >
@@ -141,16 +147,16 @@ export default function PricingGrid() {
                     transition={{ delay: 0.2 }}
                     className="flex items-baseline"
                   >
-                    <span className="text-[40px] font-bold tracking-tighter">
+                    <span className="text-[36px] md:text-[40px] font-bold tracking-tighter">
                       €{tier.price}
                     </span>
-                    <span className="text-base ml-1 opacity-60 font-medium">/mo</span>
+                    <span className="text-sm md:text-base ml-1 opacity-60 font-medium uppercase">/mo</span>
                   </motion.div>
                 </div>
 
                 {/* Role Capability Header */}
                 <div className="mb-6">
-                  <p className={`text-[16px] font-bold tracking-widest mb-2 ${
+                  <p className={`text-[12px] md:text-[13px] font-bold uppercase tracking-widest mb-2 ${
                       tier.isDark ? "text-tertiary" : "text-primary"
                     }`}
                   >
@@ -180,7 +186,7 @@ export default function PricingGrid() {
                           tier.isDark ? "text-tertiary" : "text-secondary"
                         }`}
                       />
-                      <span className={`text-[15px] leading-snug ${
+                      <span className={`text-[14px] md:text-[15px] leading-snug ${
                           tier.isDark ? "text-white/90" : theme.text.main
                         }`}
                       >
@@ -192,7 +198,7 @@ export default function PricingGrid() {
 
                 {/* CTA Button using theme variables */}
                 <button
-                  className={`w-full py-4 text-[13px] font-bold uppercase tracking-widest rounded-brand transition-all active:scale-[0.97] ${
+                  className={`w-full py-4 text-[12px] md:text-[13px] font-bold uppercase tracking-widest rounded-brand transition-all active:scale-[0.97] ${
                     tier.isDark
                       ? "bg-tertiary text-white hover:brightness-110 shadow-lg shadow-tertiary/20"
                       : `${theme.buttons.primary}`
