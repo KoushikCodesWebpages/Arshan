@@ -3,47 +3,52 @@
 import Link from "next/link";
 import { theme } from "@/lib/theme";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
-import { div } from "framer-motion/client";
 
 export default function LegacyCTA() {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6 lg:px-28">
+    /* Responsive vertical padding: py-16 on mobile, py-24 on desktop */
+    <section className="py-16 md:py-24 bg-background overflow-hidden">
+      <div className="w-full mx-auto px-6 md:px-28">
         <FadeInStagger>
           <FadeItem>
-            {/* The Arshan Legacy Card */}
-            <div className="relative overflow-hidden rounded-[2.5rem] bg-primary px-8 py-20 md:py-20 text-center shadow-2xl">
+            {/* Responsive Rounded Corners: rounded-3xl on mobile, rounded-[2.5rem] on desktop.
+                Responsive Card Padding: px-6 py-16 on mobile, px-8 py-20 on desktop.
+            */}
+            <div className="relative overflow-hidden rounded-3xl md:rounded-[2.5rem] bg-primary px-6 md:px-8 py-16 md:py-20 text-center shadow-2xl">
               
-              {/* Subtle Animated Background Glow */}
-              <div className="absolute -top-24 -right-24 w-96 h-96 bg-tertiary/10 blur-[100px] rounded-full animate-pulse" />
-              <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white/5 blur-[100px] rounded-full" />
+              {/* Subtle Animated Background Glows */}
+              <div className="absolute -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 blur-[80px] md:blur-[100px] rounded-full animate-pulse" />
+              <div className="absolute -bottom-24 -left-24 w-64 md:w-96 h-64 md:h-96 bg-white/5 blur-[80px] md:blur-[100px] rounded-full" />
 
-              <div className="relative z-10 max-w-3xl mx-auto space-y-10">
-                <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight">
+              <div className="relative z-10 max-w-3xl mx-auto space-y-8 md:space-y-10">
+                {/* Heading scales from text-3xl to text-6xl */}
+                <h2 className="text-3xl md:text-6xl font-bold tracking-tight text-white leading-[1.2] md:leading-tight">
                   Ready to build <br className="hidden md:block" />
                   your legacy?
                 </h2>
                 
-                <p className="text-lg md:text-xl text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+                {/* Paragraph scales from text-base to text-xl */}
+                <p className="text-base md:text-xl text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
                   Schedule a strategy session with our executive council to 
                   discuss your business&apos;s next chapter.
                 </p>
 
-                <div className="pt-4">
+                <div className="pt-4 w-full flex justify-center">
                   <Link 
-                  href="/contact-us"
-                  className="bg-neutral text-primary hover:bg-white px-12 py-5 rounded-xl font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-xl hover:shadow-white/10 active:scale-95">
+                    href="/contact-us"
+                    className="w-full sm:w-auto bg-neutral text-primary hover:bg-white px-10 md:px-12 py-4 md:py-5 rounded-xl font-bold text-[12px] md:text-sm uppercase tracking-widest transition-all duration-300 shadow-xl hover:shadow-white/10 active:scale-95"
+                  >
                     Book a Strategy Session
                   </Link>
                 </div>
               </div>
 
-              {/* Decorative "Glass" Border Layer */}
-              <div className="absolute inset-0 rounded-[2.5rem] border border-white/10 pointer-events-none" />
+              {/* Decorative "Glass" Border Layer - Matches parent rounding */}
+              <div className="absolute inset-0 rounded-3xl md:rounded-[2.5rem] border border-white/10 pointer-events-none" />
             </div>
           </FadeItem>
         </FadeInStagger>
       </div>
     </section>
   );
-}   
+}

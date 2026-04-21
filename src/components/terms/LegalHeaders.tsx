@@ -36,7 +36,7 @@ export default function LegalHeader() {
 
           {/* RIGHT CARD - Resized for more presence */}
           <FadeItem className="lg:mb-2">
-            <div className="bg-[#F8FAFC] rounded-2xl p-10 min-w-[240px] md:min-w-[280px] flex flex-col items-start text-left shadow-sm border border-slate-100/50">
+            <div className="bg-[#F8FAFC] rounded-2xl p-10 min-w-60 md:min-w-70 flex flex-col items-start text-left shadow-sm border border-slate-100/50">
               
               {/* Larger Icon with specific brand coloring */}
               <Gavel 

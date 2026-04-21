@@ -22,7 +22,7 @@ export default function ContentArchitecture() {
                 <span className="text-[120px] font-bold text-slate-200/50 leading-none">
                   02
                 </span>
-                <hr className="absolute top-1/2 left-[180px] right-0 border-slate-200" />
+                <hr className="absolute top-1/2 left-45 right-0 border-slate-200" />
               </div>
 
               <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${theme.text.brand}`}>
@@ -64,7 +64,7 @@ export default function ContentArchitecture() {
 
           {/* Left Image Block */}
           <FadeItem className="flex-1 w-full">
-            <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-2xl group">
+            <div className="relative w-full aspect-4/3 rounded-sm overflow-hidden shadow-2xl group">
               <Image
                 src={blueprint}
                 alt="Architectural blueprints and notebook on a desk"

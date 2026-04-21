@@ -44,7 +44,7 @@ export default function StructuralHero() {
           </FadeItem>
 
           {/* RIGHT IMAGE BLOCK */}
-          <FadeItem className="relative w-full min-h-[300px] md:min-h-[450px] lg:min-h-full order-1 lg:order-2">
+          <FadeItem className="relative w-full min-h-75 md:min-h-112.5 lg:min-h-full order-1 lg:order-2">
             <div className="relative h-full w-full overflow-hidden rounded-3xl md:rounded-brand shadow-2xl border border-border-light">
               <Image
                 src={hrstructure1}

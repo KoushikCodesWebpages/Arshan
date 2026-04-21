@@ -79,7 +79,7 @@ export default function GlobalHero({ onPricingClick }: GlobalArchitectureHeroPro
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="relative w-full min-h-[350px] md:min-h-[500px] lg:min-h-[600px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl"
+                className="relative w-full min-h-87.5 md:min-h-125 lg:min-h-150 rounded-4xl md:rounded-[2.5rem] overflow-hidden shadow-2xl"
               >
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
@@ -106,7 +106,7 @@ export default function GlobalHero({ onPricingClick }: GlobalArchitectureHeroPro
               viewport={{ once: true }}
               transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
               /* Adjusted positioning: -bottom-4 (Mobile) vs -bottom-8 (PC) */
-              className="absolute -bottom-4 -right-4 md:-bottom-8 md:-left-12 max-w-[240px] md:max-w-[320px] bg-white rounded-brand p-6 md:p-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border-l-4 border-tertiary z-20"
+              className="absolute -bottom-4 -right-4 md:-bottom-8 md:-left-12 max-w-60 md:max-w-[320px] bg-white rounded-brand p-6 md:p-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border-l-4 border-tertiary z-20"
             >
               <p className={`text-xs md:text-base font-bold italic leading-relaxed ${theme.text.brand}`}>
                 "We unify the depth of local expertise with the height of global standards."

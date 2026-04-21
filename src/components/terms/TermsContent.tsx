@@ -13,24 +13,29 @@ const terms = [
 
 export default function TermsContent() {
   return (
-    <div className="space-y-10">
-      <FadeItem className="flex items-center gap-6 mb-12">
-        <div className="w-1.5 h-10 bg-tertiary rounded-full" />
-        <h2 className={`text-4xl font-bold tracking-tight ${theme.text.brand}`}>
+    <div className="space-y-10 md:space-y-12">
+      {/* Header with Gold Accent */}
+      <FadeItem className="flex items-center gap-4 md:gap-6 mb-8 md:mb-12">
+        <div className="w-1 md:w-1.5 h-8 md:h-10 bg-tertiary rounded-full shrink-0" />
+        <h2 className={`text-2xl md:text-4xl font-bold tracking-tight ${theme.text.brand}`}>
           Terms and Conditions
         </h2>
       </FadeItem>
 
-      {terms.map((item) => (
-        <FadeItem key={item.n} className="space-y-4 max-w-4xl">
-          <h3 className={`text-xl font-bold tracking-tight ${theme.text.brand}`}>
-            {item.n}. {item.t}
-          </h3>
-          <p className={`text-base font-light leading-relaxed ${theme.text.muted}`}>
-            {item.c}
-          </p>
-        </FadeItem>
-      ))}
+      {/* Terms Grid/List */}
+      <div className="space-y-8 md:space-y-10">
+        {terms.map((item) => (
+          <FadeItem key={item.n} className="space-y-3 md:space-y-4 max-w-4xl">
+            <h3 className={`text-lg md:text-xl font-bold tracking-tight ${theme.text.brand}`}>
+              <span className="text-tertiary mr-2">{item.n}.</span>
+              {item.t}
+            </h3>
+            <p className={`text-[14px] md:text-base font-light leading-relaxed ${theme.text.muted}`}>
+              {item.c}
+            </p>
+          </FadeItem>
+        ))}
+      </div>
     </div>
   );
 }

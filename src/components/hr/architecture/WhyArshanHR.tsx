@@ -25,38 +25,40 @@ const values = [
 
 export default function WhyArshanHR() {
   return (
-    <section className="py-24 bg-white">
-      <div className="w-full mx-auto px-28">
+    /* py-16 (Mobile) -> md:py-24 (PC) */
+    <section className="py-16 md:py-24 bg-white overflow-hidden">
+      {/* MOBILE FIX: px-6 for mobile, md:px-28 preserves your original desktop design */}
+      <div className="w-full mx-auto px-6 md:px-28">
         
         {/* Header Section */}
-        <div className="text-center mb-20 space-y-4">
+        <div className="text-center mb-16 md:mb-20 space-y-4">
           <FadeItem>
-            <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${theme.text.brand}`}>
+            <h2 className={`text-3xl md:text-5xl font-bold tracking-tight ${theme.text.brand}`}>
               Why Arshan HR?
             </h2>
           </FadeItem>
           <FadeItem>
-            <p className={`text-base font-medium opacity-60 ${theme.text.muted}`}>
+            <p className={`text-sm md:text-base font-medium opacity-60 ${theme.text.muted}`}>
               The definitive advantage for the global vanguard.
             </p>
           </FadeItem>
         </div>
 
         {/* Values Grid */}
-        <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 lg:gap-16">
           {values.map((item, idx) => (
-            <FadeItem key={idx} className="flex flex-col items-start space-y-6">
+            <FadeItem key={idx} className="flex flex-col items-center md:items-start space-y-6 text-center md:text-left">
               
-              {/* Icon Wrapper: Matches the soft blue rounded box in image */}
-              <div className="w-12 h-12 rounded-xl bg-[#E0E7FF] flex items-center justify-center text-primary shadow-sm">
+              {/* Icon Wrapper */}
+              <div className="w-12 h-12 shrink-0 rounded-xl bg-[#E0E7FF] flex items-center justify-center text-primary shadow-sm">
                 {item.icon}
               </div>
 
               <div className="space-y-4">
-                <h3 className={`text-xl font-bold tracking-tight ${theme.text.brand}`}>
+                <h3 className={`text-lg md:text-xl font-bold tracking-tight ${theme.text.brand}`}>
                   {item.title}
                 </h3>
-                <p className={`text-[14px] leading-relaxed font-medium opacity-70 ${theme.text.muted}`}>
+                <p className={`text-[14px] leading-relaxed font-medium opacity-70 ${theme.text.muted} max-w-sm md:max-w-none`}>
                   {item.desc}
                 </p>
               </div>

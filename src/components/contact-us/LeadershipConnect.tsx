@@ -1,38 +1,40 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { theme } from "@/lib/theme";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
-import { ArrowUpRight } from "lucide-react";
 
 export default function LeadershipConnect() {
   return (
-    <section className="py-10 border-t border-slate-100">
-      <div className="w-full mx-auto px-28">
+    /* py-12 (Mobile) -> py-10 (Desktop) */
+    <section className="py-12 md:py-10 border-t border-slate-100 bg-white overflow-hidden">
+      {/* MOBILE FIX: px-6 for mobile, md:px-28 for your original desktop design */}
+      <div className="w-full mx-auto px-6 md:px-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           
           {/* LEFT: TEXT CONTENT */}
           <div className="lg:col-span-8">
-            <FadeInStagger className="space-y-4">
+            <FadeInStagger className="space-y-4 md:space-y-6">
               <FadeItem>
-                {/* Bumped from 10px to 12px for better readability at px-28 scale */}
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-tertiary">
                   Connect with our leadership
                 </span>
               </FadeItem>
 
               <FadeItem>
-                {/* Main heading scale maintained as it was already quite large, 
-                    but refined leading for the split line */}
-                <h2 className={`text-5xl md:text-5xl font-bold tracking-tight leading-[1.1] w-[70%] ${theme.text.brand}`}>
+                {/* MOBILE: text-3xl, w-full 
+                   DESKTOP: md:text-5xl, md:w-[70%] (preserves original design)
+                */}
+                <h2 className={`text-3xl md:text-5xl font-bold tracking-tight leading-[1.2] md:leading-[1.1] w-full md:w-[70%] ${theme.text.brand}`}>
                   Strategic guidance for your next move.
                 </h2>
               </FadeItem>
 
               <FadeItem>
-                {/* Increased from text-lg/xl to text-xl/2xl */}
-                <p className={`text-md md:text-md w-[80%] leading-relaxed ${theme.text.muted}`}>
+                {/* MOBILE: text-[15px], w-full 
+                   DESKTOP: md:text-md, md:w-[80%]
+                */}
+                <p className={`text-[15px] md:text-md w-full md:w-[80%] leading-relaxed ${theme.text.muted}`}>
                   Skip the queue. Connect directly with our strategic partners to 
                   discuss high-level growth operations across the globe.
                 </p>

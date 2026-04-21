@@ -21,18 +21,18 @@ const privacySections = [
 
 export default function PrivacyContent() {
   return (
-    <div className="space-y-12">
+    <div className="space-y-10 md:space-y-12">
       {/* Header with Gold Accent */}
-      <FadeItem className="flex items-center gap-6">
-        <div className="w-1.5 h-10 bg-tertiary rounded-full" />
-        <h2 className={`text-4xl font-bold tracking-tight ${theme.text.brand}`}>
+      <FadeItem className="flex items-center gap-4 md:gap-6">
+        <div className="w-1 md:w-1.5 h-8 md:h-10 bg-tertiary rounded-full shrink-0" />
+        <h2 className={`text-2xl md:text-4xl font-bold tracking-tight ${theme.text.brand}`}>
           Privacy Policy
         </h2>
       </FadeItem>
 
       {/* Lead Statement */}
       <FadeItem>
-        <p className={`text-base font-light leading-relaxed ${theme.text.muted} max-w-4xl`}>
+        <p className={`text-[15px] md:text-base font-medium md:font-light leading-relaxed ${theme.text.muted} max-w-4xl`}>
           Arshan Business Services GmbH takes the protection of your personal data very seriously. 
           We treat your personal data confidentially and in accordance with the statutory 
           data protection regulations (GDPR).
@@ -41,13 +41,13 @@ export default function PrivacyContent() {
 
       {/* Technical Clauses Card */}
       <FadeItem>
-        <div className="bg-white border border-slate-100 rounded-xl p-10 shadow-sm space-y-10 max-w-4xl">
+        <div className="bg-white border border-slate-100 rounded-xl p-8 md:p-10 shadow-sm space-y-8 md:space-y-10 max-w-4xl">
           {privacySections.map((section, idx) => (
             <div key={idx} className="space-y-3">
-              <h3 className={`text-sm font-bold uppercase tracking-widest ${theme.text.brand}`}>
+              <h3 className={`text-[11px] md:text-sm font-bold uppercase tracking-widest ${theme.text.brand}`}>
                 {section.title}
               </h3>
-              <p className={`text-sm font-light leading-relaxed ${theme.text.muted}`}>
+              <p className={`text-[13px] md:text-sm font-light leading-relaxed ${theme.text.muted}`}>
                 {section.content}
               </p>
             </div>

@@ -42,15 +42,22 @@ const checklist = [
 
 export default function GermanOperationalExcellence() {
   return (
-    <section className="py-24 bg-[#F8FAFC] overflow-hidden">
-      <div className="w-full mx-auto px-28">
+    /* Adjusted py-16 for mobile, py-24 for desktop */
+    <section className="py-16 md:py-24 bg-[#F8FAFC] overflow-hidden">
+      
+      {/* MOBILE FIX: px-6 for mobile, md:px-28 preserves your desktop design */}
+      <div className="w-full mx-auto px-6 md:px-28">
         
-        {/* ✅ 50 / 50 GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+        {/* ✅ 50 / 50 GRID 
+            Updated to grid-cols-1 for mobile, lg:grid-cols-2 for desktop
+        */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
           
-          {/* LEFT: FEATURE GRID */}
-          <div className="h-full">
-            <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full auto-rows-fr">
+          {/* LEFT: FEATURE GRID 
+              order-2 lg:order-1 ensures features appear after text on mobile for better flow
+          */}
+          <div className="h-full order-2 lg:order-1">
+            <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-full auto-rows-fr">
               
               {features.map((item, idx) => (
                 <FadeItem key={idx} className="h-full">
@@ -69,11 +76,11 @@ export default function GermanOperationalExcellence() {
                       {item.icon}
                     </div>
 
-                    <h4 className={`text-lg font-bold mb-3 ${theme.text.brand}`}>
+                    <h4 className={`text-base md:text-lg font-bold mb-3 ${theme.text.brand}`}>
                       {item.title}
                     </h4>
 
-                    <p className={`text-[13px] leading-relaxed ${theme.text.muted}`}>
+                    <p className={`text-[14px] leading-relaxed ${theme.text.muted}`}>
                       {item.desc}
                     </p>
                   </div>
@@ -84,8 +91,10 @@ export default function GermanOperationalExcellence() {
             </FadeInStagger>
           </div>
 
-          {/* RIGHT: CONTENT */}
-          <div className="flex flex-col justify-center h-full">
+          {/* RIGHT: CONTENT 
+              order-1 lg:order-2 brings the heading to the top on mobile
+          */}
+          <div className="flex flex-col justify-center h-full order-1 lg:order-2">
             <FadeInStagger className="space-y-6">
               
               <FadeItem>
@@ -93,14 +102,14 @@ export default function GermanOperationalExcellence() {
                   Domestic Precision
                 </span>
 
-                <h2 className={`text-5xl font-bold tracking-tight mt-4 leading-[1.1] ${theme.text.brand}`}>
-                  German Operational <br />
+                <h2 className={`text-3xl md:text-5xl font-bold tracking-tight mt-4 leading-[1.1] ${theme.text.brand}`}>
+                  German Operational <br className="hidden md:block" />
                   <span className="text-slate-400">Excellence.</span>
                 </h2>
               </FadeItem>
 
               <FadeItem>
-                <p className={`text-base leading-relaxed ${theme.text.muted}`}>
+                <p className={`text-[15px] md:text-base leading-relaxed ${theme.text.muted}`}>
                   In the German market, Arshan operates as your direct HR department. 
                   We remove the complexity of domestic administration, allowing your 
                   executive leadership to focus on high-level innovation.
@@ -119,9 +128,9 @@ export default function GermanOperationalExcellence() {
                       hover:bg-white
                     "
                   >
-                    <CheckCircle2 className={`w-5 h-5 ${theme.text.brand} opacity-70`} />
+                    <CheckCircle2 className={`w-4 h-4 md:w-5 ${theme.text.brand} opacity-70 shrink-0`} />
 
-                    <span className={`text-[13px] font-bold ${theme.text.brand}`}>
+                    <span className={`text-[14px] md:text-[15px] font-bold ${theme.text.brand}`}>
                       {text}
                     </span>
                   </div>

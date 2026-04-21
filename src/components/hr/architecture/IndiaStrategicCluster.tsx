@@ -8,7 +8,7 @@ import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 export default function IndiaStrategicCluster() {
   return (
     /* py-16 (Mobile) -> md:py-24 (PC) */
-    <section className="py-16 md:py-24 bg-[#F8FAFC]">
+    <section className="py-16 md:py-16 bg-[#F8FAFC]">
       {/* px-6 (Mobile) -> md:px-28 (PC) */}
       <div className="w-full mx-auto px-6 md:px-28">
         <FadeInStagger className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
@@ -19,13 +19,13 @@ export default function IndiaStrategicCluster() {
           >
             <div className="space-y-6">
               <div className="space-y-2">
-                <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-tertiary">
+                <span className="text-[11px] md:text-[11px] font-bold uppercase tracking-[0.3em] text-tertiary">
                   Strategic Integration
                 </span>
                 <h2 className={`text-3xl md:text-4xl font-bold tracking-tight leading-tight ${theme.text.brand}`}>
                   India Strategic <br /> Cluster
                 </h2>
-                <p className={`text-[13px] md:text-[14px] leading-relaxed ${theme.text.muted} max-w-sm`}>
+                <p className={`text-[13px] md:text-[15px] leading-relaxed ${theme.text.muted} max-w-sm`}>
                   Our Indian operations leverage a sophisticated dual-entity model, 
                   ensuring global expansion is met with legal fortitude.
                 </p>
@@ -38,8 +38,8 @@ export default function IndiaStrategicCluster() {
                     <Network className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   <div>
-                    <h4 className={`text-sm font-bold mb-1 ${theme.text.brand}`}>The Etisalar Foundation</h4>
-                    <p className={`text-[12px] leading-relaxed ${theme.text.muted}`}>
+                    <h4 className={`text-md font-bold mb-1 ${theme.text.brand}`}>The Etisalar Foundation</h4>
+                    <p className={`text-[14px] leading-relaxed ${theme.text.muted}`}>
                       Etisalar serves as the EOR, managing the 
                       intricate complexities of Indian payroll and financial distribution.
                     </p>
@@ -52,8 +52,8 @@ export default function IndiaStrategicCluster() {
                     <ShieldCheck className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   <div>
-                    <h4 className={`text-sm font-bold mb-1 ${theme.text.brand}`}>The Arshan Stewardship</h4>
-                    <p className={`text-[12px] leading-relaxed ${theme.text.muted}`}>
+                    <h4 className={`text-md font-bold mb-1 ${theme.text.brand}`}>The Arshan Stewardship</h4>
+                    <p className={`text-[14px] leading-relaxed ${theme.text.muted}`}>
                       Arshan provides the management layer, ensuring 
                       cultural alignment and rigorous compliance standards.
                     </p>
@@ -72,7 +72,7 @@ export default function IndiaStrategicCluster() {
                 Collaborative Architecture
               </h3>
               
-              <p className={`text-[13px] md:text-[14px] leading-relaxed mb-10 ${theme.text.muted}`}>
+              <p className={`text-[14px] md:text-[14px] leading-relaxed mb-10 ${theme.text.muted}`}>
                 Navigate the complexities of labor law through our specialized partnership. 
                 We provide a managed synergy.
               </p>
@@ -81,8 +81,8 @@ export default function IndiaStrategicCluster() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-slate-100 pt-8 mb-10">
                 {/* Etisalar List */}
                 <div className="space-y-4 border-l-2 border-slate-100 pl-6">
-                  <h5 className={`text-[10px] md:text-[11px] font-bold uppercase tracking-widest ${theme.text.brand}`}>Etisalar Core</h5>
-                  <ul className={`text-[12px] space-y-2 ${theme.text.muted}`}>
+                  <h5 className={`text-[12px] md:text-[12px] font-bold uppercase tracking-widest ${theme.text.brand}`}>Etisalar Core</h5>
+                  <ul className={`text-[14px] space-y-2 ${theme.text.muted}`}>
                     <li>• Payroll Mgmt</li>
                     <li>• Statutory Compliance</li>
                     <li>• Tax & Withholdings</li>
@@ -92,8 +92,8 @@ export default function IndiaStrategicCluster() {
 
                 {/* Arshan List */}
                 <div className="space-y-4 border-l-2 border-slate-100 pl-6">
-                  <h5 className={`text-[10px] md:text-[11px] font-bold uppercase tracking-widest ${theme.text.brand}`}>Arshan Leadership</h5>
-                  <ul className={`text-[12px] space-y-2 ${theme.text.muted}`}>
+                  <h5 className={`text-[12px] md:text-[12px] font-bold uppercase tracking-widest ${theme.text.brand}`}>Arshan Leadership</h5>
+                  <ul className={`text-[14px] space-y-2 ${theme.text.muted}`}>
                     <li>• Performance Mgmt</li>
                     <li>• Cultural Bridges</li>
                     <li>• Operational Training</li>
@@ -106,7 +106,7 @@ export default function IndiaStrategicCluster() {
             {/* Bottom Summary Box */}
             <div className="relative bg-[#F1F5F9]/50 rounded-xl p-5 md:p-6 overflow-hidden">
               <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${theme.brand.primary}`} />
-              <p className={`text-[11px] md:text-[12px] leading-relaxed ${theme.text.muted}`}>
+              <p className={`text-[12px] md:text-[14px] leading-relaxed ${theme.text.muted}`}>
                 Utilize Indian talent without a local entity. You retain strategic direction, 
                 while we handle the operational machinery.
               </p>

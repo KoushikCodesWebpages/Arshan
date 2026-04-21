@@ -90,7 +90,7 @@ export default function PricingGrid() {
           md:px-28 restores your original desktop design perfectly.
           max-w-[1120px] maintains that "20% smaller" aesthetic on large screens.
       */}
-      <div className="w-full w-full mx-auto px-6 md:px-28">
+      <div className="w-full mx-auto px-6 md:px-28">
         
         <FadeInStagger className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-stretch">
           {tiers.map((tier) => (
