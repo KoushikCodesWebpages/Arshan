@@ -27,8 +27,8 @@ export default function CTASection() {
                 <div className="space-y-8">
                   <h2 className="text-3xl md:text-5xl font-bold text-white leading-[1.1] tracking-tight">
                     Request a Technical <br className="hidden lg:block" /> 
-                    Business Infrastructure <br className="hidden lg:block" /> 
-                    Audit
+                    Business Infrastructure Audit
+                    
                   </h2>
                   
                   <p className="text-slate-300 text-lg md:text-xl max-w-lg leading-relaxed">

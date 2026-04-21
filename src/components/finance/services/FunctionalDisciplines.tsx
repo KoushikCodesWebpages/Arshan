@@ -17,13 +17,13 @@ export default function FunctionalDisciplines() {
         <FadeInStagger>
           <div className="w-full max-w-3xl text-center md:text-left">
             <FadeItem>
-              <h2 className={`text-3xl md:text-4xl font-bold tracking-tight ${theme.text.brand}`}>
+              <h2 className={`pb-4 text-3xl md:text-4xl font-bold tracking-tight ${theme.text.brand}`}>
                 Functional Disciplines
               </h2>
             </FadeItem>
 
             <FadeItem>
-              <p className={`mt-4 md:mt-6 text-base md:text-lg text-secondary leading-relaxed`}>
+              <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[90%]`}>
                 We bridge the gap between raw transactions and strategic oversight,
                 ensuring your operational data is boardroom-ready.
               </p>
@@ -32,17 +32,17 @@ export default function FunctionalDisciplines() {
         </FadeInStagger>
 
         {/* TOP GRID */}
-        <FadeInStagger className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+        <FadeInStagger className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-6">
           {/* Precision Bookkeeping */}
           <FadeItem className="lg:col-span-2">
-            <div className="bg-white rounded-sm border border-border-light p-6 md:p-10 h-full space-y-6 shadow-sm group">
+            <div className="bg-white rounded-sm border border-border-light p-4 md:p-8 h-full space-y-6 shadow-sm group">
               <Wallet className="text-tertiary w-8 h-8 transition-transform group-hover:scale-110" />
 
               <h3 className={`text-2xl md:text-3xl font-bold ${theme.text.main}`}>
                 Precision Bookkeeping
               </h3>
 
-              <p className={`text-secondary text-md md:text-lg w-full md:w-[60%] leading-relaxed`}>
+              <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[90%]`}>
                 Systematic tracking of all operational expenditures and revenue
                 streams. We maintain the daily pulse of your organization's
                 liquidity with absolute structural integrity.
@@ -118,7 +118,7 @@ export default function FunctionalDisciplines() {
                 Statement Preparation
               </h3>
               
-              <p className={`text-secondary text-sm md:text-lg leading-relaxed w-full md:w-[80%]`}>
+              <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[90%]`}>
                 We synthesize complex ledger data into clear, high-impact account
                 statements that provide stakeholders with a comprehensive view
                 of fiscal health.

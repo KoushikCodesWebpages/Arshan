@@ -26,18 +26,18 @@ const features = [
 export default function ClusterDetails() {
   return (
     /* py-16 (Mobile) -> md:py-24 (Desktop) */
-    <section id="clusters" className="scroll-mt-12 py-16 md:py-24 bg-[#f8fafc] overflow-hidden">
+    <section id="clusters" className="scroll-mt-12 py-12 md:py-12 bg-[#f8fafc] overflow-hidden">
       <div className="w-full mx-auto px-6 md:px-28">
         <FadeInStagger>
           
           {/* TOP PARTNERSHIP HEADER */}
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10 md:gap-12 pb-12 md:pb-16 border-b border-slate-200 mb-16 md:mb-20">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10 md:gap-12 pb-12 md:pb-6 border-b border-slate-200 mb-16 md:mb-10">
             {/* max-w-full on mobile, 60% on desktop */}
             <FadeItem className="w-full lg:w-[60%]">
               <h2 className={`text-3xl md:text-5xl font-bold tracking-tight ${theme.text.brand} mb-6`}>
                 India Strategic Cluster
               </h2>
-              <p className={`text-lg md:text-xl leading-relaxed ${theme.text.muted}`}>
+              <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[90%] mb-8 md:mb-8`}>
                 In strategic partnership with Etisalar, we offer a specialized labor cost model designed for
                 scalability. This joint venture integrates high-caliber talent with institutional-grade risk
                 management, providing a sovereign solution for global resource allocation.
@@ -51,7 +51,7 @@ export default function ClusterDetails() {
                   <Handshake className="w-6 h-6 md:w-8 md:h-8 text-tertiary" />
                 </div>
                 <div>
-                  <p className="text-[10px] md:text-[12px] font-bold uppercase tracking-widest text-slate-400 mb-1">
+                  <p className="text-[10px] md:text-[12px] font-bold uppercase tracking-widest text-slate-400 ">
                     Joint Venture Partner
                   </p>
                   <p className={`text-xl md:text-2xl font-bold ${theme.text.brand}`}>
@@ -63,11 +63,11 @@ export default function ClusterDetails() {
           </div>
 
           {/* THREE-COLUMN GRID - Gap adjusted for vertical stacking */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
             {features.map((feature, idx) => (
-              <FadeItem key={idx} className="flex flex-col space-y-5 md:space-y-6">
+              <FadeItem key={idx} className="flex flex-col space-y-4 md:space-y-4">
                 {/* Icon Container */}
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-slate-200/50 flex items-center justify-center rounded-sm shrink-0">
+                <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-sm shrink-0">
                   {feature.icon}
                 </div>
                 
@@ -75,7 +75,7 @@ export default function ClusterDetails() {
                   {feature.title}
                 </h3>
                 
-                <p className={`text-base md:text-[17px] leading-relaxed ${theme.text.muted}`}>
+                <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[90%] mb-8 md:mb-8`}>
                   {feature.description}
                 </p>
               </FadeItem>

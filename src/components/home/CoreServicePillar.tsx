@@ -54,7 +54,7 @@ export default function ServicePillars() {
           </FadeItem>
           <FadeItem>
             {/* mx-auto (Mobile) -> md:mx-0 (PC) */}
-            <p className={`max-w-2xl text-md font-medium text-secondary mx-auto md:mx-0`}>
+             <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[90%] mb-8 md:mb-10`}>
               Comprehensive business infrastructure designed for performance, growth and further visibilty.
             </p>
           </FadeItem>
@@ -80,7 +80,7 @@ export default function ServicePillars() {
                   <h3 className={`w-full md:w-[80%] text-xl md:text-2xl font-bold leading-tight ${theme.text.main}`}>
                     {service.title}
                   </h3>
-                  <p className={`text-sm lg:text-md leading-relaxed font-medium text-secondary`}>
+                  <p className={`text-sm lg:text-medium leading-relaxed font-medium text-secondary`}>
                     {service.description}
                   </p>
 

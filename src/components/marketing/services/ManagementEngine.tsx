@@ -27,10 +27,10 @@ export default function ManagementEngine() {
                 {/* text-3xl (Mobile) -> md:text-5xl (PC) */}
                 <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight">
                   Data-Driven <br />
-                  Management <br />
+                  Management 
                   Engine.
                 </h2>
-                <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-md opacity-90">
+                <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-lg opacity-90">
                   Our management approach uses real-time platform data to ensure 
                   your content is always delivered at the optimal time for maximum engagement.
                 </p>

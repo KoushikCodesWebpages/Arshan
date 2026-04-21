@@ -60,7 +60,7 @@ export default function GermanyOperations() {
               <h2 className={`text-3xl md:text-5xl font-bold tracking-tight ${theme.text.brand} mb-6 leading-[1.1]`}>
                 Germany Operations
               </h2>
-              <p className={`text-lg md:text-xl leading-relaxed ${theme.text.muted} max-w-lg`}>
+              <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[90%] mb-8 md:mb-10`}>
                 High-compliance, bespoke labor management for the DACH
                 region. Our German infrastructure is built on regulatory
                 excellence and precise fiscal oversight.

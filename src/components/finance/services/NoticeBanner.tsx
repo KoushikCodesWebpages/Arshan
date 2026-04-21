@@ -22,7 +22,7 @@ export default function NoticeBanner() {
                   Notice of Services
                 </h4>
                 {/* text-sm (Mobile) -> lg:text-lg (PC) */}
-                <p className={`text-sm md:text-base lg:text-lg italic leading-relaxed text-secondary w-full font-medium`}>
+                <p className={`text-sm lg:text-base italic leading-relaxed text-secondary w-full font-medium`}>
                   We provide administrative bookkeeping and financial record management. We are not a licensed accounting firm and do not provide audit, tax, or legal advice.
                 </p>
               </div>

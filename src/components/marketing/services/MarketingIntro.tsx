@@ -4,12 +4,13 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { theme } from "@/lib/theme";
+import { ArrowRight } from "lucide-react";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 import marketing1 from "../../../../public/Professional workspace representing high-end social media management and brand consistency(2).svg";
 
 export default function MarketingIntro() {
   return (
-    <section className="py-16 md:py-24 overflow-hidden bg-white">
+    <section className="py-16 md:py-12 overflow-hidden bg-white">
       <div className="w-full mx-auto px-6 md:px-28">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
           
@@ -72,9 +73,10 @@ export default function MarketingIntro() {
                 
                 <Link 
                   href="/marketing/#social-media-pricing"
-                  className="w-full sm:w-auto px-10 py-4 border border-primary/20 text-primary font-bold text-xs md:text-sm tracking-widest uppercase rounded-sm hover:bg-neutral transition-all active:scale-95 inline-block text-center"
+                  className={`flex items-center justify-center gap-2 font-bold text-md ${theme.text.main} group transition-colors hover:text-primary`}
                 >
                   Our Pricing
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </FadeItem>

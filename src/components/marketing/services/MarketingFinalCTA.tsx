@@ -13,14 +13,14 @@ export default function MarketingFinalCTA() {
             
             {/* Headline */}
             <FadeItem>
-              <h2 className={`text-5xl md:text-7xl font-bold tracking-tight ${theme.text.brand}`}>
+              <h2 className={`text-5xl md:text-6xl font-bold tracking-tight ${theme.text.brand}`}>
                 Ready to scale?
               </h2>
             </FadeItem>
 
             {/* Subtext */}
             <FadeItem>
-              <p className={`text-lg md:text-xl leading-relaxed text-secondary max-w-2xl mx-auto`}>
+              <p className={`text-lg md:text-xl font-medium leading-relaxed text-secondary max-w-2xl mx-auto`}>
                 Partner with Arshan for professional social media management that 
                 transforms your digital presence into a consistent, high-authority brand asset.
               </p>
@@ -36,12 +36,6 @@ export default function MarketingFinalCTA() {
                   Request Account Audit
                 </Link>
                 
-                <Link
-                  href="/marketing/workflow"
-                  className="inline-flex items-center justify-center min-w-55 py-4 border border-primary/20 text-primary font-bold text-sm tracking-widest uppercase hover:bg-neutral transition-all rounded-sm active:scale-95"
-                >
-                  Our Case Studies
-                </Link>
               </div>
             </FadeItem>
             

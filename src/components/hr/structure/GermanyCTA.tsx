@@ -27,8 +27,8 @@ export default function GermanyCTA() {
             <div className="relative z-10 w-full mx-auto flex flex-col items-center">
               
               {/* text-3xl (Mobile) -> md:text-6xl (Desktop) for cinematic scale */}
-              <h2 className="text-3xl md:text-6xl font-bold text-white tracking-tight leading-[1.2] md:leading-[1.1]">
-                Initiate Your Strategic <br className="hidden md:block" /> Talent Plan
+              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-[1.2] md:leading-[1.1]">
+                Initiate Your Strategic  Talent Plan
               </h2>
 
               {/* w-full (Mobile) -> md:w-[70%] (Desktop) */}

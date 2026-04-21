@@ -48,7 +48,7 @@ export default function MarketingCoreExpertise() {
               </FadeItem>
 
               <FadeItem>
-                <p className={`${theme.text.muted} max-w-xl text-base md:text-lg lg:text-xl`}>
+                <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[60%]`}>
                   End-to-end social media solutions designed to maintain a consistent,
                   professional brand presence across all major digital channels.
                 </p>

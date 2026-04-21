@@ -18,7 +18,7 @@ const stats = [
 export default function MarketImpact() {
   return (
     /* py-12 (Mobile) -> md:py-20 (PC) */
-    <section className="py-12 md:py-20 bg-white overflow-hidden">
+    <section className="py-12 md:py-12 bg-white overflow-hidden">
       {/* px-6 (Mobile) -> md:px-28 (PC) */}
       <div className="w-full mx-auto px-6 md:px-28">
 
@@ -42,7 +42,7 @@ export default function MarketImpact() {
               Using a nested grid (grid-cols-2) on mobile so stats sit side-by-side 
               instead of one long vertical list.
           */}
-          <div className="lg:col-span-2 grid grid-cols-2 gap-6 lg:flex lg:justify-around">
+          <div className="lg:col-span-2 grid grid-cols-2 gap-3 lg:flex lg:justify-around">
             {stats.map((stat, index) => (
               <FadeItem key={index} className="text-center">
 
@@ -50,7 +50,7 @@ export default function MarketImpact() {
                   {stat.value}
                 </div>
 
-                <p className="text-[10px] md:text-sm mt-2 tracking-widest text-text-muted uppercase font-medium">
+                <p className="text-[10px] md:text-sm  tracking-widest text-text-muted uppercase font-medium">
                   {stat.label}
                 </p>
 
