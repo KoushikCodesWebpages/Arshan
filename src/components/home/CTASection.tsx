@@ -9,72 +9,65 @@ import home3 from '../../../public/home3.svg';
 
 export default function CTASection() {
   return (
-    /* py-12 (Mobile) -> md:py-20 (PC) */
-    <section className="py-12 md:py-20 bg-white overflow-hidden">
-      {/* px-6 (Mobile) -> md:px-28 (PC) */}
-      <div className="w-full mx-auto px-6 md:px-28">
+    /* Removed large vertical padding on section to let the card sit more naturally */
+    <section className="py-8 md:py-16 bg-white overflow-hidden">
+      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12">
         <FadeInStagger>
           <FadeItem>
-            <div className="relative overflow-hidden rounded-2xl bg-primary shadow-2xl flex flex-col md:flex-row items-stretch">
+            {/* FIX: 'items-stretch' on the flex container ensures the image div 
+              is ALWAYS the same height as the text div.
+            */}
+            <div className="relative rounded-3xl bg-[#0F2648] shadow-2xl flex flex-col md:flex-row items-stretch overflow-hidden">
               
-              {/* Subtle Hexagon Pattern Overlay */}
-              <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/images/pattern-hex.png')] bg-repeat" />
+              {/* Pattern Overlay */}
+              <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('/images/pattern-hex.png')] bg-repeat" />
 
-              {/* Left Content Side: 
-                  - p-8 (Mobile) -> md:p-24 (PC)
-                  - text-center (Mobile) -> md:text-left (PC)
-              */}
-              <div className="flex-1 p-8 md:p-24 z-10 flex flex-col justify-center text-center md:text-left">
-                <FadeInStagger className="space-y-6">
-                  <FadeItem>
-                    {/* The <br /> tags are hidden on mobile to prevent awkward spacing */}
-                    <h2 className="text-2xl md:text-4xl font-bold text-white leading-tight">
-                      Request a Technical <span className="hidden md:block" /> 
-                      Business Infrastructure <span className="hidden md:block" /> 
-                      Audit
-                    </h2>
-                  </FadeItem>
+              {/* LEFT CONTENT: 50% width */}
+              <div className="w-full md:w-1/2 p-10 md:p-20 z-10 flex flex-col justify-center text-left">
+                <div className="space-y-8">
+                  <h2 className="text-3xl md:text-5xl font-bold text-white leading-[1.1] tracking-tight">
+                    Request a Technical <br className="hidden lg:block" /> 
+                    Business Infrastructure <br className="hidden lg:block" /> 
+                    Audit
+                  </h2>
                   
-                  <FadeItem>
-                    <p className="text-slate-300 text-base md:text-lg max-w-md mx-auto md:mx-0 leading-relaxed">
-                      Our technical audit provides a 360-degree review of your current 
-                      business infrastructure, identifying critical vulnerabilities in 
-                      finance, marketing, and HR. Gain actionable insights to improve 
-                      compliance and operational efficiency.
-                    </p>
-                  </FadeItem>
+                  <p className="text-slate-300 text-lg md:text-xl max-w-lg leading-relaxed">
+                    Our technical audit provides a 360-degree review of your current 
+                    business infrastructure, identifying critical vulnerabilities in 
+                    finance, marketing, and HR.
+                  </p>
 
-                  <FadeItem>
+                  <div className="pt-4">
                     <Link
                       href="/contact-us"
-                      /* w-full (Mobile) -> md:w-auto (PC) */
-                      className={`${theme.buttons.tertiary} inline-flex items-center justify-center gap-3 px-8 py-4 text-base group active:scale-95 transition-all w-full sm:w-auto`}
+                      className={`${theme.buttons.tertiary} h-16 inline-flex items-center justify-center gap-4 px-10 text-lg font-semibold group active:scale-95 transition-all w-full md:w-auto shadow-lg`}
                     >
                       Start Your Free Audit
-                      <ChartColumn className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      <ChartColumn className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                     </Link>
-                  </FadeItem>
-                </FadeInStagger>
+                  </div>
+                </div>
               </div>
 
-              {/* Right Image Side: 
-                  - h-64 (Mobile) -> md:min-h-100 (PC) 
+              {/* RIGHT IMAGE: 50% width
+                  FIX: Removed 'min-h-[400px]' and replaced with 'self-stretch' 
+                  to ensure it goes all the way to the bottom of the parent card.
               */}
-              <FadeItem className="flex-1 h-64 md:min-h-100 relative group overflow-hidden">
+              <div className="w-full md:w-1/2 relative self-stretch min-h-[350px] md:min-h-0 overflow-hidden">
                 <Image
                   src={home3}
                   alt="Professional Office Setup"
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  /* object-cover + object-bottom ensures the image sits "full down" */
+                  className="object-cover object-center md:object-bottom transition-transform duration-1000 group-hover:scale-110"
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                {/* Gradient Overlay for mobile to ensure text readability if it stacks */}
-                <div className="absolute inset-0 bg-linear-to-t from-primary/80 to-transparent md:hidden" />
                 
-                {/* Subtle Lens Overlay for consistency with other intro sections */}
-                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.3)_100%)] mix-blend-multiply" />
-              </FadeItem>
+                {/* Overlays */}
+                <div className="absolute inset-0 bg-black/10 transition-colors duration-500" />
+                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.3)_100%)]" />
+              </div>
 
             </div>
           </FadeItem>

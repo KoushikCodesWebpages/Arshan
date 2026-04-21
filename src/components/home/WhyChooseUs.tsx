@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
             <FadeInStagger className="space-y-10 text-center lg:text-left">
                 <div className="space-y-4">
                   <FadeItem>
-                    <h2 className={`text-3xl md:text-5xl font-bold ${theme.text.brand}`}>
+                    <h2 className={`text-3xl md:text-4xl font-bold ${theme.text.brand}`}>
                         Why Choose us?
                     </h2>
                   </FadeItem>
@@ -74,7 +74,7 @@ export default function WhyChooseUs() {
                         {feature.title}
                         </h3>
                         {/* Adjusted w-[80%] to w-full for mobile clarity */}
-                        <p className={`w-full lg:w-[80%] text-sm mt-1 leading-snug font-medium text-secondary`}>
+                        <p className={`w-full lg:w-[80%] text-md mt-1 leading-snug font-medium text-secondary`}>
                         {feature.description}
                         </p>
                     </div>

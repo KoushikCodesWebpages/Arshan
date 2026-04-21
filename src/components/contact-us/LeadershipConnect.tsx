@@ -7,7 +7,7 @@ import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 export default function LeadershipConnect() {
   return (
     /* py-12 (Mobile) -> py-10 (Desktop) */
-    <section className="py-12 md:py-10 border-t border-slate-100 bg-white overflow-hidden">
+    <section className="py-12 md:py-10 border-t border-slate-100 overflow-hidden">
       {/* MOBILE FIX: px-6 for mobile, md:px-28 for your original desktop design */}
       <div className="w-full mx-auto px-6 md:px-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">

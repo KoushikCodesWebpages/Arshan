@@ -1,16 +1,17 @@
 @import "tailwindcss";
-
+/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap'); */
 html {
   scroll-behavior: smooth;
 }
 /* 1. DEFINE YOUR ARSHAN PALETTE VARIABLES */
 :root {
   /* Page Level */
+  --font-manrope: 'Manrope', sans-serif;
   --background: #f6f6f6b0;    /* Tailwind Gray-100 (The Canvas) */
   --foreground: #1E293B;    /* Slate 800 (Text Main) */
   
   /* Brand Specifics */
-  --primary: #0d2649;       /* Deep Navy */
+  --primary: #0b2241;       /* Deep Navy */
   --secondary: #57616f;     /* Slate Blue-Grey */
   --tertiary: #987d25;      /* Gold Accent */
   --neutral: #F8FAFC;       /* Off-white surface */
@@ -35,8 +36,8 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  /* Using standard system fonts for that clean, professional SaaS look */
-  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Use the variable defined in layout.tsx */
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

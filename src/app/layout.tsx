@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// import { Inter } from "next/font/google";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import { theme } from "@/lib/theme"; 
@@ -8,15 +7,15 @@ import Navbar from "@/components/layout/Navbar";
 import ScrollReset from "@/components/utils/ScrollReset";
 import GlobalBackButton from "@/components/layout/BackButton";
 
-// const inter = Inter({ subsets: ["latin"] });
-// Configure Manrope
+// 1. Configure Manrope with the variable option
 const manrope = Manrope({ 
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-manrope", // Recommended for better CSS integration
+  variable: "--font-manrope", 
 });
+
 export const metadata: Metadata = {
-  title: "Arshan ",
+  title: "Arshan",
   description: "High-performance infrastructure for finance, marketing, and HR.",
   metadataBase: new URL('https://arshan.de'), 
   openGraph: {
@@ -36,7 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    // 2. Add manrope.variable to the html tag
+    <html lang="en" className={`scroll-smooth ${manrope.variable}`}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -59,15 +59,12 @@ export default function RootLayout({
           flex-col
         `}
       >
-        {/* This component now handles global click listening and scroll logic */}
         <ScrollReset />
-
         <Navbar />
         <GlobalBackButton />
         <main className="grow">
           {children}
         </main>
-
         <Footer />
       </body>
     </html>

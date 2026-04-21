@@ -55,7 +55,7 @@ export default function FinanceIntro() {
                  
                 <Link 
                   href="/finance/process/" 
-                  className={`flex items-center justify-center gap-2 font-bold text-sm ${theme.text.main} group transition-colors hover:text-primary`}
+                  className={`flex items-center justify-center gap-2 font-bold text-md ${theme.text.main} group transition-colors hover:text-primary`}
                 >
                   Our Process 
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -68,13 +68,13 @@ export default function FinanceIntro() {
           <FadeInStagger className="flex-1 w-full lg:w-auto">
             <FadeItem className="relative w-full group">
               {/* max-w-xs (Mobile) -> md:max-w-125 (PC) */}
-              <div className="relative w-full max-w-70 sm:max-w-125 aspect-square mx-auto">
+              <div className="relative w-full scale-120 sm:max-w-125 aspect-square mx-auto">
                 
                 {/* Back Layer (Navy Accent): Reduced rotation for mobile */}
-                <div className="absolute inset-0 bg-primary rounded-2xl rotate-2 md:rotate-3 translate-x-2 md:translate-x-4 translate-y-2 opacity-90 shadow-xl transition-transform duration-700 group-hover:rotate-1 group-hover:translate-x-2" />
+                <div className="absolute inset-0 bg-primary rounded-md rotate-2 md:rotate-3 translate-x-2 md:translate-x-4 translate-y-2 opacity-90 shadow-xl transition-transform duration-700 group-hover:rotate-1 group-hover:translate-x-2" />
                 
                 {/* Top Layer (The Graph Image): Reduced rotation for mobile */}
-                <div className="absolute inset-0 rounded-2xl overflow-hidden -rotate-3 md:-rotate-5 translate-x-2 md:translate-x-4 translate-y-1 md:translate-y-2 shadow-2xl border border-white/10 bg-slate-900">
+                <div className="absolute inset-0 rounded-md overflow-hidden -rotate-3 md:-rotate-5 translate-x-2 md:translate-x-4 translate-y-1 md:translate-y-2 shadow-2xl border border-white/10 bg-slate-900">
                   <Image
                     src={finance1}
                     alt="Financial Growth Chart"

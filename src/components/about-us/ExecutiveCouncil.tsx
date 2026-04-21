@@ -3,7 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import { theme } from "@/lib/theme";
-import professional1 from "../../../public/Professional_photo_Arjhun.jpg.jpeg"
+import arjhun from "../../../public/arjhun.jpeg"
+import anupam from "../../../public/anupam.jpeg"
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
@@ -12,13 +13,13 @@ const executives = [
     name: "Arjhun Mohanarangam",
     role: "Founder & CEO",
     bio: "Economic structuralist with 30 years of corporate governance experience in Germany and beyond.",
-    image: professional1
+    image: arjhun
   },
   {
-    name: "Marc Hoffmann",
-    role: "Head of Marketing & HR",
+    name: "Anupam Devikalavathy",
+    role: "Finance Operations",
     bio: "Expert in cultural engineering and brand psychology for the modern workforce.",
-    image: professional1,
+    image: anupam,
   },
 ];
 

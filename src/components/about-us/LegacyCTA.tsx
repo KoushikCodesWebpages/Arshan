@@ -36,8 +36,7 @@ export default function LegacyCTA() {
                 <div className="pt-4 w-full flex justify-center">
                   <Link 
                     href="/contact-us"
-                    className="w-full sm:w-auto bg-neutral text-primary hover:bg-white px-10 md:px-12 py-4 md:py-5 rounded-xl font-bold text-[12px] md:text-sm uppercase tracking-widest transition-all duration-300 shadow-xl hover:shadow-white/10 active:scale-95"
-                  >
+className="inline-flex w-full sm:w-auto items-center justify-center px-10 md:px-12 py-4 md:py-5 text-sm md:text-base font-bold bg-tertiary text-white rounded-md transition-all hover:scale-105 hover:brightness-110 shadow-2xl"                  >
                     Book a Strategy Session
                   </Link>
                 </div>

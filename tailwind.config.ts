@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // This overrides the default sans font with Manrope
+        sans: ['Manrope', 'sans-serif'],
+        manrope: ['Manrope', 'sans-serif'],
+      },
       colors: {
         // Mapping your palette to Tailwind tokens
         primary: "#1A365D",
