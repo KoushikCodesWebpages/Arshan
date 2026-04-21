@@ -5,7 +5,7 @@ import { theme } from "@/lib/theme";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import ScrollReset from "@/components/utils/ScrollReset";
-import GlobalBackButton from "@/components/layout/BackButton";
+// import GlobalBackButton from "@/components/layout/BackButton";
 
 // 1. Configure Manrope with the variable option
 const manrope = Manrope({ 
@@ -61,7 +61,7 @@ export default function RootLayout({
       >
         <ScrollReset />
         <Navbar />
-        <GlobalBackButton />
+       
         <main className="grow">
           {children}
         </main>

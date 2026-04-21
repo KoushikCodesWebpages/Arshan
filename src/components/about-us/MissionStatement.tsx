@@ -15,7 +15,7 @@ export default function MissionStatement() {
               {/* Vertical Accent Bar */}
               <div className="h-16 w-1.5 bg-primary transition-transform duration-700 group-hover:scale-y-110 origin-center" />
               
-              <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${theme.text.brand}`}>
+              <h2 className={`text-4xl md:text-4xl font-bold tracking-tight ${theme.text.brand}`}>
                 Our Mission
               </h2>
             </div>
@@ -23,7 +23,7 @@ export default function MissionStatement() {
 
           {/* Right Side: Mission Text */}
           <FadeItem className="flex-[1.5]">
-            <p className={`text-xl md:text-2xl leading-relaxed font-light ${theme.text.muted} max-w-3xl`}>
+            <p className={`text-xl md:text-xl leading-relaxed font-light ${theme.text.muted} max-w-3xl`}>
               To empower global enterprises through precision-engineered 
               financial strategies and human-centric HR management. We believe 
               that <span className={`${theme.text.brand} font-bold border-b-2 border-tertiary/30 pb-1`}>

@@ -7,7 +7,7 @@ import { FadeItem } from "@/components/animations/FadeIn";
 
 export default function LegalInquiriesCTA() {
   return (
-    <FadeItem className="pt-8 md:pt-12">
+    <FadeItem className="pt-8 md:pt-6">
       <div className={`relative overflow-hidden rounded-2xl md:rounded-3xl p-8 md:p-16 ${theme.brand.primary} text-white flex flex-col lg:flex-row items-center justify-between gap-10 md:gap-12`}>
         
         {/* Left Content - Center aligned on mobile, left on desktop */}

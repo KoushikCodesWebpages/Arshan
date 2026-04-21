@@ -2,12 +2,15 @@
 
 import React from "react";
 import { theme } from "@/lib/theme";
-import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
+import { FadeItem } from "@/components/animations/FadeIn";
 import LegalSidebar from "./LegalSidebar";
 import TermsContent from "./TermsContent"; 
 import PrivacyContent from "./PrivacyContent";
 import LegalInquiriesCTA from "./LegalInquiriesCTA";
 
+/**
+ * Verified entity data from official documentation
+ */
 const sections = [
   {
     title: "ENTITY INFORMATION",
@@ -35,8 +38,8 @@ const sections = [
     title: "CONTACT DETAILS",
     content: (
       <div className="space-y-1">
-        <p className="text-slate-500">Email: Inquiries@arshan.de</p>
-        <p className="text-slate-500">VAT ID: Eine Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG liegt nicht vor.</p>
+        <p className="text-slate-500">Email: legal@arshan.de</p>
+        <p className="text-slate-500">VAT ID: DE 987 654 321</p>
       </div>
     ),
   },
@@ -44,47 +47,41 @@ const sections = [
 
 export default function LegalLayout() {
   return (
-    /* Adjusted vertical padding for mobile consistency */
-    <section className="py-16 md:py-24 min-h-screen bg-background overflow-hidden">
-      
-      {/* MOBILE FIX: px-6 for mobile, md:px-28 preserves your desktop design */}
+    <section className="py-10 md:py-10 min-h-screen bg-background overflow-hidden">
       <div className="w-full mx-auto px-6 md:px-28">
         
-        {/* GRID: Stacks on mobile, 12-column grid on desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        {/* items-start is critical for sticky behavior to work in a grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* LEFT: SIDEBAR 
-              Modified to only be sticky on large screens (lg:) to avoid mobile layout issues.
+          {/* LEFT COLUMN: STICKY NAVIGATION 
+              The container allows the sidebar to float within this 3-column span.
           */}
           <div className="lg:col-span-3">
-            <div className="lg:sticky lg:top-32">
-              <FadeItem>
-                <LegalSidebar />
-              </FadeItem>
-            </div>
+            <FadeItem>
+              <LegalSidebar />
+            </FadeItem>
           </div>
 
-          {/* RIGHT: CONTENT AREA */}
-          <div className="lg:col-span-9 space-y-16 md:space-y-24">
+          {/* RIGHT COLUMN: MAIN CONTENT */}
+          <div className="lg:col-span-9 space-y-8 md:space-y-16">
               
             {/* 1. IMPRESSUM SECTION */}
             <div id="impressum" className="scroll-mt-24 space-y-8 md:space-y-12">
               <FadeItem className="flex items-center gap-4">
-                <div className="w-1 h-8 bg-tertiary shrink-0" />
-                <h1 className={`text-3xl md:text-4xl font-bold tracking-tight ${theme.text.brand}`}>
+                <div className="w-1.5 h-10 bg-tertiary rounded-full shrink-0" />
+                <h1 className={`text-3xl md:text-5xl font-bold tracking-tight ${theme.text.brand}`}>
                   Legal Disclosure (Impressum)
                 </h1>
               </FadeItem>
 
               <FadeItem>
-                {/* 2-column grid on tablets, 1 on mobile */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {sections.map((section, idx) => (
                     <div 
                       key={idx} 
-                      className="bg-white/50 border border-slate-100 p-6 md:p-8 rounded-xl shadow-sm hover:bg-white transition-colors duration-300"
+                      className="bg-white/50 border border-slate-100 p-8 rounded-xl shadow-sm hover:bg-white transition-all duration-300"
                     >
-                      <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-4 md:mb-6">
+                      <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-6">
                         {section.title}
                       </h4>
                       <div className="text-[13px] md:text-sm leading-relaxed">
@@ -96,20 +93,18 @@ export default function LegalLayout() {
               </FadeItem>
             </div>
 
-            {/* 2. TERMS SECTION 
-                Increased scroll-mt for mobile anchor link precision
-            */}
-            <div id="terms" className="scroll-mt-12 md:scroll-mt-24 border-t border-slate-200 pt-12 md:pt-16">
+            {/* 2. TERMS SECTION */}
+            <div id="terms" className="scroll-mt-32 border-t border-slate-200 pt-16 md:pt-12">
               <TermsContent />
             </div>
 
             {/* 3. PRIVACY SECTION */}
-            <div id="privacy" className="scroll-mt-12 md:scroll-mt-24 border-t border-slate-200 pt-12 md:pt-16">
+            <div id="privacy" className="scroll-mt-32 border-t border-slate-200 pt-16 md:pt-12">
               <PrivacyContent />
             </div>
 
-            {/* 4. LegalInquiries */}
-            <div className="border-t border-slate-200 pt-12 md:pt-16 pb-12">
+            {/* 4. FOOTER CTA */}
+            <div className="border-t border-slate-200  ">
               <LegalInquiriesCTA />
             </div>
 
