@@ -8,7 +8,7 @@ import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 export default function FinalFiscalCTA() {
   return (
     /* py-16 (Mobile) -> md:py-24 (PC) */
-    <section className="py-16 md:py-24 bg-background">
+    <section className="py-16 md:py-16 bg-background">
       {/* px-6 (Mobile) -> md:px-28 (PC) */}
       <div className="w-full mx-auto px-6 md:px-28">
         <FadeInStagger>

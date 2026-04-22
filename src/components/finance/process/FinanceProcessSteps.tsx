@@ -35,12 +35,12 @@ const processes = [
 export default function FinanceProcessSteps() {
   return (
     /* py-16 (Mobile) -> md:py-24 (PC) */
-    <section className="py-16 md:py-24 bg-background">
+    <section className="py-16 md:py-16 bg-background">
       {/* px-6 (Mobile) -> md:px-28 (PC) */}
       <div className="w-full mx-auto px-6 md:px-28">
         
         {/* Section Header */}
-        <div className="mb-12 md:mb-20 text-center md:text-left flex flex-col items-center md:items-start">
+        <div className="mb-12 md:mb-12 text-center md:text-left flex flex-col items-center md:items-start">
           <h2 className={`text-3xl md:text-5xl font-bold ${theme.text.brand} mb-4`}>
             Our Transparent Process
           </h2>

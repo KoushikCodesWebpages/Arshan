@@ -41,7 +41,7 @@ const services = [
 export default function ServicePillars() {
   return (
     /* py-16 (Mobile) -> md:py-20 (PC) */
-    <section id="pillars" className="scroll-mt-8 py-16 md:py-20 bg-background overflow-hidden">
+    <section id="pillars" className="scroll-mt-8 py-12 md:py-12 bg-background overflow-hidden">
       {/* px-6 (Mobile) -> md:px-28 (PC) */}
       <div className="w-full mx-auto px-6 md:px-28">
         

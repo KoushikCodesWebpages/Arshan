@@ -15,7 +15,7 @@ export default function ManagementEngine() {
 
   return (
     /* py-16 (Mobile) -> md:py-24 (PC) */
-    <section className="py-16 md:py-24 bg-white overflow-hidden">
+    <section className="py-16 md:py-16 overflow-hidden">
       {/* px-6 (Mobile) -> md:px-28 (PC) */}
       <div className="w-full mx-auto px-6 md:px-28">
         <FadeInStagger>

@@ -6,7 +6,7 @@ import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
 export default function MarketingFinalCTA() {
   return (
-    <section className="py-24 bg-white border-t border-border-light overflow-hidden">
+    <section className="py-16 bg-white border-t border-border-light overflow-hidden">
       <div className="container mx-auto px-6 lg:px-28 text-center">
         <FadeInStagger>
           <div className="space-y-8">

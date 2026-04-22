@@ -10,8 +10,8 @@ import home3 from '../../../public/home3.svg';
 export default function CTASection() {
   return (
     /* Removed large vertical padding on section to let the card sit more naturally */
-    <section className="py-8 md:py-16 bg-white overflow-hidden">
-      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12">
+    <section className="py-8 md:py-16 overflow-hidden">
+      <div className="w-full max-w-350 mx-auto px-6 md:px-12">
         <FadeInStagger>
           <FadeItem>
             {/* FIX: 'items-stretch' on the flex container ensures the image div 

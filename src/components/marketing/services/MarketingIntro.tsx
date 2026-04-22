@@ -10,7 +10,7 @@ import marketing1 from "../../../../public/Professional workspace representing h
 
 export default function MarketingIntro() {
   return (
-    <section className="py-16 md:py-12 overflow-hidden bg-white">
+    <section className="py-12 md:py-12 overflow-hidden bg-white">
       <div className="w-full mx-auto px-6 md:px-28">
         {/* Added flex-col and lg:flex-row to maintain desktop side-by-side */}
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">

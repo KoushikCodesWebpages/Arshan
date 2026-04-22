@@ -18,7 +18,7 @@ const stats = [
 export default function MarketImpact() {
   return (
     /* py-12 (Mobile) -> md:py-20 (PC) */
-    <section className="py-12 md:py-12 bg-white overflow-hidden">
+    <section className="py-12 md:py-12 overflow-hidden">
       {/* px-6 (Mobile) -> md:px-28 (PC) */}
       <div className="w-full mx-auto px-6 md:px-28">
 

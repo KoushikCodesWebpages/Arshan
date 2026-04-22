@@ -9,7 +9,7 @@ import finance2 from "../../../../public/finance2.svg";
 
 export default function FiscalClarity() {
   return (
-    <section className="py-16 md:py-24 overflow-hidden bg-primary text-white relative">
+    <section className="py-4 md:py-4 overflow-hidden bg-primary text-white relative">
       {/* Background Subtle Glow */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_70%_50%,rgba(164,134,38,0.05),transparent_50%)] pointer-events-none" />
 
@@ -19,7 +19,7 @@ export default function FiscalClarity() {
           {/* Left Content - Desktop sizes preserved */}
           <FadeInStagger className="lg:flex-2 space-y-8 text-center lg:text-left flex flex-col items-center lg:items-start">
             <FadeItem>
-              <span className={`uppercase tracking-[0.3em] text-sm md:text-md font-bold ${theme.brand.accent}`}>
+              <span className={`uppercase tracking-[0.2em] text-[10px] md:text-[12px] font-bold ${theme.brand.accent} border-l-2 border-tertiary pl-3`}>
                 Sovereign Ledger
               </span>
             </FadeItem>

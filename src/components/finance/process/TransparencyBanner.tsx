@@ -8,7 +8,7 @@ import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 export default function TransparencyBanner() {
   return (
     /* py-8 (Mobile) -> md:py-12 (PC) */
-    <section className="py-8 md:py-12 bg-white">
+    <section className="py-2 md:py-2">
       {/* px-6 (Mobile) -> md:px-28 (PC) */}
       <div className="w-full mx-auto px-6 md:px-28">
         <FadeInStagger>

@@ -77,13 +77,13 @@ export default function FinanceIntro() {
           <FadeInStagger className="w-full lg:flex-[0_0_40%]">
             <FadeItem className="relative w-full group">
               
-              <div className="relative w-full scale-[0.9] lg:scale-120 sm:max-w-125 aspect-square mx-auto lg:mx-0 lg:-ml-12">
+              <div className="relative w-full scale-[0.9] lg:scale-120 sm:max-w-125 aspect-square mx-auto lg:mx-0 lg:-ml-24">
                 
                 {/* Back Layer */}
-                <div className="absolute inset-0 bg-primary rounded-md rotate-2 md:rotate-3 translate-x-2 md:translate-x-4 translate-y-2 opacity-90 shadow-xl transition-transform duration-700 group-hover:rotate-1 group-hover:translate-x-2" />
+                <div className="absolute inset-0 bg-primary rounded-md rotate-2 md:rotate-3 translate-x-2 md:translate-x-4 translate-y-2 opacity-90  transition-transform duration-700 group-hover:rotate-1 group-hover:translate-x-2" />
                 
                 {/* Image Layer */}
-                <div className="absolute inset-0 rounded-md overflow-hidden -rotate-3 md:-rotate-5 translate-x-2 md:translate-x-4 translate-y-1 md:translate-y-2 shadow-2xl border border-white/10 bg-slate-900">
+                <div className="absolute inset-0 rounded-md overflow-hidden -rotate-3 md:-rotate-5 translate-x-2 md:translate-x-4 translate-y-1 md:translate-y-2  border border-white/10 bg-slate-900">
                   <Image
                     src={finance1}
                     alt="Financial Growth Chart"
@@ -94,7 +94,7 @@ export default function FinanceIntro() {
                   />
 
                   <div className="absolute inset-0 bg-linear-to-t from-primary/40 to-transparent pointer-events-none" />
-                  <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_80px_rgba(0,0,0,0.4)]" />
+                  <div className="absolute inset-0 pointer-events-none " />
                 </div>
 
               </div>

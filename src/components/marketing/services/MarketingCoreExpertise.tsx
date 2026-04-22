@@ -31,7 +31,7 @@ const expertise = [
 
 export default function MarketingCoreExpertise() {
   return (
-    <section id="services" className="scroll-mt-8 py-16 md:py-24 bg-white overflow-hidden">
+    <section id="services" className="scroll-mt-8 py-16 md:py-16 bg-white overflow-hidden">
       {/* px-6 (Mobile) -> px-24 (PC) */}
       <div className="w-full mx-auto px-6 md:px-24">
 

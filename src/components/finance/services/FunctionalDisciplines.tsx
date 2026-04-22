@@ -9,7 +9,7 @@ import finance2 from '../../../../public/finance2.svg';
 
 export default function FunctionalDisciplines() {
   return (
-    <section id="solutions" className="scroll-mt-8 py-16 md:py-24 bg-neutral/50">
+    <section id="solutions" className="scroll-mt-8 py-12 md:py-12 bg-neutral/50">
       {/* Keeping your px-28 for desktop, px-6 for mobile */}
       <div className="w-full mx-auto px-6 md:px-28 space-y-12 md:space-y-16">
 

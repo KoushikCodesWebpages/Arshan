@@ -18,7 +18,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-slate-50 border-t border-gray-200 mt-auto font-sans">
+    <footer className=" border-t bg-white border-gray-200 mt-auto font-sans">
     
       <div className="w-full mx-auto px-6 md:px-28 pt-12 md:pt-16 pb-8">
         

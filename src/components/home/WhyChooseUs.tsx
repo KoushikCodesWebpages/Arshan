@@ -38,7 +38,7 @@ const features = [
 export default function WhyChooseUs() {
   return (
     /* py-16 (Mobile) -> md:py-32 (PC) */
-    <section className="py-16 md:py-32 bg-white overflow-hidden">
+    <section className="py-8 md:py-8 bg-white overflow-hidden">
         {/* px-6 (Mobile) -> md:px-28 (PC) */}
         <div className="w-full mx-auto px-6 md:px-28">
 

@@ -25,7 +25,7 @@ export default function LeadershipConnect() {
                 {/* MOBILE: text-3xl, w-full 
                    DESKTOP: md:text-5xl, md:w-[70%] (preserves original design)
                 */}
-                <h2 className={`text-3xl md:text-5xl font-bold tracking-tight leading-[1.2] md:leading-[1.1] w-full md:w-[70%] ${theme.text.brand}`}>
+                <h2 className={`text-3xl md:text-5xl font-bold tracking-tight leading-[1.2] md:leading-[1.1] w-full ${theme.text.brand}`}>
                   Strategic guidance for your next move.
                 </h2>
               </FadeItem>
@@ -34,7 +34,7 @@ export default function LeadershipConnect() {
                 {/* MOBILE: text-[15px], w-full 
                    DESKTOP: md:text-md, md:w-[80%]
                 */}
-                <p className={`text-[15px] md:text-md w-full md:w-[80%] leading-relaxed ${theme.text.muted}`}>
+                <p className={`text-[15px] md:text-md w-full leading-relaxed ${theme.text.muted}`}>
                   Skip the queue. Connect directly with our strategic partners to 
                   discuss high-level growth operations across the globe.
                 </p>

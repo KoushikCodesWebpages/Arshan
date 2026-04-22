@@ -88,10 +88,10 @@ export default function PricingGrid() {
   };
 
   return (
-    <section id="social-media-pricing" className="py-16 md:py-24 bg-background overflow-hidden">
+    <section id="social-media-pricing" className="py-16 md:py-16 bg-background overflow-hidden">
       <div className="w-full mx-auto px-6 md:px-28">
         
-        <FadeInStagger className="text-center mb-16 space-y-4">
+        <FadeInStagger className="text-center mb-8 space-y-4">
           <FadeItem>
             <span className={`${theme.text.brand} text-[13px] font-bold tracking-[0.2em] uppercase`}>
               Service Plans
