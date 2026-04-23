@@ -1,99 +1,172 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { X, CheckCircle2, ShieldCheck } from "lucide-react";
 import { theme } from "@/lib/theme";
-import { ArrowRight } from "lucide-react";
-import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
-import marketing1 from "../../../../public/Professional workspace representing high-end social media management and brand consistency(2).svg";
 
-export default function MarketingIntro() {
+export type Plan = {
+  name: string;
+  price: string;
+  desc: string;
+  features: string[];
+  featured?: boolean;
+};
+
+const plans: Plan[] = [
+  {
+    name: "Starter",
+    price: "250",
+    desc: "Essential Brand presence",
+    features: ["8 High-Impact Posts", "Platform-Native Captions", "Monthly Performance Report"],
+    featured: false,
+  },
+  {
+    name: "Growth",
+    price: "450",
+    desc: "Comprehensive management",
+    features: ["15 Posts Per Month", "Active Stories & Engagement", "Bi-Weekly Strategy Review", "Full Profile makeover & Trend Research"],
+    featured: true,
+  },
+  {
+    name: "Premium",
+    price: "800",
+    desc: "Full-scale digital authority",
+    features: ["Daily Posting (30+ posts)", "Premium Custom Content", "Full Platform Management", "Priority Support Desk"],
+    featured: false,
+  },
+];
+
+interface PlanSelectionModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onSelectPlan: (plan: Plan) => void;
+  currentPlanName: string;
+}
+
+export default function PlanSelectionModal({ 
+  isOpen, 
+  onClose, 
+  onSelectPlan, 
+  currentPlanName 
+}: PlanSelectionModalProps) {
+  
+  if (!isOpen) return null;
+
   return (
-    <section className="py-12 md:py-12 overflow-hidden bg-white">
-      <div className="w-full mx-auto px-6 md:px-28">
-        {/* Added flex-col and lg:flex-row to maintain desktop side-by-side */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+    <div className="fixed inset-0 z-10000 flex items-center justify-center p-4 md:p-6 bg-slate-900/40 backdrop-blur-md animate-in fade-in duration-500">
+      
+      {/* Main Modal Container */}
+      <div className={`bg-white rounded-brand w-full max-w-7xl max-h-[95vh] overflow-y-auto shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] animate-in fade-in zoom-in-95 slide-in-from-bottom-12 duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative`}>
+        
+        {/* Animated Close Button */}
+        <button 
+          onClick={onClose} 
+          className="absolute top-4 right-4 md:top-6 md:right-6 p-2 hover:bg-neutral rounded-full transition-all duration-300 hover:rotate-90 z-20 animate-in fade-in zoom-in delay-500"
+        >
+          <X className="w-5 h-5 text-secondary" />
+        </button>
+
+        <div className="px-6 py-10 md:px-10 md:py-12">
           
-          {/* TEXT CONTENT: order-1 ensures it stays on top on mobile */}
-          <FadeInStagger className="flex-1 space-y-8 text-center lg:text-left flex flex-col items-center lg:items-start order-1">
-            <div className="space-y-6">
-              <FadeItem>
-                <span className={`uppercase tracking-[0.2em] text-[10px] md:text-[12px] font-bold ${theme.brand.accent} border-l-2 border-tertiary pl-3`}>
-                  Elevate Your Digital Presence
-                </span>
-              </FadeItem>
-              
-              <FadeItem>
-                <h1 className={`text-4xl md:text-7xl font-bold leading-[1.1] md:leading-[1.05] tracking-tight ${theme.text.brand} mb-6 md:mb-8`}>
-                  Professional <br className="hidden sm:block" />
-                  Social Media <br className="hidden sm:block" />
-                  Management.
-                </h1>
-              </FadeItem>
+          {/* Header Animation - Slide from top */}
+          <div className="text-center mb-8 md:mb-10 animate-in fade-in slide-in-from-top-4 duration-1000 delay-200">
+            <span className="uppercase tracking-[0.2em] text-[10px] md:text-[11px] font-bold text-tertiary">
+              Service Management
+            </span>
+            <h2 className={`text-2xl md:text-4xl font-bold mt-1 ${theme.text.brand}`}>
+              Change your Plan
+            </h2>
+            <p className={`text-xs md:text-sm mt-2 max-w-xl mx-auto ${theme.text.muted}`}>
+              Select the plan that best fits your current brand requirements and future ambitions.
+            </p>
+          </div>
 
-              <FadeItem>
-                <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[90%]`}>
-                  We manage your brand&apos;s digital narrative through consistent 
-                  posting, strategic scheduling, and professional account 
-                  maintenance. Build authority and scale your influence.
-                </p>
-              </FadeItem>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-10 items-stretch">
+            {plans.map((plan, index) => {
+              const isCurrent = currentPlanName === plan.name;
 
-            <FadeItem className="w-full">
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 pt-2">
-                <button
-                  onClick={() => {
-                    const el = document.getElementById("services");
-                    el?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className={`${theme.buttons.primary} w-full sm:w-auto px-10 py-3 text-xs md:text-sm font-bold uppercase tracking-widest rounded-sm active:scale-95 shadow-xl hover:shadow-primary/20 transition-all`}
+              return (
+                <div 
+                  key={plan.name}
+                  style={{ animationDelay: `${400 + index * 100}ms` }}
+                  className={`
+                    relative p-8 md:p-10 rounded-lg flex flex-col border transition-all duration-700 group
+                    animate-in fade-in zoom-in-95 slide-in-from-bottom-8 fill-mode-both
+                    ${plan.featured 
+                      ? `${theme.brand.primary} text-white border-transparent shadow-2xl lg:scale-[1.04] z-10 lg:hover:scale-[1.07]` 
+                      : "bg-white text-foreground border-border-light hover:border-tertiary/30 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] md:hover:-translate-y-2"
+                    }
+                  `}
                 >
-                  View Services
-                </button>
-                
-                <Link 
-                  href="/marketing/#social-media-pricing"
-                  className={`flex items-center justify-center gap-2 font-bold text-md ${theme.text.main} group transition-colors hover:text-primary`}
-                >
-                  Our Pricing
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </FadeItem>
-          </FadeInStagger>
+                  {/* THE HR HOVER GLOW: Radial gradient that appears on group hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none bg-[radial-gradient(circle_at_top,rgba(164,134,38,0.1),transparent_70%)]" />
 
-          {/* IMAGE CONTAINER: order-2 moves this below the text on mobile */}
-          <FadeInStagger className="flex-1 relative group order-2 w-full">
-            <FadeItem>
-              <div className="relative w-full max-w-137.5 aspect-square mx-auto">
-                <div className="absolute -inset-6 bg-primary/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                
-                <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-950 md:bg-slate-900">
-                  <Image
-                    src={marketing1}
-                    alt="Digital Presence Visualization"
-                    fill
-                    className="object-cover transition-transform duration-[2s] ease-out lg:group-hover:scale-110 opacity-90 md:opacity-100"
-                    priority
-                  />
-                  
-                  {/* Adaptive Overlays: Stronger contrast on mobile, sophisticated on desktop */}
-                  <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.6)_60%,rgba(0,0,0,0.9)_100%)] mix-blend-multiply" />
-                  
-                  {/* Subtle light effects preserved for desktop */}
-                  <div className="hidden md:block absolute inset-0 mix-blend-screen opacity-30 bg-[radial-gradient(circle_at_70%_70%,rgba(0,255,255,0.15)_0%,transparent_50%)]" />
-                  
-                  <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
-                  <div className="absolute inset-0 rounded-2xl border border-white/20 pointer-events-none shadow-[inset_0_0_80px_rgba(0,0,0,0.4)]" />
+                  {plan.featured && (
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-tertiary text-white text-[9px] md:text-[10px] font-bold uppercase tracking-widest px-6 py-2 rounded-2xl shadow-lg z-20 whitespace-nowrap">
+                      Most Selected
+                    </div>
+                  )}
+
+                  {/* Pricing Header */}
+                  <div className="flex flex-col gap-4 md:gap-5 mb-8 relative z-10">
+                    <div>
+                      <h4 className="text-lg md:text-xl font-bold tracking-tight group-hover:text-tertiary transition-colors duration-300">
+                        {plan.name}
+                      </h4>
+                      <p className={`text-[12px] md:text-[13px] leading-relaxed mt-1 italic font-medium ${plan.featured ? "text-white/70" : "text-secondary"}`}>
+                        {plan.desc}
+                      </p>
+                    </div>
+
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-2xl md:text-3xl font-bold">€{plan.price}</span>
+                      <span className="text-[10px] md:text-[11px] font-bold opacity-60 tracking-wider uppercase">/ month</span>
+                    </div>
+                  </div>
+
+                  {/* THE HR FEATURE ANIMATION: Features slide slightly to the right on card hover */}
+                  <ul className="space-y-4 mb-10 flex-1 relative z-10">
+                    {plan.features.map((feat, i) => (
+                      <li 
+                        key={feat} 
+                        className="flex items-start gap-3 text-[13px] md:text-[14px] leading-snug opacity-90 lg:group-hover:translate-x-1 transition-transform duration-300"
+                        style={{ transitionDelay: `${i * 40}ms` }}
+                      >
+                        <CheckCircle2 className={`w-4 h-4 mt-0.5 shrink-0 ${plan.featured ? "text-blue-400" : "text-tertiary"}`} />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <button 
+                    onClick={() => onSelectPlan(plan)}
+                    disabled={isCurrent}
+                    className={`
+                      relative z-10 w-full py-3 md:py-3 rounded-2xl font-bold text-[11px] md:text-[12px] uppercase tracking-widest transition-all duration-300 active:scale-95
+                      ${isCurrent 
+                        ? "bg-slate-100 text-slate-400 cursor-not-allowed border border-border-light" 
+                        : plan.featured 
+                          ? "bg-white text-primary hover:bg-tertiary hover:text-white shadow-xl" 
+                          : `${theme.buttons.primary} hover:bg-tertiary hover:text-white`
+                      }
+                    `}
+                  >
+                    {isCurrent ? "Current Plan" : "Select Plan"}
+                  </button>
                 </div>
-              </div>
-            </FadeItem>
-          </FadeInStagger>
+              );
+            })}
+          </div>
+        </div>
 
+        {/* Footer Bar - Slide up animation */}
+        <div className="bg-neutral border-t border-border-light px-6 md:px-10 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-[10px] md:text-[11px] text-secondary font-bold tracking-widest uppercase animate-in slide-in-from-bottom-full duration-1000 delay-700 fill-mode-both">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 md:w-4.5 md:h-4.5 text-tertiary" />
+            Changes effective next billing cycle
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

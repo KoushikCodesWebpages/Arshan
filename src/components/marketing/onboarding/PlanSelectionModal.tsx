@@ -53,80 +53,87 @@ export default function PlanSelectionModal({
   if (!isOpen) return null;
 
   return (
-    /* 1. OVERLAY: items-start + py-10 ensures the modal doesn't get cut off at the top. overflow-y-auto enables the scroll. */
-    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 md:p-10 bg-primary/20 backdrop-blur-md overflow-y-auto animate-in fade-in duration-500">
+    <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4 md:p-6 bg-slate-900/40 backdrop-blur-md animate-in fade-in duration-500">
       
-      {/* 2. MODAL: Removed overflow-hidden so the internal grid doesn't get clipped. */}
-      <div className={`${theme.ui.modal} w-full max-w-7xl my-auto shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] animate-in fade-in zoom-in-95 slide-in-from-bottom-12 duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative flex flex-col bg-white`}>
+      {/* Main Modal Container */}
+      <div className={`bg-white rounded-brand w-full max-w-7xl max-h-[95vh] overflow-y-auto shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] animate-in fade-in zoom-in-95 slide-in-from-bottom-12 duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative`}>
         
-        {/* Close Button - Stays sticky/fixed relative to the modal top */}
+        {/* Animated Close Button */}
         <button 
           onClick={onClose} 
-          className="absolute top-4 right-4 md:top-6 md:right-8 p-3 bg-slate-100/80 backdrop-blur-sm md:bg-transparent hover:bg-slate-100 rounded-full transition-all duration-300 z-50"
+          className="absolute top-4 right-4 md:top-6 md:right-6 p-2 hover:bg-neutral rounded-full transition-all duration-300 hover:rotate-90 z-20 animate-in fade-in zoom-in delay-500"
         >
-          <X className="w-5 h-5 text-slate-500" />
+          <X className="w-5 h-5 text-secondary" />
         </button>
 
-        <div className="px-6 md:px-20 py-12 md:py-16">
+        <div className="px-6 py-10 md:px-10 md:py-12">
           
-          {/* Header */}
-          <div className="text-center mb-12">
-            <span className={`uppercase tracking-[0.2em] text-[10px] md:text-[11px] font-bold ${theme.brand.accent}`}>
+          {/* Header Animation - Slide from top */}
+          <div className="text-center mb-8 md:mb-10 animate-in fade-in slide-in-from-top-4 duration-1000 delay-200">
+            <span className="uppercase tracking-[0.2em] text-[10px] md:text-[11px] font-bold text-tertiary">
               Service Management
             </span>
-            <h2 className={`text-3xl md:text-5xl font-bold mt-2 ${theme.text.brand} tracking-tight`}>
-              Change Your Plan
+            <h2 className={`text-2xl md:text-4xl font-bold mt-1 ${theme.text.brand}`}>
+              Change your Plan
             </h2>
-            <p className={`mt-3 text-sm md:text-lg leading-relaxed text-secondary max-w-2xl mx-auto`}>
+            <p className={`text-xs md:text-sm mt-2 max-w-xl mx-auto ${theme.text.muted}`}>
               Select the plan that best fits your current brand requirements and future ambitions.
             </p>
           </div>
 
-          {/* Plan Grid: Vertical on mobile, Horizontal on LG */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-10 items-stretch">
             {plans.map((plan, index) => {
               const isCurrent = currentPlanName === plan.name;
 
               return (
                 <div 
                   key={plan.name}
-                  style={{ animationDelay: `${200 + index * 100}ms` }}
+                  style={{ animationDelay: `${400 + index * 100}ms` }}
                   className={`
-                    relative p-8 rounded-2xl flex flex-col border transition-all duration-500 group
+                    relative p-8 md:p-10 rounded-lg flex flex-col border transition-all duration-700 group
                     animate-in fade-in zoom-in-95 slide-in-from-bottom-8 fill-mode-both
                     ${plan.featured 
-                      ? "bg-[#031933] text-white border-primary/50 shadow-2xl py-12 lg:scale-105 z-10" 
-                      : "bg-white text-slate-900 border-slate-100 shadow-sm"
+                      ? `${theme.brand.primary} text-white border-transparent shadow-2xl lg:scale-[1.04] z-10 lg:hover:scale-[1.07]` 
+                      : "bg-white text-foreground border-border-light hover:border-tertiary/30 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] md:hover:-translate-y-2"
                     }
                   `}
                 >
+                  {/* THE HR HOVER GLOW: Radial gradient that appears on group hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none bg-[radial-gradient(circle_at_top,rgba(164,134,38,0.1),transparent_70%)]" />
+
                   {plan.featured && (
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-tertiary text-[9px] font-bold uppercase tracking-widest px-5 py-2 rounded-full shadow-lg z-20 whitespace-nowrap text-white">
-                      Most Popular
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-tertiary text-white text-[9px] md:text-[10px] font-bold uppercase tracking-widest px-6 py-2 rounded-2xl shadow-lg z-20 whitespace-nowrap">
+                      Most Selected
                     </div>
                   )}
 
-                  <div className="flex flex-col gap-4 mb-8 relative z-10">
+                  {/* Pricing Header */}
+                  <div className="flex flex-col gap-4 md:gap-5 mb-8 relative z-10">
                     <div>
-                      <h4 className="text-xl uppercase font-bold tracking-tight">
+                      <h4 className="text-lg md:text-xl font-bold tracking-tight group-hover:text-tertiary transition-colors duration-300">
                         {plan.name}
                       </h4>
-                      <p className={`text-[13px] mt-1 ${plan.featured ? "text-slate-400" : "text-slate-500"}`}>
+                      <p className={`text-[12px] md:text-[13px] leading-relaxed mt-1 italic font-medium ${plan.featured ? "text-white/70" : "text-secondary"}`}>
                         {plan.desc}
                       </p>
                     </div>
-                    
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-4xl font-bold">€{plan.price}</span>
-                      <span className="text-[12px] opacity-60 font-medium tracking-wider uppercase">/ month</span>
+
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-2xl md:text-3xl font-bold">€{plan.price}</span>
+                      <span className="text-[10px] md:text-[11px] font-bold opacity-60 tracking-wider uppercase">/ month</span>
                     </div>
                   </div>
 
+                  {/* THE HR FEATURE ANIMATION: Features slide slightly to the right on card hover */}
                   <ul className="space-y-4 mb-10 flex-1 relative z-10">
-                    {plan.features.map((feat) => (
-                      <li key={feat} className="flex items-start gap-3 text-[14px]">
-                        <CheckCircle2 className={`w-4 h-4 mt-0.5 shrink-0 ${plan.featured ? "text-blue-400" : "text-primary "}`} />
-                        <span className="leading-snug">{feat}</span>
+                    {plan.features.map((feat, i) => (
+                      <li 
+                        key={feat} 
+                        className="flex items-start gap-3 text-[13px] md:text-[14px] leading-snug opacity-90 lg:group-hover:translate-x-1 transition-transform duration-300"
+                        style={{ transitionDelay: `${i * 40}ms` }}
+                      >
+                        <CheckCircle2 className={`w-4 h-4 mt-0.5 shrink-0 ${plan.featured ? "text-blue-400" : "text-tertiary"}`} />
+                        <span>{feat}</span>
                       </li>
                     ))}
                   </ul>
@@ -135,12 +142,12 @@ export default function PlanSelectionModal({
                     onClick={() => onSelectPlan(plan)}
                     disabled={isCurrent}
                     className={`
-                      relative z-10 w-full py-3 rounded-sm font-bold text-xs uppercase tracking-widest transition-all duration-300 active:scale-95
+                      relative z-10 w-full py-3 md:py-3 rounded-2xl font-bold text-[11px] md:text-[12px] uppercase tracking-widest transition-all duration-300 active:scale-95
                       ${isCurrent 
-                        ? "bg-slate-100 text-slate-400 cursor-not-allowed" 
+                        ? "bg-slate-100 text-slate-400 cursor-not-allowed border border-border-light" 
                         : plan.featured 
-                          ? "bg-white text-primary hover:bg-tertiary shadow-xl" 
-                          : "border border-primary/20 text-primary hover:bg-primary hover:text-white"
+                          ? "bg-white text-primary hover:bg-tertiary hover:text-white shadow-xl" 
+                          : `${theme.buttons.primary} hover:bg-tertiary hover:text-white`
                       }
                     `}
                   >
@@ -152,10 +159,10 @@ export default function PlanSelectionModal({
           </div>
         </div>
 
-        {/* Footer Bar */}
-        <div className="bg-slate-50/80 backdrop-blur-sm border-t border-slate-100 px-6 md:px-12 py-5 flex justify-center items-center text-[10px] md:text-[11px] text-slate-400 font-bold tracking-widest uppercase shrink-0">
+        {/* Footer Bar - Slide up animation */}
+        <div className="bg-neutral border-t border-border-light px-6 md:px-10 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-[10px] md:text-[11px] text-secondary font-bold tracking-widest uppercase animate-in slide-in-from-bottom-full duration-1000 delay-700 fill-mode-both">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4" />
+            <ShieldCheck className="w-4 h-4 md:w-4.5 md:h-4.5 text-tertiary" />
             Changes effective next billing cycle
           </div>
         </div>

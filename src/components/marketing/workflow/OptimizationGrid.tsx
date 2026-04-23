@@ -7,7 +7,7 @@ import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
 export default function OptimizationGrid() {
   return (
-    <section className="py-24 bg-white">
+    <section className="pt-20 pb-10">
       <div className="w-full mx-auto px-6 md:px-28">
         <FadeInStagger className="grid lg:grid-cols-2 gap-8 items-stretch">
           
@@ -15,7 +15,7 @@ export default function OptimizationGrid() {
           <FadeItem className="bg-white border border-slate-100 p-12 lg:p-16 rounded-sm shadow-sm flex flex-col justify-between">
             <div className="space-y-8">
               <div className="relative">
-                <span className="text-5xl font-bold text-slate-100 leading-none">
+                <span className="text-5xl font-bold text-slate-200 leading-none">
                   04
                 </span>
                 <hr className="absolute top-1/2 left-20 right-0 border-slate-50" />
@@ -50,7 +50,7 @@ export default function OptimizationGrid() {
           <FadeItem className="bg-[#031933] p-12 lg:p-16 rounded-sm shadow-2xl flex flex-col justify-between text-white">
             <div className="space-y-8">
               <div className="relative">
-                <span className="text-5xl font-bold text-white/10 leading-none">
+                <span className="text-5xl font-bold text-slate-200 leading-none">
                   05
                 </span>
                 <hr className="absolute top-1/2 left-20 right-0 border-white/5" />

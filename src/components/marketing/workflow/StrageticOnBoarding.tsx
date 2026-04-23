@@ -25,7 +25,7 @@ export default function StrategicOnboarding() {
             {/* Index & Header */}
             <FadeItem className="space-y-4">
               <div className="relative">
-                <span className="text-[120px] font-bold text-slate-100 leading-none">
+                <span className="text-[120px] font-bold text-slate-200 leading-none">
                   01
                 </span>
                 <hr className="absolute top-1/2 left-[180px] right-0 border-slate-100/50" />

@@ -19,7 +19,7 @@ export default function ContentArchitecture() {
             {/* Index & Header */}
             <FadeItem className="space-y-4">
               <div className="relative">
-                <span className="text-[120px] font-bold text-slate-200/50 leading-none">
+                <span className="text-[120px] font-bold text-slate-200 leading-none">
                   02
                 </span>
                 <hr className="absolute top-1/2 left-45 right-0 border-slate-200" />

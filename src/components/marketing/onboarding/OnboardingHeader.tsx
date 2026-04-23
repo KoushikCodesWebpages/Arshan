@@ -8,7 +8,7 @@ export default function OnboardingHeader() {
     <FadeInStagger className="space-y-4 mb-16">
       
       <FadeItem>
-        <span className={`uppercase tracking-[0.25em] text-xs font-bold ${theme.brand.accent}`}>
+        <span className={`uppercase tracking-[0.2em] text-[10px] md:text-[12px] font-bold ${theme.brand.accent} border-l-2 border-tertiary pl-3`}>
           Arshan's Social Management
         </span>
       </FadeItem>

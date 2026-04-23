@@ -7,7 +7,7 @@ import { FadeInStagger, FadeItem } from "@/components/animations/FadeIn";
 
 export default function WorkflowCTA() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-10 bg-white">
       <div className="w-full mx-auto px-6 md:px-28">
         <FadeItem>
           <div className="bg-slate-50/50 rounded-sm p-12 lg:p-20 flex flex-col md:flex-row items-center justify-between gap-12 border border-slate-100">

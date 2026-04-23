@@ -28,7 +28,7 @@ export default function CreativityGeneration() {
           {/* Index & Header */}
           <FadeItem className="space-y-4">
             <div className="flex items-center gap-6">
-              <span className="text-6xl font-bold text-white/20">
+              <span className="text-6xl font-bold text-slate-200">
                 03
               </span>
               <div className="h-px w-24 bg-white/20" />
