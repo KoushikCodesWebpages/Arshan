@@ -12,7 +12,7 @@ export default function GoalSelector() {
         <button
           key={goal}
           onClick={() => setSelected(goal)}
-          className={`flex items-center gap-3 p-4 rounded-lg border transition-all text-sm font-medium ${
+          className={`flex items-center gap-3 p-3 rounded-lg border transition-all text-sm font-medium ${
             selected === goal ? "border-primary bg-primary/5 text-primary" : "border-slate-100 bg-slate-50/30 text-slate-600"
           }`}
         >

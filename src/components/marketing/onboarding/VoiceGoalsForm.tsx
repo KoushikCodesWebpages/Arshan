@@ -79,7 +79,7 @@ export default function VoiceGoalsForm({ values, onChange }: VoiceGoalsProps) {
                         key={goal}
                         type="button"
                         onClick={() => handleGoalSelect(goal)}
-                        className={`flex items-center gap-3 p-5 rounded-sm border transition-all text-sm font-medium text-left ${
+                        className={`flex items-center gap-3 p-3 rounded-sm border transition-all text-sm font-medium text-left ${
                           isActive
                             ? "border-primary bg-primary/5 text-primary shadow-sm"
                             : "border-slate-50 bg-slate-50/30 text-slate-500 hover:border-slate-200 hover:bg-slate-50"

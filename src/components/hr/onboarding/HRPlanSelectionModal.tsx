@@ -146,7 +146,7 @@ export default function HRPlanSelectionModal({
                     onClick={() => onSelectPlan(plan)}
                     disabled={isCurrent}
                     className={`
-                      relative z-10 w-full py-4 md:py-5 rounded-2xl font-bold text-[11px] md:text-[12px] uppercase tracking-widest transition-all duration-300 active:scale-95
+                      relative z-10 w-full py-3 md:py-3 rounded-2xl font-bold text-[11px] md:text-[12px] uppercase tracking-widest transition-all duration-300 active:scale-95
                       ${isCurrent 
                         ? "bg-slate-100 text-slate-400 cursor-not-allowed border border-border-light" 
                         : plan.featured 

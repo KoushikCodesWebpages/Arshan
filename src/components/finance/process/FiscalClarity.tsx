@@ -25,7 +25,7 @@ export default function FiscalClarity() {
             </FadeItem>
             
             <FadeItem>
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight w-full">
+              <h2 className="text-4xl md:text-6xl lg:text-6xl font-bold leading-[1.1] tracking-tight w-full">
                 Your Clear Path to Fiscal Clarity
               </h2>
             </FadeItem>
@@ -41,7 +41,7 @@ export default function FiscalClarity() {
             <FadeItem className="w-full sm:w-auto">
               <Link 
                 href="/contact-us"
-                className="inline-block bg-white text-primary px-10 py-4 font-bold rounded-sm shadow-xl hover:bg-slate-100 transition-all active:scale-95 w-full sm:w-auto text-center"
+                className="inline-block bg-white text-primary px-10 py-3 font-bold rounded-sm shadow-xl hover:bg-slate-100 transition-all active:scale-95 w-full sm:w-auto text-center"
               >
                 Contact Us
               </Link>

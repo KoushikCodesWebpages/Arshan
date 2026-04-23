@@ -37,7 +37,7 @@ export default function StructuralHero() {
 
             <a
               href="/hr/architecture" 
-              className={`${theme.buttons.base} ${theme.buttons.primary} w-full sm:w-auto text-center px-8 py-4 text-base md:text-lg shadow-lg`}
+              className={`${theme.buttons.base} ${theme.buttons.primary} w-full sm:w-auto text-center px-8 py-3 text-base md:text-md shadow-lg`}
             >
               Explore Clusters
             </a>

@@ -13,7 +13,7 @@ export default function TransparencyBanner() {
       <div className="w-full mx-auto px-6 md:px-28">
         <FadeInStagger>
           <FadeItem>
-            <div className="relative bg-neutral border-l-4 border-tertiary p-8 md:p-12 shadow-sm group">
+            <div className="relative bg-neutral border-l-4 border-tertiary p-6 md:p-6 shadow-sm group">
               {/* sm:flex-row ensures icon stays next to text on larger phones */}
               <div className="flex flex-col sm:flex-row items-start gap-4 md:gap-6 relative z-10">
                 

@@ -57,7 +57,7 @@ export default function FinanceIntro() {
                     const el = document.getElementById("solutions");
                     el?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className={`${theme.buttons.primary} w-full sm:w-auto px-8 py-4 shadow-xl hover:shadow-primary/20 rounded-sm transition-all active:scale-95 flex justify-center items-center`}
+                  className={`${theme.buttons.primary} w-full sm:w-auto px-8 py-3 shadow-xl hover:shadow-primary/20 rounded-sm transition-all active:scale-95 flex justify-center items-center`}
                 >
                   View Solutions
                 </button>

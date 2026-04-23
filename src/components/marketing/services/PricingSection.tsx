@@ -98,8 +98,8 @@ export default function PricingGrid() {
             </span>
           </FadeItem>
           <FadeItem>
-            <h2 className={`text-4xl md:text-6xl font-bold tracking-tight ${theme.text.brand}`}>
-              Social Media Pricing<span className="text-primary">.</span>
+            <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${theme.text.brand}`}>
+              Social Media Pricing
             </h2>
           </FadeItem>
         </FadeInStagger>
@@ -180,7 +180,7 @@ export default function PricingGrid() {
                 </ul>
 
                 {/* Button stays at bottom */}
-                <button className={`w-full py-4 text-[12px] md:text-[13px] font-bold uppercase tracking-widest rounded-brand transition-all active:scale-[0.97] mt-auto ${
+                <button className={`w-full py-3 text-[12px] md:text-[13px] font-bold uppercase tracking-widest rounded-brand transition-all active:scale-[0.97] mt-auto ${
                   plan.isDark ? "bg-tertiary text-white hover:brightness-110 shadow-lg shadow-tertiary/20" : `${theme.buttons.primary}`
                 }`}>
                   Select {plan.name}

@@ -98,7 +98,7 @@ export default function ContactStrategySection() {
                     <p className="text-white/70 text-[14px] md:text-[15px] leading-relaxed mb-8 max-w-sm">
                       Direct access to a partner's calendar for a 30-minute high-level assessment.
                     </p>
-                    <button className="flex items-center gap-2 bg-tertiary text-white px-8 py-4 rounded-md text-sm font-bold uppercase tracking-wider hover:brightness-110 transition-all active:scale-95 w-full sm:w-fit justify-center">
+                    <button className="flex items-center gap-2 bg-tertiary text-white px-8 py-3 rounded-md text-sm font-bold uppercase tracking-wider hover:brightness-110 transition-all active:scale-95 w-full sm:w-fit justify-center">
                       Reserve Time <ArrowRight className="w-3 h-3" />
                     </button>
                   </div>
@@ -185,7 +185,7 @@ export default function ContactStrategySection() {
                     <button 
                       type="submit"
                       disabled={status === "loading"}
-                      className="w-full py-4 rounded-lg bg-[#001F3F] text-white font-bold text-sm tracking-wider hover:bg-black transition-all active:scale-[0.99] disabled:opacity-70 flex justify-center items-center gap-2"
+                      className="w-full py-3 rounded-lg bg-[#001F3F] text-white font-bold text-sm tracking-wider hover:bg-black transition-all active:scale-[0.99] disabled:opacity-70 flex justify-center items-center gap-2"
                     >
                       {status === "loading" ? (
                         <>

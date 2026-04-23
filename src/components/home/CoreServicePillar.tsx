@@ -40,12 +40,22 @@ const services = [
 
 export default function ServicePillars() {
   return (
-    /* py-16 (Mobile) -> md:py-20 (PC) */
-    <section id="pillars" className="scroll-mt-8 py-12 md:py-12 bg-background overflow-hidden">
-      {/* px-6 (Mobile) -> md:px-28 (PC) */}
+    /* We add 'relative' here so the ghost anchor positions itself based on this section */
+    <section className="relative py-12 md:py-12 bg-background">
+      
+      {/* 1. THE FIX: GHOST ANCHOR 
+          This empty div is hidden from screen readers. 
+          The negative top value acts as your scroll margin. 
+          Adjust '-top-32' to match your header height. */}
+      <div 
+        id="pillars" 
+        className="absolute -top-14 left-0 w-full h-0 invisible" 
+        aria-hidden="true" 
+      />
+
       <div className="w-full mx-auto px-6 md:px-28">
         
-        {/* Header: text-center (Mobile) -> md:text-left (PC) */}
+        {/* Header Content */}
         <FadeInStagger className="mb-12 md:mb-16 space-y-4 text-center md:text-left">
           <FadeItem>
             <h2 className={`text-3xl md:text-4xl font-bold ${theme.text.brand}`}>
@@ -53,30 +63,26 @@ export default function ServicePillars() {
             </h2>
           </FadeItem>
           <FadeItem>
-            {/* mx-auto (Mobile) -> md:mx-0 (PC) */}
              <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[90%] mb-8 md:mb-10`}>
               Comprehensive business infrastructure designed for performance, growth and further visibilty.
             </p>
           </FadeItem>
         </FadeInStagger>
 
-        {/* Cards Grid: Stays 1 column on mobile, moves to 3 columns on md (768px+) */}
+        {/* Cards Grid */}
         <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
           {services.map((service, index) => (
             <FadeItem key={index} className="h-full">
               <div 
                 className={`${theme.cards.base} p-6 md:p-8 hover:shadow-lg transition-all duration-300 flex flex-col h-full`}
               >
-                {/* Icon Header: justify-center (Mobile) -> md:justify-start (PC) */}
                 <div className="mb-6 md:mb-8 flex justify-center md:justify-start">
                   <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
                     <service.icon className="w-6 h-6 text-primary" />
                   </div>
                 </div>
 
-                {/* Content: text-center (Mobile) -> md:text-left (PC) */}
                 <div className="space-y-4 flex-1 text-center md:text-left">
-                  {/* Changed w-[80%] to w-full for mobile to prevent narrow text columns */}
                   <h3 className={`w-full md:w-[80%] text-xl md:text-2xl font-bold leading-tight ${theme.text.main}`}>
                     {service.title}
                   </h3>
@@ -84,7 +90,6 @@ export default function ServicePillars() {
                     {service.description}
                   </p>
 
-                  {/* Highlights: items-center (Mobile) -> items-start (PC) */}
                   <ul className="space-y-3 pt-4 inline-block md:block text-left">
                     {service.highlights.map((item, i) => (
                       <li key={i} className="flex items-center gap-3">
@@ -97,7 +102,6 @@ export default function ServicePillars() {
                   </ul>
                 </div>
 
-                {/* Footer Link: justify-center (Mobile) -> md:justify-start (PC) */}
                 <div className="mt-8 md:mt-10 pt-6 border-t border-border-light">
                   <a 
                     href={service.href} 

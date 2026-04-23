@@ -48,7 +48,7 @@ export default function MarketingIntro() {
                     const el = document.getElementById("services");
                     el?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className={`${theme.buttons.primary} w-full sm:w-auto px-10 py-4 text-xs md:text-sm font-bold uppercase tracking-widest rounded-sm active:scale-95 shadow-xl hover:shadow-primary/20 transition-all`}
+                  className={`${theme.buttons.primary} w-full sm:w-auto px-10 py-3 text-xs md:text-sm font-bold uppercase tracking-widest rounded-sm active:scale-95 shadow-xl hover:shadow-primary/20 transition-all`}
                 >
                   View Services
                 </button>

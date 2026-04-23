@@ -102,7 +102,7 @@ export const OnboardingStatusModal = ({
                 <>
                   <button 
                     onClick={onRetry} 
-                    className="w-full bg-[#0d2649] text-white py-5 text-[10px] font-bold uppercase tracking-[0.25em] rounded-sm flex items-center justify-center gap-3 hover:bg-[#16335a] transition-all"
+                    className="w-full bg-[#0d2649] text-white py-3 text-[10px] font-bold uppercase tracking-[0.25em] rounded-sm flex items-center justify-center gap-3 hover:bg-[#16335a] transition-all"
                   >
                     <RefreshCcw className="w-3 h-3" /> {config.actionLabel}
                   </button>
@@ -113,7 +113,7 @@ export const OnboardingStatusModal = ({
               ) : (
                 <button 
                   onClick={onClose} 
-                  className="w-full bg-[#0d2649] text-white py-5 text-[10px] font-bold uppercase tracking-[0.25em] rounded-sm hover:bg-[#16335a] transition-all shadow-lg shadow-blue-900/10"
+                  className="w-full bg-[#0d2649] text-white py-3 text-[10px] font-bold uppercase tracking-[0.25em] rounded-sm hover:bg-[#16335a] transition-all shadow-lg shadow-blue-900/10"
                 >
                   {config.actionLabel}
                 </button>

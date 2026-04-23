@@ -42,13 +42,13 @@ export default function MarketingCoreExpertise() {
             <div className="space-y-4">
               <FadeItem>
                 {/* text-4xl (Mobile) -> text-6xl (PC) */}
-                <h2 className={`text-4xl md:text-6xl font-bold tracking-tight ${theme.text.brand}`}>
-                  Our Core Expertise.
+                <h2 className={`text-4xl md:text-5xl font-bold tracking-tight ${theme.text.brand}`}>
+                  Our Core Expertise
                 </h2>
               </FadeItem>
 
               <FadeItem>
-                <p className={`text-base md:text-lg leading-relaxed ${theme.text.muted} w-full md:w-[60%]`}>
+                <p className={`text-base md:text-md leading-relaxed ${theme.text.muted} w-full md:w-[60%]`}>
                   End-to-end social media solutions designed to maintain a consistent,
                   professional brand presence across all major digital channels.
                 </p>

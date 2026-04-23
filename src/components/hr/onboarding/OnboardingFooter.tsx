@@ -143,7 +143,7 @@ const hrTableRows = `
               disabled={status === "loading" || count >= 5}
               onClick={handleFinalSubmit}
               className={`
-                w-full md:w-auto px-14 py-4 rounded-sm flex items-center justify-center gap-3
+                w-full md:w-auto px-14 py-3 rounded-sm flex items-center justify-center gap-3
                 text-[10px] font-bold tracking-[0.25em] uppercase transition-all active:scale-[0.98]
                 ${count >= 5 
                   ? "bg-slate-200 text-slate-400 cursor-not-allowed" 

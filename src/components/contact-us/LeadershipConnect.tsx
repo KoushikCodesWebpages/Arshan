@@ -10,13 +10,13 @@ export default function LeadershipConnect() {
     <section className="py-12 md:py-10 border-t border-slate-100 overflow-hidden">
       {/* MOBILE FIX: px-6 for mobile, md:px-28 for your original desktop design */}
       <div className="w-full mx-auto px-6 md:px-28">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 items-end">
           
           {/* LEFT: TEXT CONTENT */}
           <div className="lg:col-span-8">
-            <FadeInStagger className="space-y-4 md:space-y-6">
+            <FadeInStagger className="space-y-4 md:space-y-4">
               <FadeItem>
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-tertiary">
+                <span className={`uppercase tracking-[0.2em] text-[10px] md:text-[11px] font-bold ${theme.brand.accent} border-l-2 border-tertiary pl-3`}>
                   Connect with our leadership
                 </span>
               </FadeItem>
@@ -25,7 +25,7 @@ export default function LeadershipConnect() {
                 {/* MOBILE: text-3xl, w-full 
                    DESKTOP: md:text-5xl, md:w-[70%] (preserves original design)
                 */}
-                <h2 className={`text-3xl md:text-5xl font-bold tracking-tight leading-[1.2] md:leading-[1.1] w-full ${theme.text.brand}`}>
+                <h2 className="text-5xl md:text-5xl lg:text-5xl font-bold leading-[1.1] tracking-tight">
                   Strategic guidance for your next move.
                 </h2>
               </FadeItem>

@@ -198,7 +198,7 @@ export default function PricingGrid() {
 
                 {/* CTA Button using theme variables */}
                 <button
-                  className={`w-full py-4 text-[12px] md:text-[13px] font-bold uppercase tracking-widest rounded-brand transition-all active:scale-[0.97] ${
+                  className={`w-full py-3 text-[12px] md:text-[13px] font-bold uppercase tracking-widest rounded-brand transition-all active:scale-[0.97] ${
                     tier.isDark
                       ? "bg-tertiary text-white hover:brightness-110 shadow-lg shadow-tertiary/20"
                       : `${theme.buttons.primary}`

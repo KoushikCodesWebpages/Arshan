@@ -15,7 +15,7 @@ export default function FinalFiscalCTA() {
           <FadeItem>
             {/* rounded-3xl (Mobile) -> md:rounded-4xl (PC) */}
             {/* p-12 (Mobile) -> md:p-32 (PC) */}
-            <div className="bg-primary rounded-3xl md:rounded-4xl p-12 md:p-32 text-center shadow-2xl relative overflow-hidden">
+            <div className="bg-primary rounded-3xl md:rounded-4xl p-12 md:p-20 text-center shadow-2xl relative overflow-hidden">
               
               {/* Content Wrapper */}
               <div className="relative z-10 flex flex-col items-center">

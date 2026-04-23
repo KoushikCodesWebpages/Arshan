@@ -52,7 +52,7 @@ export default function Hero() {
             <FadeItem className="flex flex-wrap gap-4 pt-6">
               <Link
                 href="/contact-us"
-                className={`${theme.buttons.base} ${theme.buttons.primary} px-8 py-4 flex items-center gap-3 group shadow-xl shadow-primary/20 rounded-md`}
+                className={`${theme.buttons.base} ${theme.buttons.primary} px-8 py-3 flex items-center gap-3 group shadow-xl shadow-primary/20 rounded-md`}
               >
                 Request Technical Audit
                 <svg
@@ -70,7 +70,7 @@ export default function Hero() {
                   const el = document.getElementById("pillars");
                   el?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="px-8 py-4 bg-slate-300 text-primary font-bold text-sm rounded-md hover:bg-slate-400 transition-colors"
+                className="px-8 py-3 bg-slate-300 text-primary font-bold text-sm rounded-md hover:bg-slate-400 transition-colors"
               >
                 View Pillars
               </button>

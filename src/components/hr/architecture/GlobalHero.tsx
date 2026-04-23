@@ -61,7 +61,7 @@ export default function GlobalHero({ onPricingClick }: GlobalArchitectureHeroPro
               <FadeItem className="pt-4">
                 <button
                   onClick={handleNavigation}
-                  className={`${theme.buttons.base} ${theme.buttons.primary} w-full sm:w-auto px-10 py-5 text-sm shadow-xl hover:brightness-110 active:scale-95 transition-all`}
+                  className={`${theme.buttons.base} ${theme.buttons.primary} w-full sm:w-auto px-10 py-3 text-sm shadow-xl hover:brightness-110 active:scale-95 transition-all`}
                 >
                   View HR Pricing
                 </button>
